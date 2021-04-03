@@ -1,4 +1,11 @@
 Source,Translation
+"Distance en km: ","Distance in km: "
+Jet SAUVEGARDE,STUN save
+"Dommages totaux: ","Total damage: "
+"Dégâts: ","Damage: "
+"Valeur Encombrement: ","Encumbrance Value: "
+"Terre d'origine: +1 ",Homeland: +1
+"Jet ","Roll "
 NOM,NAME
 SURNOM,NICKNAME
 Race,
@@ -84,8 +91,8 @@ Max,
 Ce rempli automatiquement,Auto-filled
 Endurance,Stamina
 Concentration,
-Couronnes,crowns
-Couronnes (banque),crowns (bank)
+Couronnes,Crowns
+Couronnes (banque),Crowns (bank)
 Points de Progression,Improvement Points
 Chance (actuelle),Luck (ATM)
 Statut social,Social status
@@ -105,55 +112,30 @@ od,
 Le calcul Final des caractéristiques ne se fait pas toujours automatiquement (augmenter/diminuer la valeur pour corriger cela).",":angle-double-right: Warning :angle-double-left:
 Final calculation of Statistics is not always done automatically (increase / decrease the value to correct this)."
 Caractéristiques primaires,Statistics
-Caractéristiques,Derived Statistics
+Caractéristiques,Statistics
 Base,
 Mod,
 Final,
 Intelligence,
 calculé automatiquement,calculated automatically
-round(@INT_1)+round(@INT_2),
 Réflexes,Reflexes
-round(@REF_1)+round(@REF_2),
 Dextérité,Dexterity
-round(@DEX_1)+round(@DEX_2),
 Corps,Body
-round(@COR_1)+round(@COR_2),
 Vitesse,Speed
-round(@VIT_1)+round(@VIT_2),
 Empathie,Empathy
-round(@EMP_1)+round(@EMP_2),
 Technique,Craft
-round(@TEC_1)+round(@TEC_2),
 Volonté,Will
-round(@VOL_1)+round(@VOL_2),
 Chance,Luck
-round(@CHA_1)+round(@CHA_2),
 Vigueur,Vigor
-round(@VIG_1)+round(@VIG_2),
-Caractéristiques secondaires,
+Caractéristiques secondaires,Derived Statistics
 Étourdissement,Stun
-"if(floor((@COR_3+@VOL_3)/2) > 10,10,floor((@COR_3+@VOL_3)/2))",
-round(@ETOU_1)+round(@ETOU_2),
 Course,Run
-@VIT_3*3,
-round(@COU_1)+round(@COU_2),
 Saut,Leap
-floor(@COU_3/5),
-round(@SAUT_1)+round(@SAUT_2),
 Points de santé,Health Points
-floor((@COR_3+@VOL_3)/2)*5,
-round(@PS_1)+round(@PS_2),
-round(@END_1)+round(@END_2),
 Encombrement,Encumbrance
-@COR_3*10,
-round(@ENC_1)+round(@ENC_2),
 Récupération,Recovery
-floor((@COR_3+@VOL_3)/2),
-round(@REC_1)+round(@REC_2),
 Poings,Punch
 Pieds,Kick
-floor((round(@INT_3)+round(@VOL_3))*3/2),
-round(@CON_1)+round(@CON_2),
 Compétences,Skills
 <u>Intelligence:</u>,
 Con. de la rue,Streetwise
@@ -526,3 +508,28 @@ Notes...,
 "<p><u>III.<span style=""white-space:pre;"">&nbsp; &nbsp;&nbsp;</span>Inventaire</u></p> <ul> <li>La valeur PA max est calcul&eacute; automatiquement contrairement &agrave; la valeur actuelle qui est &agrave; rentrer manuellement&nbsp;</li> </ul> <p><u>IV.<span style=""white-space:pre;"">&nbsp; &nbsp;&nbsp;</span>Magie</u></p> <ul> <li>Le focus et la vigueur sont calcul&eacute;s automatiquement&nbsp;</li> </ul> <p><u>V.<span style=""white-space:pre;"">&nbsp; &nbsp;&nbsp;</span>Combat</u></p> <ul> <li>Initiative: jet d&rsquo;initiative</li> <li>Attaque<ul> <li>Corps &agrave; corps : permet de faire un jet d&rsquo;attaque avec une arme de corps &agrave; corps disponible dans l&rsquo;inventaire</li> <li>Distance : permet de faire un jet d&rsquo;attaque avec une arme &agrave; distance pr&eacute;sente dans l&rsquo;inventaire</li> </ul> </li> <li>Calcul:<ul> <li>Calcul si l&rsquo;attaque touche ou non</li> </ul> </li> <li>Dommages<ul> <li>Calcul des d&eacute;g&acirc;ts pour une seule localisation</li> </ul> </li> <li>Dommages &ndash; complet<ul> <li>Calcul les d&eacute;g&acirc;ts pour toute les localisations&nbsp;</li> </ul> </li> </ul> <p><u>VI.<span style=""white-space:pre;"">&nbsp; &nbsp;&nbsp;</span>Notes</u></p> <p><br></p>","<p> <u> III. <span style = white-space: pre; > & nbsp; & nbsp; & nbsp; </span> Inventory </u> </p> <ul> <li> The max PA value is calculated automatically unlike the current value which has to be entered manually </li> </ul> <p> <u> IV. <span style = "" white-space: pre; "" > & nbsp; & nbsp; & nbsp; </span> Magic </u> </p> <ul> <li> Focus and stamina are calculated automatically & nbsp; </li> </ul> <p> <u > V. <span style = "" white-space: pre; ""> & nbsp; & nbsp; & nbsp; </span> Combat </u> </p> <ul> <li> Initiative: initiative roll < / li> <li> Attack <ul> <li> Body: allows you to make an attack roll with a body weapon available in the inventory </li> <li> Distance: allows you to make an attack roll with a ranged weapon present in inventory </li> </ul> </li> <li> Calculation: <ul> <li> Calculation whether the attack hits or not </li> </ul> </li> <li> Damage <ul> <li> Calculation of damage for a single location ation </li> </ul> </li> <li> Damage & ndash; complete <ul> <li> Calculate damage for all locations </li> </ul> </li> </ul> <p> <u> VI. <span style = "" white -space: pre; ""> & nbsp; & nbsp; & nbsp; </span> Notes </u> </p> <p> <br> </p> "
 1 Unitée = kilomètre,1 Unit = kilometer
 "<a target=""_blank"" href=""https://macnaab.github.io/Random-Tables/WM/"">Version détaillé ici</a>","<a target=""_blank"" href=""https://macnaab.github.io/Random-Tables/WM/""> Detailed version here </a>"
+round(@INT_1)+round(@INT_2),
+round(@REF_1)+round(@REF_2),
+round(@DEX_1)+round(@DEX_2),
+round(@COR_1)+round(@COR_2),
+round(@VIT_1)+round(@VIT_2),
+round(@EMP_1)+round(@EMP_2),
+round(@TEC_1)+round(@TEC_2),
+round(@VOL_1)+round(@VOL_2),
+round(@CHA_1)+round(@CHA_2),
+round(@VIG_1)+round(@VIG_2),
+"if(floor((@COR_3+@VOL_3)/2) > 10,10,floor((@COR_3+@VOL_3)/2))",
+round(@ETOU_1)+round(@ETOU_2),
+@VIT_3*3,
+round(@COU_1)+round(@COU_2),
+floor(@COU_3/5),
+round(@SAUT_1)+round(@SAUT_2),
+floor((@COR_3+@VOL_3)/2)*5,
+round(@PS_1)+round(@PS_2),
+round(@END_1)+round(@END_2),
+@COR_3*10,
+round(@ENC_1)+round(@ENC_2),
+floor((@COR_3+@VOL_3)/2),
+round(@REC_1)+round(@REC_2),
+floor((round(@INT_3)+round(@VOL_3))*3/2),
+round(@CON_1)+round(@CON_2),
