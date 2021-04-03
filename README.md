@@ -6,7 +6,7 @@ Let’s Role is a modern and accessible web platform allowing you to play RPGs o
 The Witcher Tabletop Roleplaying Game is made by R. Talsorian Games in collaboration with CD Projekt Red and gives players a chance to tell their own stories in the Dark and Dangerous World of the Witcher.
 
 ## Forum
-The presentation message about this system can be found here, direct download.
+The presentation message about this system can be found here, [direct download](https://alpha.lets-role.com/sy/BEdrBzCHSz3vTJsX).
 
 ## Translation
 You're welcome to help expand and update this system.
