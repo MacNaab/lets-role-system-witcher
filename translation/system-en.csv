@@ -1,72 +1,72 @@
 Source,Translation
-NOM,
-SURNOM,
+NOM,NAME
+SURNOM,NICKNAME
 Race,
-Humain,
-Elfe,
-Nain,
-Sorceleur,
-Halfelin,
+Humain,Human
+Elfe,Elve
+Nain,Dwarf
+Sorceleur,Witcher
+Halfelin,Halflin
 Gnome,
 Vampire,
 Profession,
 Artisan,Craftman
-Barde,
-Criminel,
-Docteur,
-Homme d'armes,
+Barde,Bard
+Criminel,Criminal
+Docteur,Doctor
+Homme d'armes,Man At Arms
 Mage,
-Marchand,
-Prêtre,
+Marchand,Merchant
+Prêtre,Priest
 Noble,
-Paysan,
-Fanatique,
-Hors-la-loi,
-Nomade,
-Terre d'Origine,
-Rédanie,
+Paysan,Peasant
+Fanatique,Fanatic
+Hors-la-loi,Outlaw
+Nomade,Nomad
+Terre d'Origine,Homeland
+Rédanie,Redania
 Kaedwen,
-Témérie,
+Témérie,Temeria
 Aedirn,
-Lyrie et Rivie,
-Kovir et Poviss,
+Lyrie et Rivie,Lyria & Rivia
+Kovir et Poviss,Kovir & Poviss
 Skellige,
 Cidaris,
 Verden,
 Cintra,
-Cœur de l'Empire,
+Cœur de l'Empire,The Heart of Nilfgaard
 Vicovaro,
 Angren,
 Nazair,
-Metinna,
+Metinna,Mettina
 Mag Turga,
-Geso,
+Geso,Gheso
 Ebbing,
 Maecht,
-Gemmery,
-Étolie,
+Gemmery,Gemmeria
+Étolie,Etolia
 Dol Blathanna,
 Mahakam,
-Âge,
-<u>jet rapide</u>,
+Âge,Year old
+<u>jet rapide</u>,<u>quick roll</u>
 :dragon: Initiative,
-:skull: sauvegarde,
+:skull: sauvegarde,:skull: Stun
 Combat,
-Arbalète,
-Archerie,
-Athlétisme,
-Bagarre,
-Bâton/Lance,
-Escrime,
-Esquive/Évasion,
-Lames courtes,
-Mêlée,
-Tactique,
-Magie,
-Envoûtement,
-Incantation,
-Résistance à la magie,
-Rituels,
+Arbalète,Crossbow
+Archerie,Archery
+Athlétisme,Athletics
+Bagarre,Brawling
+Bâton/Lance,Staff/Spear
+Escrime,Swordsmanship
+Esquive/Évasion,Dodge/Escape
+Lames courtes,Small Blades
+Mêlée,Melee
+Tactique,Tactics
+Magie,Magic
+Envoûtement,Hex Weaving
+Incantation,Spell Casting
+Résistance à la magie,Resist Magic
+Rituels,Ritual Crafting
 Indice,
 Analyse de preuve,
 Analyse de transactions,
@@ -79,444 +79,307 @@ Investigation mystique,
 Pistage,
 Recherches,
 Rumeurs,
-Santé,
+Santé,HP
 Max,
-Ce rempli automatiquement,
-Endurance,
+Ce rempli automatiquement,Auto-filled
+Endurance,Stamina
 Concentration,
-Couronnes,
-Couronnes (banque),
-Points de Progression,
-Chance (actuelle),
-Statut social,
-"Réputation, titre...",
-Profil,
-Carac & Compt,
-Inventaire,
+Couronnes,crowns
+Couronnes (banque),crowns (bank)
+Points de Progression,Improvement Points
+Chance (actuelle),Luck (ATM)
+Statut social,Social status
+"Réputation, titre...","Reputation, title ..."
+Profil,Profile
+Carac & Compt,Statistics & Skills
+Inventaire,Inventaire
 Notes,
 Guide,
-Texte d'avertissement en fonction des capacités activées,
-Histoire,
+Histoire,History
 Description,
 bonus/malus,
 carac,
 od,
 ":angle-double-right: Attention :angle-double-left:
-Le calcul Final des caractéristiques ne se fait pas toujours automatiquement (augmenter/diminuer la valeur pour corriger cela).",
-Caractéristiques primaires,
-Caractéristiques,
+Le calcul Final des caractéristiques ne se fait pas toujours automatiquement (augmenter/diminuer la valeur pour corriger cela).",":angle-double-right: Warning :angle-double-left:
+Final calculation of Statistics is not always done automatically (increase / decrease the value to correct this)."
+Caractéristiques primaires,Statistics
+Caractéristiques,Derived Statistics 
 Base,
 Mod,
 Final,
 Intelligence,
-calculé automatiquement,
-round(@INT_1)+round(@INT_2),
-Réflexes,
-round(@REF_1)+round(@REF_2),
-Dextérité,
-round(@DEX_1)+round(@DEX_2),
-Corps,
-round(@COR_1)+round(@COR_2),
-Vitesse,
-round(@VIT_1)+round(@VIT_2),
-Empathie,
-round(@EMP_1)+round(@EMP_2),
-Technique,
-round(@TEC_1)+round(@TEC_2),
-Volonté,
-round(@VOL_1)+round(@VOL_2),
-Chance,
-round(@CHA_1)+round(@CHA_2),
-Vigueur,
-round(@VIG_1)+round(@VIG_2),
+calculé automatiquement,calculated automatically
+Réflexes,Reflexes
+Dextérité,Dexterity
+Corps,Body
+Vitesse,Speed
+Empathie,Empathy
+Technique,Craft
+Volonté,Will
+Chance,Luck
+Vigueur,Vigor
 Caractéristiques secondaires,
-Étourdissement,
-"if(floor((@COR_3+@VOL_3)/2) > 10,10,floor((@COR_3+@VOL_3)/2))",
-round(@ETOU_1)+round(@ETOU_2),
-Course,
-@VIT_3*3,
-round(@COU_1)+round(@COU_2),
-Saut,
-floor(@COU_3/5),
-round(@SAUT_1)+round(@SAUT_2),
-Points de santé,
-floor((@COR_3+@VOL_3)/2)*5,
-round(@PS_1)+round(@PS_2),
-round(@END_1)+round(@END_2),
-Encombrement,
-@COR_3*10,
-round(@ENC_1)+round(@ENC_2),
-Récupération,
-floor((@COR_3+@VOL_3)/2),
-round(@REC_1)+round(@REC_2),
-Poings,
-Pieds,
-floor((round(@INT_3)+round(@VOL_3))*3/2),
-round(@CON_1)+round(@CON_2),
-Compétences,
+Étourdissement,Stun
+Course,Run
+Saut,Leap
+Points de santé,Health Points
+Encombrement,Encumbrance
+Récupération,Recovery
+Poings,Punch
+Pieds,Kick
+Compétences,Skills
 <u>Intelligence:</u>,
-Con. de la rue,
-round(@RUE_1)+round(@RUE_2),
-Con. monstres,
-round(@MON_1)+round(@MON_2),
-Déduction,
-round(@DED_1)+round(@DED_2),
-Éducation,
-round(@EDU_1)+round(@EDU_2),
-Enseignement,
-round(@ENS_1)+round(@ENS_2),
-Étiquette,
-round(@ETQ_1)+round(@ETQ_2),
-Langue ancienne,
-round(@LAN_1)+round(@LAN_2),
-Lang. commune,
-round(@LCO_1)+round(@LCO_2),
-Langue naine,
-round(@LNA_1)+round(@LNA_2),
-Négoce,
-round(@NEG_1)+round(@NEG_2),
-Survie,
-round(@SUR_1)+round(@SUR_2),
-round(@TAC_1)+round(@TAC_2),
-Vigilance,
-round(@VIGi_1)+round(@VIGi_2),
-<u>Réflexes:</u>,
-round(@BAG_1)+round(@BAG_2),
-round(@BAT_1)+round(@BAT_2),
-Équitation,
-round(@EQUI_1)+round(@EQUI_2),
-round(@ESC_1)+round(@ESC_2),
-round(@ESQ_1)+round(@ESQ_2),
-round(@LAM_1)+round(@LAM_2),
-round(@MEL_1)+round(@MEL_2),
-Navigation,
-round(@NAV_1)+round(@NAV_2),
-<u>Dextérité:</u>,
-Adresse,
-round(@ADR_1)+round(@ADR_2),
-round(@ARB_1)+round(@ARB_2),
-round(@ARC_1)+round(@ARC_2),
-round(@ATH_1)+round(@ATH_2),
-Furtivité,
-round(@FUR_1)+round(@FUR_2),
-<u>Corps:</u>,
+Con. de la rue,Streetwise
+Con. monstres,Monster Lore
+Déduction,Deduction
+Éducation,Education
+Enseignement,Teaching
+Étiquette,Social Etiquette
+Langue ancienne,Ancient lang
+Lang. commune,Common lang
+Langue naine,Dwarf lang
+Négoce,Business
+Survie,Wilderness Survival
+Vigilance,Awareness
+<u>Réflexes:</u>,<u>Reflex:</u>
+Équitation,Riding
+Navigation,Sailing
+<u>Dextérité:</u>,<u>Dexterity:</u>
+Adresse,Sleight of Hand
+Furtivité,Stealth
+<u>Corps:</u>,<u>body:</u>
 Physique,
-round(@PHY_1)+round(@PHY_2),
-Résilience,
-round(@RES_1)+round(@RES_2),
-<u>Empathie:</u>,
-Beaux-arts,
-round(@BEAU_1)+round(@BEAU_2),
-Charisme,
-round(@CHAR_1)+round(@CHAR_2),
-Commandement,
-round(@COM_1)+round(@COM_2),
-Duperie,
-round(@DUP_1)+round(@DUP_2),
-Jeu,
-round(@JEU_1)+round(@JEU_2),
+Résilience,Endurance
+<u>Empathie:</u>,<u>Empathy:</u>
+Beaux-arts,Fine ArtsGambling
+Charisme,Charisma
+Commandement,Leadership
+Duperie,Deceit
+Jeu,Gambling
 Persuasion,
-round(@PER_1)+round(@PER_2),
-Psychologie,
-round(@PSY_1)+round(@PSY_2),
-Représentation,
-round(@REP_1)+round(@REP_2),
-Séduction,
-round(@SED_1)+round(@SED_2),
-Stylisme,
-round(@STYL_1)+round(@STYL_2),
-<u>Technique:</u>,
-Alchimie,
-round(@ALC_1)+round(@ALC_2),
-Artisanat,
-round(@ART_1)+round(@ART_2),
-Contrefaçon,
-round(@CONT_1)+round(@CONT_2),
-Crochetage,
-round(@CRO_1)+round(@CRO_2),
-Déguisement,
-round(@DEG_1)+round(@DEG_2),
-Fab. pièges,
-round(@PIEGE_1)+round(@PIEGE_2),
-Premiers soins,
-round(@SOI_1)+round(@SOI_2),
-<u>Volonté:</u>,
+Psychologie,Human Perception
+Représentation,Performance
+Séduction,Seduction
+Stylisme,Grooming and Style
+<u>Technique:</u>,<u>Craft:</u>
+Alchimie,Alchemy
+Artisanat,Crafting
+Contrefaçon,Forgery
+Crochetage,Pick Lock
+Déguisement,Disguise
+Fab. pièges,Trap Crafting
+Premiers soins,First Aid
+<u>Volonté:</u>,<u>Will:</u>
 Courage,
-round(@COUR_1)+round(@COUR_2),
-round(@ENV_1)+round(@ENV_2),
-round(@INC_1)+round(@INC_2),
-Intimidation,
-round(@INTI_1)+round(@INTI_2),
-Rés. contrainte,
-round(@RCON_1)+round(@RCON_2),
-Rés. magie,
-round(@RMAG_1)+round(@RMAG_2),
-round(@RIT_1)+round(@RIT_2),
+Intimidation,Intimidation
+Rés. contrainte,Resist Coercion
+Rés. magie,Resist Magic
 Compétences exclusives,
-Caract,
-Modificateurs actifs,
-état,
+Caract,Statistic
+Modificateurs actifs,Active modifiers
+état,condition
 Race:,
-Origine,
-VE:,
+Origine,Origin
+VE:,EV:
 ENC:,
-Blessure critique,
-Nom,
-État,
-Nouveau modificateur,
+Blessure critique,Critical injury
+Nom,Name
+État,Condition
+Nouveau modificateur,New modifier
 Type,
-PA - Tête,
-Ce rempli automatiquement à la sélection de la meta-armure,
-PA - Torse,
-PA - Jambes,
+PA - Tête,SP - Head
+PA - Torse,SP - Torso
+PA - Jambes,SP - Leg
 <u>notes</u>,
-Ecrivez vos notes ici !,
-"VE: ",
-Armes,
-PRÉ,
-DÉG,
-Fia,
-A mettre en format 1/1,
-Mains,
-POR,
-Effet,
-Diss,
-AM,
-Poids,
-Armures,
-PA,
-AA,
-VE,
-Quantité,
-Composants,
-schémas,
-SD,
-Durée,
+Ecrivez vos notes ici !,Write your notes here!
+"VE: ","EV: "
+Armes,Weapons
+PRÉ,WA
+DÉG,DMG
+Fia,Rel
+A mettre en format 1/1,Put in 1/1 format
+Mains,Hands
+POR,RNG
+Effet,Effect
+Diss,Conc
+AM,EN
+Poids,Weight
+Armures,Armors
+PA,SP
+AA,AE
+VE,EV
+Quantité,Quantity
+Composants,Components
+schémas,diagram
+SD,DC
+Durée,Duration
 Focus,
-sorts,
-Coût,
-Portée,
+sorts,spells
+Coût,Cost
+Portée,Range
 "invocations ",
-"signes ",
-rituels,
-Temps,
-"envoûtements ",
-Prérequis pour la lever,
-Épée,
-Lame courte,
-Hache,
-Arme contondante,
-Arme d'hast,
-Bâton,
-Arme de jet,
-Arc,
-Mains nues,
-3d6+2,
-1/1,
+"signes ","Signs "
+rituels,rituals
+Temps,Time
+"envoûtements ","Hexes "
+Prérequis pour la lever,Requirement To Lift
+Épée,Sword
+Lame courte,Small Blade
+Hache,Axe
+Arme contondante,Bludgeon
+Arme d'hast,Pole Arm
+Bâton,Stave
+Arme de jet,Thrown Weapon
+Arc,Bow
+Mains nues,Bare hands
 Focus:,
-Valeur du focus,
-#arme_1,
-#arme_2,
-#arme_3,
-#arme_4,
-#arme_5,
-#arme_6,
-#arme_7,
-#arme_8,
-#arme_9,
-#arme_10,
-#arme_11,
-Tête,
-"Tête, Torse",
-"Tête, Torse, Jambes",
-Torse,
-"Torse, Jambes",
-Jambes,
-#armor_name,
-#armor_2,
-#armor_3,
-#armor_4,
-#armor_effect,
-#armor_6,
-#armor_7,
-#inv_name,
-#inv_2,
-#inv_3,
-#inv_4,
-#inv_5,
-#schema_1,
-#schema_2,
-#schema_3,
-#schema_4,
-#sort_1,
-#sort_2,
-#sort_3,
-#sort_4,
-#sort_5,
-#rituel_1,
-#rituel_2,
-#rituel_3,
-#rituel_4,
-#rituel_5,
-#rituel_6,
-#rituel_7,
-#envout_1,
-#envout_2,
-#envout_3,
-#envout_4,
-Aucune,
-#ComptExcl_1,
-#ComptExcl_2,
-#ComptExcl_3,
-#ComptExcl_4,
-#ComptExcl_6,
-Mâchoire fêlée,
-Cicatrice défigurante,
-Côtes fêlées,
-Corps étranger,
-Entorse du bras,
-Entorse de la jambe/cheville,
-Blessure mineure à la tête,
-Dents perdues,
-Rupture de la rate,
-Côtes brisées,
-Bras fracturé,
-Jambe fracturée,
-Fracture du crâne,
-Commotion,
-Perforation de l’estomac,
-Plaie aspirante au thorax,
-Fracture ouverte du bras,
-Fracture ouverte de la jambe,
-Fracture de la nuque/décapitation,
-Œil endommagé,
-Cœur endommagé,
-Choc septique,
-Bras arraché,
-Jambe arrachée,
-Critique,
-Stabilisé,
-Traité,
-#Blessure_1,
-#Blessure_2,
-#Blessure_3,
-Connaissance de la rue,
-Connaissance des monstres,
-Langue commune,
-Fabrication de pièges,
-Résistance à la contrainte,
-#Nmod_1,
-#Nmod_2,
-#Nmod_3,
-#Nmod_4,
+Valeur du focus,Focus value
+Tête,Head
+"Tête, Torse","Head, Torso"
+"Tête, Torse, Jambes","Head, Torso, Legs"
+Torse,Torso
+"Torse, Jambes","Torso, Legs"
+Jambes,Legs
+Aucune,Any
+Mâchoire fêlée,Cracked Jaw
+Cicatrice défigurante,Disfiguring Scar
+Côtes fêlées,Cracked Ribs
+Corps étranger,Foreign Object
+Entorse du bras,Sprained Arm
+Entorse de la jambe/cheville,Sprained Leg
+Blessure mineure à la tête,Minor Head Wound
+Dents perdues,Lost Teeth
+Rupture de la rate,Ruptured Spleen
+Côtes brisées,Broken Ribs
+Bras fracturé,Fractured Arm
+Jambe fracturée,Fractured Leg
+Fracture du crâne,Skull Fracture
+Commotion,Concussion
+Perforation de l’estomac,Torn Stomach
+Plaie aspirante au thorax,Sucking Chest Wound
+Fracture ouverte du bras,Compound Arm Fracture
+Fracture ouverte de la jambe,Compound Leg Fracture
+Fracture de la nuque/décapitation,Separated Spine/Decapitated
+Œil endommagé,Damaged Eye
+Cœur endommagé,Heart Damage
+Choc septique,Septic Shock
+Bras arraché,Dismembered Arm
+Jambe arrachée,Dismembered Leg
+Critique,Critical
+Stabilisé,Stabilized
+Traité,Treated
+Connaissance de la rue,Streetwise
+Connaissance des monstres,Monster Lore
+Langue commune,Common language
+Fabrication de pièges,Trap Crafting
+Résistance à la contrainte,Resist Coercion
 initiative,
-Cliquez pour lancer l'initiative !,
-Attaque,
-Corps à corps,
-Arme,
-Taille de la cible,
-Moyenne,
-Grande,
-Énorme,
-Petite,
-Cible,
+Cliquez pour lancer l'initiative !,Click to roll initiative!
+Attaque,Attack
+Corps à corps,Body to body
+Arme,Weapon
+Taille de la cible,Target size
+Moyenne,Medium
+Grande,Large
+Énorme,Huge
+Petite,Small
+Cible,Target
 Normal,
-Immobilisée,
-Esquive active,
-Mouvante,
-Luminosité,
-Lumière du jour,
-Ténèbres,
-Brillante,
-Modificateur,
-à distance,
-Courte,
-A bout portant,
-Intermédiaire,
-Longue,
-Extrême,
-Calcul,
-Jet d'attaque,
-Localisation,
-Bras / Membre,
-Jambe / Spécial,
-Jet de défense,
-Résultat,
-Dommages,
-Dégâts,
-3d6,
-ou,
+Immobilisée,Pinned
+Esquive active,Active dodge
+Mouvante,Moving
+Luminosité,Light Levels
+Lumière du jour,Daylight
+Ténèbres,Darkness
+Brillante,Bright Light
+Modificateur,Modifier
+à distance,From a far
+Courte,Close
+A bout portant,Point Blank
+Intermédiaire,Medium
+Longue,Long
+Extrême,Extreme
+Calcul,Calculation
+Jet d'attaque,Attack roll
+Localisation,Location
+Bras / Membre,Arm / Limb
+Jambe / Spécial,Leg / Special
+Jet de défense,Defense roll
+Résultat,Résultat
+Dommages,Dommages
+Dégâts,Damage
+ou,or
 A cocher si c'est une attaque au corps à corps,
-CàC,
-Frappe puissante,
-A cocher si la cible est un monstre,
-Monstre,
-Aucun,
+CàC,BtoB
+Frappe puissante,Strong Strikes
+A cocher si la cible est un monstre,Check if the target is a monster
+Monstre,Monster
+Aucun,None
 Simple,
-Complexe,
-Difficile,
-Mortel,
+Complexe,Complex
+Difficile,Difficult
+Mortel,Deadly
 R/V,
-Résistance / Vulnérabilité,
-Vulnérabilité,
-Résistance,
-Pouvoir d'Arrêt,
-Dommages - complet,
-<u>Pourvoir d'arrêt</u>,
+Résistance / Vulnérabilité,Resistance / Vulnerability
+Vulnérabilité,Vulnerability
+Résistance,Resistance
+Pouvoir d'Arrêt,Shield Power
+Dommages - complet,Damage - all location
+<u>Pourvoir d'arrêt</u>,<u>Shield Power</u>
 Membre G,
 Membre D,
-Jambe G,
-" Jambe D",
-Modificateur:,
-Visibilité du jet:,
+Jambe G,L Leg
+" Jambe D","R Leg"
+Modificateur:,Modifier
+Visibilité du jet:,Roll visibility:
 Visible,
-MJ,
-Uniquement le MJ,
-<h5><u>Explication du fonctionnement de la fiche:</u></h5>,
+MJ,GM
+Uniquement le MJ,GM only
+<h5><u>Explication du fonctionnement de la fiche:</u></h5>,<h5><u>Explanation of how the sheet works:</u></h5>
 "<h6><u>Jet Rapide&nbsp;:</u></h6>
-<ul> <li>Initiative&nbsp;: jet d&rsquo;initiative</li> <li>Sauvegarde&nbsp;: jet d&rsquo;&Eacute;tourdissement</li> <li>Combat&nbsp;: liste des comp&eacute;tences de combat</li> <li>Magie&nbsp;: liste des comp&eacute;tences magiques</li> <li>Indice&nbsp;: jet de d&eacute;g&acirc;ts des indices</li> </ul> ",
-<u>Vulnérabilités</u>,
-<u>Capacités</u>,
-Menace:,
-Fort simple,
-Récompense:,
-1200 couronnes,
-Armure:,
+<ul> <li>Initiative&nbsp;: jet d&rsquo;initiative</li> <li>Sauvegarde&nbsp;: jet d&rsquo;&Eacute;tourdissement</li> <li>Combat&nbsp;: liste des comp&eacute;tences de combat</li> <li>Magie&nbsp;: liste des comp&eacute;tences magiques</li> <li>Indice&nbsp;: jet de d&eacute;g&acirc;ts des indices</li> </ul> ","<h6><u>Quick roll:</u></h6>
+<ul> <li> Initiative: initiative roll </li> <li> Saving: stun roll </li> <li> Combat: list of combat skills </li> <li> Magic: list of magic skills </li> <li> Hint: hint damage roll </li> </ul> "
+<u>Vulnérabilités</u>,<u>Vulnerabilities</u>
+<u>Capacités</u>,<u>Abilities</u>
+Menace:,Threat:
+Fort simple,Hard Difficult
+Récompense:,Bounty:
+1200 couronnes,1200 crowns
+Armure:,Armor:
 "Tête:
 Torse:
-Jambes:",
+Jambes:","Head:
+Torso:
+Leg:"
 Information,
-Compétences & Caractéristiques,
+Compétences & Caractéristiques,Statistics & Skills
 Prétiré:,
-Taille:,
-Taille humaine,
-Poids:,
-Poids humain,
+Taille:,Height:
+Taille humaine,Around 1 meter
+Poids:,Weight:
+Poids humain,Around 13kg
 Intelligence:,
 Humaine,
-<u>Environnement:</u>,
-<u>Organisation:</u>,
-<u>Butin:</u>,
-<u>Armes:</u>,
-Att/tour,
+<u>Environnement:</u>,<u>Environment:</u>
+<u>Organisation:</u>,<u>Organization:</u>
+<u>Butin:</u>,<u>Loot:</u>
+<u>Armes:</u>,<u>Weapons:</u>
+Att/tour,ROF
 "POR: 4m, Poison (75%)",
-1,
-Compétence:,
-La plupart des monstres utilisent la compétence Mêlée,
-PRÉ:,
-Valeur de la Précision,
-#pnj_arme_1,
-#pnj_arme_2,
-#pnj_arme_3,
-#pnj_arme_4,
-Calculateur de trajet,
-Echelle:,
-En kilomètre*,
+Compétence:,Skill:
+La plupart des monstres utilisent la compétence Mêlée,Most monsters use the Melee skill
+PRÉ:,WA:
+Valeur de la Précision,Weapon accuracy value
+Calculateur de trajet,Trip calculator
+Echelle:,Scale:
+En kilomètre*,In kilometers*
 km,
 Distance:,
 Résultat:,
 Notes...,
 "<h6><u>Onglets&nbsp;:</u></h6>
-<p><u>I.<span style=""white-space:pre;"">&nbsp; &nbsp;&nbsp;</span>Profil</u></p> <ul> <li>Histoire : noter votre histoire</li> <li>Description : noter votre description&nbsp;</li> </ul> <p><u>II.<span style=""white-space:pre;"">&nbsp; &nbsp;&nbsp;</span>Carac &amp; Compt</u></p> <p>Pour g&eacute;n&eacute;rer un jet, cliquez sur le nom de la caract&eacute;ristique ou de la comp&eacute;tence. Une fen&ecirc;tre s&rsquo;ouvrira vous demandant :</p> <ul> <li>Modificateur: valeur du modificateur propre &agrave; la situation</li> <li>Visibilit&eacute; : Visible (tout le monde verra le jet), MJ (seul le MJ et vous verront le jet) et Uniquement le MJ (seul le MJ verra le jet)&nbsp;</li> </ul> <p>La valeur affich&eacute;e sera sous la forme:</p> <p style=""text-align: center;"">1d10 + Base (Caract&eacute;ristique + Comp&eacute;tence) + Modificateur</p> <ul> <li>&nbsp;Tableaux:<ul> <li>Base repr&eacute;sente votre niveau dans la caract&eacute;ristique ou comp&eacute;tence.</li> <li>Mod repr&eacute;sente les modificateurs actifs (calcul automatique)</li> <li>Final est la somme de Base et Mod</li> </ul> </li> <li>Comp&eacute;tences exclusives correspond aux comp&eacute;tences de profession a rentrer manuelle en cliquant sur le bouton &laquo; Add&hellip; &raquo;</li> <li>Modificateurs actifs liste les modificateurs permanents ou temporaires:<ul> <li>&Eacute;tat : liste les modificateurs actifs</li> <li>Blessure critique permet de rajouter une blessure</li> <li>Nouveau modificateur permet de rajouter un modificateur qui ne serait pas pris en compte.</li> </ul> </li> </ul>",
-"<p><u>III.<span style=""white-space:pre;"">&nbsp; &nbsp;&nbsp;</span>Inventaire</u></p> <ul> <li>La valeur PA max est calcul&eacute; automatiquement contrairement &agrave; la valeur actuelle qui est &agrave; rentrer manuellement&nbsp;</li> </ul> <p><u>IV.<span style=""white-space:pre;"">&nbsp; &nbsp;&nbsp;</span>Magie</u></p> <ul> <li>Le focus et la vigueur sont calcul&eacute;s automatiquement&nbsp;</li> </ul> <p><u>V.<span style=""white-space:pre;"">&nbsp; &nbsp;&nbsp;</span>Combat</u></p> <ul> <li>Initiative: jet d&rsquo;initiative</li> <li>Attaque<ul> <li>Corps &agrave; corps : permet de faire un jet d&rsquo;attaque avec une arme de corps &agrave; corps disponible dans l&rsquo;inventaire</li> <li>Distance : permet de faire un jet d&rsquo;attaque avec une arme &agrave; distance pr&eacute;sente dans l&rsquo;inventaire</li> </ul> </li> <li>Calcul:<ul> <li>Calcul si l&rsquo;attaque touche ou non</li> </ul> </li> <li>Dommages<ul> <li>Calcul des d&eacute;g&acirc;ts pour une seule localisation</li> </ul> </li> <li>Dommages &ndash; complet<ul> <li>Calcul les d&eacute;g&acirc;ts pour toute les localisations&nbsp;</li> </ul> </li> </ul> <p><u>VI.<span style=""white-space:pre;"">&nbsp; &nbsp;&nbsp;</span>Notes</u></p> <p><br></p>",
-1 Unitée = kilomètre,
+<p><u>I.<span style=""white-space:pre;"">&nbsp; &nbsp;&nbsp;</span>Profil</u></p> <ul> <li>Histoire : noter votre histoire</li> <li>Description : noter votre description&nbsp;</li> </ul> <p><u>II.<span style=""white-space:pre;"">&nbsp; &nbsp;&nbsp;</span>Carac &amp; Compt</u></p> <p>Pour g&eacute;n&eacute;rer un jet, cliquez sur le nom de la caract&eacute;ristique ou de la comp&eacute;tence. Une fen&ecirc;tre s&rsquo;ouvrira vous demandant :</p> <ul> <li>Modificateur: valeur du modificateur propre &agrave; la situation</li> <li>Visibilit&eacute; : Visible (tout le monde verra le jet), MJ (seul le MJ et vous verront le jet) et Uniquement le MJ (seul le MJ verra le jet)&nbsp;</li> </ul> <p>La valeur affich&eacute;e sera sous la forme:</p> <p style=""text-align: center;"">1d10 + Base (Caract&eacute;ristique + Comp&eacute;tence) + Modificateur</p> <ul> <li>&nbsp;Tableaux:<ul> <li>Base repr&eacute;sente votre niveau dans la caract&eacute;ristique ou comp&eacute;tence.</li> <li>Mod repr&eacute;sente les modificateurs actifs (calcul automatique)</li> <li>Final est la somme de Base et Mod</li> </ul> </li> <li>Comp&eacute;tences exclusives correspond aux comp&eacute;tences de profession a rentrer manuelle en cliquant sur le bouton &laquo; Add&hellip; &raquo;</li> <li>Modificateurs actifs liste les modificateurs permanents ou temporaires:<ul> <li>&Eacute;tat : liste les modificateurs actifs</li> <li>Blessure critique permet de rajouter une blessure</li> <li>Nouveau modificateur permet de rajouter un modificateur qui ne serait pas pris en compte.</li> </ul> </li> </ul>","<h6><u>Tabs:</u></h6>
+<p> <u> I. <span style = "" white-space: pre; ""> & nbsp; & nbsp; & nbsp; </span> Profile </u> </p> <ul> <li> Story: write your story </li> <li> Description: write your description </li> </ul> < p> <u> II. <span style = "" white-space: pre; ""> & nbsp; & nbsp; & nbsp; </span> Carac & amp; Account </u> </p> <p> To generate a roll, click on the name of the characteristic or skill. A window will open asking you: </p> <ul> <li> Modifier: value of own modifier & agrave; the situation </li> <li> Visibility; : Visible (everyone will see the roll), GM (only the GM and you will see the roll) and Only the GM (only the GM will see the roll) & nbsp; </li> </ul> <p> The displayed value ; e will be in the form: </p> <p style = "" text-align: center; ""> 1d10 + Base (Characteristic + Skill) + Modifier </p> <ul> <li> & nbsp; Tables: <ul> <li> Base represents your level in the characteristic or skill. </li> <li> Mod represents active modifiers (automatic calculation) </li> <li > Final is the sum of Base and Mod </li> </ul> </li> <li> Exclusive skills corresponds to the skills of the profession to be entered manually by clicking on the button & laquo; Add & hellip; & raquo; </li> <li> Active modifiers lists permanent or temporary modifiers: <ul> <li> & Eacute; state: lists active modifiers </li> <li> Critical injury allows you to add a wound </li> <li> New modifier allows you to add a modifier that would not be taken into account. </li> </ul> </li> </ul> "
+"<p><u>III.<span style=""white-space:pre;"">&nbsp; &nbsp;&nbsp;</span>Inventaire</u></p> <ul> <li>La valeur PA max est calcul&eacute; automatiquement contrairement &agrave; la valeur actuelle qui est &agrave; rentrer manuellement&nbsp;</li> </ul> <p><u>IV.<span style=""white-space:pre;"">&nbsp; &nbsp;&nbsp;</span>Magie</u></p> <ul> <li>Le focus et la vigueur sont calcul&eacute;s automatiquement&nbsp;</li> </ul> <p><u>V.<span style=""white-space:pre;"">&nbsp; &nbsp;&nbsp;</span>Combat</u></p> <ul> <li>Initiative: jet d&rsquo;initiative</li> <li>Attaque<ul> <li>Corps &agrave; corps : permet de faire un jet d&rsquo;attaque avec une arme de corps &agrave; corps disponible dans l&rsquo;inventaire</li> <li>Distance : permet de faire un jet d&rsquo;attaque avec une arme &agrave; distance pr&eacute;sente dans l&rsquo;inventaire</li> </ul> </li> <li>Calcul:<ul> <li>Calcul si l&rsquo;attaque touche ou non</li> </ul> </li> <li>Dommages<ul> <li>Calcul des d&eacute;g&acirc;ts pour une seule localisation</li> </ul> </li> <li>Dommages &ndash; complet<ul> <li>Calcul les d&eacute;g&acirc;ts pour toute les localisations&nbsp;</li> </ul> </li> </ul> <p><u>VI.<span style=""white-space:pre;"">&nbsp; &nbsp;&nbsp;</span>Notes</u></p> <p><br></p>","<p> <u> III. <span style =" "white-space: pre;" "> & nbsp; & nbsp; & nbsp; </span> Inventory </u> </p> <ul> <li> The max PA value is calculated automatically unlike the current value which has to be entered manually </li> </ul> <p> <u> IV. <span style = "" white-space: pre; "" > & nbsp; & nbsp; & nbsp; </span> Magic </u> </p> <ul> <li> Focus and stamina are calculated automatically & nbsp; </li> </ul> <p> <u > V. <span style = "" white-space: pre; ""> & nbsp; & nbsp; & nbsp; </span> Combat </u> </p> <ul> <li> Initiative: initiative roll < / li> <li> Attack <ul> <li> Body: allows you to make an attack roll with a body weapon available in the inventory </li> <li> Distance: allows you to make an attack roll with a ranged weapon present in inventory </li> </ul> </li> <li> Calculation: <ul> <li> Calculation whether the attack hits or not </li> </ul> </li> <li> Damage <ul> <li> Calculation of damage for a single location ation </li> </ul> </li> <li> Damage & ndash; complete <ul> <li> Calculate damage for all locations </li> </ul> </li> </ul> <p> <u> VI. <span style = "" white -space: pre; ""> & nbsp; & nbsp; & nbsp; </span> Notes </u> </p> <p> <br> </p> "
+1 Unitée = kilomètre,1 Unit = kilometer
