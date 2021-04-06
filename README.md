@@ -13,3 +13,6 @@ You're welcome to help expand and update this system.
 Translation files are .csv and can be found [here](https://github.com/MacNaab/lets-role-system-witcher/tree/main/translation).
 
 When you're done you can send me a message on the forum or push a [pull request](https://github.com/MacNaab/lets-role-system-witcher/pulls).
+
+## Wiki
+You can check the [wiki](https://github.com/MacNaab/lets-role-system-witcher/wiki) about this system in :fr: and :gb:
