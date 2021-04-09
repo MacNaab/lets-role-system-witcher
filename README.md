@@ -16,3 +16,6 @@ When you're done you can send me a message on the forum or push a [pull request]
 
 ## Wiki
 You can check the [wiki](https://github.com/MacNaab/lets-role-system-witcher/wiki) about this system in :fr: and :gb:
+
+## Changelog
+You can check the [changelog](https://github.com/MacNaab/lets-role-system-witcher/blob/main/update.md) about this system in :fr: and :gb:

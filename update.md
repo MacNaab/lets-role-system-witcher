@@ -1,26 +1,56 @@
 # Commits changelog
+- [:gb:](#en)
+- [:fr:](#fr)
 ---
+# En
 ## 5
-- :gb: Fixes:  || :fr: Corrections:
+- Fixes:
   - getBarAttributes
-  - :gb: English translation || :fr: Traduction anglaise
-  - :gb: Better IU || :fr: Meilleure interface
-  - :gb: Fixed not updating the * Final * column (PC's sheet)  || :fr: Correction de la non actualisation de la colonne *Final*  (Feuille PJ)
-- Add:  || :fr: Ajouts:
-  - :gb: Optional Rules (PC's sheet) || :fr: Règles optionnelles (Feuille PJ)
-  - :gb: Layering Armor calculation (actual & max) (PC's sheet) || :fr: Calcul automatique de la Superposition des armures (actuelle & max) (Feuille PJ)
-  - :gb: Roll on click for magic view (PC's sheet) || :fr: Jet au clic dans l'onglet magie (Feuille PJ)
-## 4
-- :gb: Fixes:  || :fr: Correction:
-  - :gb: English translation || :fr: Traduction anglaise
-- :gb: Add:  || :fr: Ajout:
-  - :gb: Distance calculation (MJ's sheet) || :fr: Calculteur de distance
-## 3
-- :gb: Fixes:  || :fr: Correction:
-  - :gb: English translation || :fr: Traduction anglaise
-- :gb: Add:  || :fr: Ajout:
-  - :gb: Premade (NPC's sheet) || :fr: Prétirés (Fiche PnJ)
-## 2
-- :gb: English translation || :fr: Traduction anglaise
-## 1
-- :gb: Alpha version of the system.  || :fr: Version Alpha du système.
+  - English translation
+  - Better IU
+  - Fixed not updating the * Final * column (PC's sheet)
+- Add:
+  - Optional Rules (PC's sheet)
+  - Layering Armor calculation (actual & max) (PC's sheet)
+  - Roll on click for magic view (PC's sheet)
+## 4 - Mon, 05 Apr 2021  [Current]
+- Fixes:
+  - English translation
+- Add:
+  - Distance calculation (MJ's sheet)
+## 3 - Sat, 03 Apr 2021
+- Fixes:
+  - English translation
+- Add:
+  - Premade (NPC's sheet)
+## 2 - Sat, 03 Apr 2021
+- English translation
+## 1 - Sat, 03 Apr 2021
+- Alpha version of the system
+
+---
+# Fr
+## 5
+- Corrections:
+  - getBarAttributes
+  - Traduction anglaise
+  - Meilleure interface
+  - Correction de la non actualisation de la colonne *Final*  (Feuille PJ)
+- Ajouts:
+  - Règles optionnelles (Feuille PJ)
+  - Calcul automatique de la Superposition des armures (actuelle & max) (Feuille PJ)
+  - Jet au clic dans l'onglet magie (Feuille PJ)
+## 4 - 05/04/2021 [Actuel]
+- Correction:
+  - Traduction anglaise
+- Ajout:
+  - Calculteur de distance
+## 3 - 03/04/2021
+- Correction:
+  - Traduction anglaise
+- Ajout:
+  - Prétirés (Fiche PnJ)
+## 2 - 03/04/2021
+- Traduction anglaise
+## 1 - 03/04/2021
+- Version Alpha du système
