@@ -1,4 +1,5 @@
 Source,Translation
+Défense,
 Réussite de l'attaque!,Attack successful!
 Échec de l'attaque!,Attack failure!
 Terrestre,On land
@@ -485,3 +486,32 @@ PA max,SP's max
 :flag: Français
 - [Site de la communauté francophone](https://www.the-witcher-jdr.fr/)
 - [Tables aléatoires, générateurs d'environnement urbain, gestionnaire de trajets et autres](https://macnaab.github.io/Random-Tables/)",
+Adrénaline,Adrenaline
+Génération :dice:,"Generate :dice:	"
+<u>Dés adrénaline:</u>,"<u>Adrenaline dice:</u>	"
+Dégâts supplémentaires :hammer:,additional damage :hammer:
+PS temporaires :heartbeat:,Temporary HP :heartbeat:
+Combat verbal,Verbal Combat
+<u>Détermination:</u>,"<u>Resolve:</u>	"
+<u>Attaques:</u>,"<u>Attacks:</u>	"
+Attaque Empathique,Empathetic Attacks
+Séduire,Seduce
+Persuader,Persuade
+Exhorter,Appeal
+Se lier d'amitié,Befriend
+Attaque Antagonique,Antagonistic Attacks
+Tromper,Deceive
+Ridiculiser,Ridicule
+Intimider,Intimidate
+<u>Défense:</u>,"<u>Defense:</u>	"
+Ignorer,Ignore
+Contre-argumenter,Counterargue
+Changer de sujet,Change the subject
+Désengagement,Disengage
+<u>Outils:</u>,<u>Tools:</u>
+Outil Empathique,Empathetic Tools
+Charmer,Romance
+Observer,Study
+Outil Antagonique,Antagonistic Tools
+Insinuer,Imply
+Soudoyer,Bribe

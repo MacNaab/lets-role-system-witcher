@@ -19,3 +19,6 @@ You can check the [wiki](https://github.com/MacNaab/lets-role-system-witcher/wik
 
 ## Changelog
 You can check the [changelog](https://github.com/MacNaab/lets-role-system-witcher/blob/main/update.md) about this system in :fr: and :gb:
+
+## To do list
+You can check the [to do list](https://github.com/MacNaab/lets-role-system-witcher/projects/1) about this system in :fr:

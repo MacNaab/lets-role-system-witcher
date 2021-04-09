@@ -3,17 +3,18 @@
 - [:fr:](#fr)
 ---
 # En
-## 5
+## 5 - Fri, 09 Apr 2021  [Current]
 - Fixes:
   - getBarAttributes
   - English translation
   - Better IU
-  - Fixed not updating the * Final * column (PC's sheet)
+  - Fixed not updating the *Final* column (PC's sheet)
 - Add:
   - Optional Rules (PC's sheet)
+  - Investigation system (GM's sheet)
   - Layering Armor calculation (actual & max) (PC's sheet)
   - Roll on click for magic view (PC's sheet)
-## 4 - Mon, 05 Apr 2021  [Current]
+## 4 - Mon, 05 Apr 2021
 - Fixes:
   - English translation
 - Add:
@@ -30,7 +31,7 @@
 
 ---
 # Fr
-## 5
+## 5 - 09/04/2021 [Actuel]
 - Corrections:
   - getBarAttributes
   - Traduction anglaise
@@ -38,9 +39,10 @@
   - Correction de la non actualisation de la colonne *Final*  (Feuille PJ)
 - Ajouts:
   - Règles optionnelles (Feuille PJ)
+  - Système d'investigation (Feuille MJ)
   - Calcul automatique de la Superposition des armures (actuelle & max) (Feuille PJ)
   - Jet au clic dans l'onglet magie (Feuille PJ)
-## 4 - 05/04/2021 [Actuel]
+## 4 - 05/04/2021
 - Correction:
   - Traduction anglaise
 - Ajout:
