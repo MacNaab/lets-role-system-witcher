@@ -12,11 +12,11 @@ init = function(sheet) {
 
 getBarAttributes = function(sheet) {
     if (sheet.id() === "main") {
-       return {
-            "PS": ["ps_value", "ps_max"],
-            "END": ["end_value", "end_max"],
-            "Concentration": ["con_value", "con_max"],
-        };
+		var bar = {}
+			bar[_('PS')] = ["ps_value", "ps_max"];
+			bar[_('END')] = ["end_value", "end_max"];
+            bar[_('Concentration')] = ["con_value", "con_max"];
+       return bar;
     }
 	if (sheet.id() === "monster" || sheet.id() === "pnj") {
        return {
@@ -290,9 +290,9 @@ function Etat(sheet){
 		var line_race = Tables.get("race_list").get(race);
 		if(line_race.i != '0'){
 			var a = line_race.text.split('<br>');
-			var aff = 'Race: ';
+			var aff = _('Race')+": ";
 				a.forEach(function(e){
-					aff += '\n'+e;
+					aff += '\n'+_(e);
 				});
 			sheet.get('Etat_race').value(aff);
 			if(line_race.c != null && line_race != ""){
@@ -497,6 +497,12 @@ function Inventaire(sheet){
 		let entry2 = entry.find('inv_5').value(); // Poids
 		poids += Number(entry1)*Number(entry2);
 	});
+	var race = Tables.get("race_list").get(sheet.get('race').value()).i;
+	if(race=='3'){
+		tete.max += 2;tete.a += 2;
+		torse.max += 2;torse.a += 2;
+		pant.max += 2;pant.a += 2;
+	}
 	sheet.setData({
     	"enc": poids,
 	    "VE": VE,
@@ -565,6 +571,12 @@ function PAarmure(sheet){
 		if(line.i == '23'){calculpa(2,'a',entry5);calculpa(3,'a',entry5);};
 		if(line.i == '3'){calculpa(3,'a',entry5);};
 	});
+	var race = Tables.get("race_list").get(sheet.get('race').value()).i;
+	if(race=='3'){
+		tete.max += 2;tete.a += 2;
+		torse.max += 2;torse.a += 2;
+		pant.max += 2;pant.a += 2;
+	}
 	sheet.setData({
 		"pa_tete": tete.a,
 		"pa_torse": torse.a,
@@ -821,6 +833,16 @@ const initCombat = function(sheet){
 			}
 		}
 	});
+
+	sheet.get('loc_roll').on('click',function(){
+		var lejet = new RollBuilder(sheet);
+				lejet.expression('1d10')
+				.title(_('Localisation'))
+				.onRoll(function(result){
+					Loca(sheet,result.total);
+				})
+				.roll();
+	});
 }
 
 function Dommages(sheet,aff,o){
@@ -979,6 +1001,48 @@ function CC(sheet,a,som,loc,aff){	// a = dé, som = ATQ-DEF, loc = localisation,
 	}
 	var affi = crit.n+": "+line.id;
 	sheet.get(aff).text(affi);
+}
+
+function Loca(sheet,r){	// r = résultat du jet
+	if(sheet.get('loc_mon').value() == true){
+		if(r==1){
+			var aff = _('Tête');
+			sheet.get('Dom_2').value('1');
+		}else if(r<=4){
+			var aff = _('Torse');
+			sheet.get('Dom_2').value('2');
+		}else if(r==5||r==7||r==9){
+			var aff = _('Membre droit');
+			sheet.get('Dom_2').value('3');
+		}else if(r==6||r==8){
+			var aff = _('Membre gauche');
+			sheet.get('Dom_2').value('3');
+		}else{
+			var aff = _('Spécial');
+			sheet.get('Dom_2').value('4');
+		}
+	}else{
+		if(r==1){
+			var aff = _('Tête');
+			sheet.get('Dom_2').value('1');
+		}else if(r<=4){
+			var aff = _('Torse');
+			sheet.get('Dom_2').value('2');
+		}else if(r==5){
+			var aff = _('Bras droit');
+			sheet.get('Dom_2').value('3');
+		}else if(r==6){
+			var aff = _('Bras gauche');
+			sheet.get('Dom_2').value('3');
+		}else if(r==7||r==9){
+			var aff = _('Jambe droite');
+			sheet.get('Dom_2').value('4');
+		}else{
+			var aff = _('Jambe gauche');
+			sheet.get('Dom_2').value('4');
+		}
+	}
+	sheet.get('loc_aff').text(aff);
 }
 //endregion
 
@@ -1192,6 +1256,7 @@ function Roll_Cust(sheet,aff,a,b,c,v){
 		if(a==10){
 			dice = Dice.create('10').add(Dice.create('1d10').expl(10));
 			aff += _(" - réussite critique!");
+			try{if(sheet.get('adre_auto').value()==true){AdreGen(sheet);}}catch(err){log(err);}
 		}
 		dice = dice.add(b).add(c);
 
@@ -1231,24 +1296,7 @@ const initOption = function(sheet){
 		sheet.get('adre_cor').text(sheet.get('COR_3').text());
 	});
 
-	sheet.get('adre_gen').on('click', function(){
-		var lejet = new RollBuilder(sheet);
-			lejet.expression('1d6')
-			.title(_('Adrénaline'))
-			.onRoll(function(result){
-				var a = Number(sheet.get('adre_val').value());	// Adrénaline actuelle
-				var max = Number(sheet.get('COR_3').text());	// Adrénaline max
-				var n = Number(result.total);					// résultat du dé
-				var som = Number(a)+Number(n);
-				log(n);
-				if(som <= max){
-					sheet.get('adre_val').value(som);
-				}else{
-					sheet.get('adre_val').value(max);
-				}
-			})
-			.roll();
-	});
+	sheet.get('adre_gen').on('click', function(){AdreGen(sheet);});
 
 	sheet.get('adre_ps').on('click', function(){
 		var aff = _('Adrénaline')+': '+_('PS temporaires :heartbeat:');
@@ -1336,6 +1384,24 @@ const initOption = function(sheet){
 			return;
 		}		
 	});
+}
+
+function AdreGen(sheet){
+	var lejet = new RollBuilder(sheet);
+			lejet.expression('1d6')
+			.title(_('Adrénaline'))
+			.onRoll(function(result){
+				var a = Number(sheet.get('adre_val').value());	// Adrénaline actuelle
+				var max = Number(sheet.get('COR_3').text());	// Adrénaline max
+				var n = Number(result.total);					// résultat du dé
+				var som = Number(a)+Number(n);
+				if(som <= max){
+					sheet.get('adre_val').value(som);
+				}else{
+					sheet.get('adre_val').value(max);
+				}
+			})
+			.roll();
 }
 //endregion
 
@@ -1728,6 +1794,17 @@ const initPNJcombat = function(sheet){
 			}
 		}
 	});
+
+	sheet.get('loc_roll').on('click',function(){
+		var lejet = new RollBuilder(sheet);
+				lejet.expression('1d10')
+				.title(_('Localisation'))
+				.visibility('gm')
+				.onRoll(function(result){
+					Loca(sheet,result.total);
+				})
+				.roll();
+	});
 };
 
 const initPNJJauges = function(sheet){
@@ -1771,16 +1848,18 @@ const initMonster = function(sheet) {
 	initPNJcc(sheet);
 	initPNJcombat(sheet);
 	initPNJJauges(sheet);
-	log('fin de l\'initiation!');
+	log('fin de l\'initiation Monstre!');
 };
 
-//---------------------- INIT PNJ ---------------------------
+//region---------------------- INIT PNJ ---------------------------
 const initPnj = function(sheet) {
 	initPNJcc(sheet);
 	initPNJcombat(sheet);
 	initPNJJauges(sheet);
 	PnJadd(sheet);
-	log('fin de l\'initiation!');
+	PnJRace(sheet);
+	sheet.get('race').on('update', function(){PnJRace(sheet);})
+	log('fin de l\'initiation PnJ!');
 };
 
 function PnJadd(sheet){
@@ -1839,18 +1918,36 @@ function PnJadd(sheet){
 	});
 }
 
-//---------------------- INIT MK ---------------------------
+function PnJRace(sheet){
+	var race = sheet.get('race').value();
+		var line_race = Tables.get("race_list").get(race);
+		var aff = "";
+		if(line_race.i != '0'){
+			var a = line_race.text.split('<br>');
+				a.forEach(function(e){
+					aff += e+'\n';
+				});
+		}
+		sheet.get('capacite').value(aff);
+}
+//endregion
+
+//region---------------------- INIT MJ ---------------------------
 const initMJ = function(sheet) {
+	Meteo(sheet);
+	AffiMJ(sheet);
+	Monnaie(sheet);
 	sheet.get('MJ_dist2').on('update', function(){
 		var a = sheet.get('MJ_dist1').value(); // echelle
   		var b = sheet.get('MJ_dist2').value(); // distance
   		var km = Number(a)*Number(b);
 		var affichage = _('Distance en km: ');
   		var aff = affichage+km.toFixed(1);		  
-  		sheet.get('MJ_dist_aff').value(aff);
+  		sheet.get('MJ_dist_aff').text(aff);
 		  KtoT(km,sheet);
 	});
-	log('fin de l\'initiation!');
+
+	log('fin de l\'initiation MJ!');
 };
 
 function KtoT(km,sheet){
@@ -1894,3 +1991,158 @@ function KtoT(km,sheet){
 	sheet.get('MJ_dist_T').value(_('Terrestre')+':\n'+terrestre[0]+'\n'+terrestre[1]+'\n'+terrestre[2]+'\n'+terrestre[3]+'\n'+terrestre[4]+'\n'+terrestre[5]);
 	sheet.get('MJ_dist_N').value(_('Navigation')+':\n'+navigation[0]+'\n'+navigation[1]);
 }
+
+function Meteo(sheet){
+	function Jour(r){	// r = résultat du jet
+		var id = sheet.get('meteo_jour').value();
+		var v = 0;	// vent
+		if(id=='1'){
+			if(r==1){
+				var aff = _('Brouillard épais (vent léger)');
+				v = 1;
+			}
+			if(r==2){
+				var aff = _('Brouillard moyen (vent léger)');
+				v = 1;
+			}
+			if(r==3){
+				var aff = _('Chute lourde (vent de tempête)');
+				v = 2;
+			}
+		}
+		if(id=='2'){
+			if(r==1){
+				var aff = _('Chute torrentielle (vent de tempête)');
+				v = 2;
+			}
+			if(r==2){
+				var aff = _('Chute lourde (vent de tempête)');
+				v = 2;
+			}
+			if(r==3){var aff = _('Chute moyen');} 
+		}
+		if(id=='3'){
+			if(r==1){
+				var aff = _('Brouillard léger (vent léger)');
+				v = 1;
+			}
+			if(r==2){
+				var aff = _('Chute torrentielle (vent de tempête)');
+				v = 2;
+			}
+			if(r==3){
+				var aff = _('Chute lourde (vent de tempête)');
+				v = 2;
+			} 
+		}
+		if(id=='4'){
+			if(r==1){
+				var aff = _('Brouillard épais (vent léger)');
+				v = 1;
+			}
+			if(r==2){
+				var aff = _('Brouillard épais (vent léger)');
+				v = 1;
+			}
+			if(r==3){
+				var aff = _('Chute lourde (vent de tempête)');
+				v = 2;
+			} 
+		}
+		if(r==4){var aff = _('Chute moyen');}
+		if(r==5){var aff = _('Chute légère');}
+		if(r==6){var aff = _('Couvert');}
+		if(r==7){var aff = _('Nuagé');}
+		if(r>=8){var aff = _('Clairsemé');}
+
+		if(v!=0){
+			var lejet = new RollBuilder(sheet);
+				lejet.expression('1d10')
+				.title(_('Vent du jour'))
+				.visibility('gm')
+				.onRoll(function(result){
+					Vent(r,result.total);
+				})
+				.roll();
+		}
+		sheet.get('meteo_jour_aff').text(aff);
+	}
+	function Vent(t,r){	// t = type 1||2	r = résultat du jet
+		if(t==1){
+			if(r<=4){
+				var aff = _("Pas de vent");
+			}else if(r<=7){
+				var aff = _("Vent modéré");
+			}else if(r==8){
+				var aff = _("Vent fort");
+			}else if(r==9){
+				var aff = _("Vent hurlant");
+			}else{
+				var aff = _("Tempête");
+			}
+		}else{
+			if(r<=5){
+				var aff = _("Vent fort");
+			}else if(r<=8){
+				var aff = _("Vent hurlant");
+			}else{
+				var aff = _("Tempête");
+			}
+		}
+		sheet.get('meteo_vent_aff').text(aff);
+	}
+	sheet.get('meteo_jour_roll').on('click', function(){
+		var lejet = new RollBuilder(sheet);
+				lejet.expression('1d10')
+				.title(_('Météo du jour'))
+				.visibility('gm')
+				.onRoll(function(result){
+					Jour(result.total);
+				})
+				.roll();
+	});
+	sheet.get('meteo_vent_roll').on('click', function(){
+		var t = sheet.get('meteo_vent').value();
+		var lejet = new RollBuilder(sheet);
+				lejet.expression('1d10')
+				.title(_('Vent du jour'))
+				.visibility('gm')
+				.onRoll(function(result){
+					Vent(t,result.total);
+				})
+				.roll();
+	});
+}
+
+function AffiMJ(sheet){
+	var Data = ['trip','inves','meteo','monnaie'];
+	Data.forEach(function(e){
+		sheet.get(e+'_trigged').hide();
+		sheet.get(e+'_trigger').on('click', function(){
+			let a = sheet.get(e+'_trigged').visible();
+			if(a){sheet.get(e+'_trigged').hide();}else{sheet.get(e+'_trigged').show();}
+		});
+	});
+}
+
+function Monnaie(sheet){
+	sheet.get('Monnaie_A').on('update', function(){
+		var a = sheet.get('Monnaie_A').value();	// valeur
+		var b = Tables.get("monnaie").get(sheet.get('Monnaie_B').value());	// indice de base
+		var c = Tables.get("monnaie").get(sheet.get('Monnaie_C').value());	// indice de fin
+
+		// étape 1: convertir base en couronnes
+			var val = Number(a)*Number(b.r);
+		// étape 2: convertir couronnes en fin
+			var d = Math.floor(Number(val)*Number(1/c.r));
+		sheet.get('Monnaie_D').value(d);
+	});
+
+	// Faire diff: -0 => 50% / 0-3 => 100 % / 4-5 => 125 % / 6-7 => 150 % / 8-9 => 175 % / 10+ => 200 %
+	sheet.get('revente1').on('update', function(){
+		var a = 0;	// Jet - SD
+		if(a<0){var b=50;}else if(a<4){var b=100;}else if(a<6){var b=125;}else if(a<8){var b=150;}else{var b=200;}
+		sheet.get('revente2').text(b+_('% du prix du marché'));
+	});
+}
+//endregion

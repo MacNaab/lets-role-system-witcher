@@ -3,7 +3,18 @@
 - [:fr:](#fr)
 ---
 # En
-## 5 - Fri, 09 Apr 2021  [Current]
+## 6 - Fri, 30 Apr 2021	[Current]
+- Fixes:
+  - getBarAttributes
+  - English translation
+- Add:
+  - Automatic adrenaline (PC sheet)
+  - Race (NPC sheet)
+  - Random location (PC, NPC, Monster sheet)
+  - Weather (GL sheet)
+  - Currency (GM sheet)
+  - New race and professions FanMade (PC sheet)
+## 5 - Fri, 09 Apr 2021
 - Fixes:
   - getBarAttributes
   - English translation
@@ -31,7 +42,18 @@
 
 ---
 # Fr
-## 5 - 09/04/2021 [Actuel]
+## 6 - 30/04/2021 [Actuel]
+- Corrections:
+  - getBarAttributes
+  - Traduction anglaise
+- Ajouts:
+  - Adrénaline automatique (Feuille PJ)
+  - Race (Feuille PnJ)
+  - Localisation aléatoire (Feuille PJ,PnJ,Monstre)
+  - Météorologie(Feuille MJ)
+  - Monnaie (Feuille MJ)
+  - Nouvelles Race & Professions FanMade (Feuille PJ)
+## 5 - 09/04/2021
 - Corrections:
   - getBarAttributes
   - Traduction anglaise

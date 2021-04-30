@@ -11135,6 +11135,114 @@
                 "collapsed": true
               },
               {
+                "id": "smshxjbp",
+                "name": "Row titre - Localisation",
+                "classes": "text-title highlight-2 m-0 p-1 mt-1",
+                "children": [
+                  {
+                    "id": "oqkmpzya",
+                    "name": "Column",
+                    "classes": "d-flex",
+                    "children": [
+                      {
+                        "id": "gwllmyec",
+                        "name": "Container",
+                        "classes": "justify-content-center w-100",
+                        "children": [
+                          {
+                            "text": "Localisation",
+                            "align": "Center",
+                            "id": "dnbfurcf",
+                            "name": "Label",
+                            "classes": "text-title",
+                            "className": "Label"
+                          }
+                        ],
+                        "className": "Container",
+                        "layout": "horizontal"
+                      }
+                    ],
+                    "className": "Column"
+                  }
+                ],
+                "className": "Row",
+                "collapsed": true
+              },
+              {
+                "id": "uggidpal",
+                "name": "Row",
+                "children": [
+                  {
+                    "id": "vrkfkfhq",
+                    "name": "Column",
+                    "children": [
+                      {
+                        "id": "revxgeri",
+                        "name": "Container",
+                        "classes": "justify-content-center",
+                        "children": [
+                          {
+                            "id": "wwckpanz",
+                            "name": "Container",
+                            "classes": "m-1 w-100px pt-2",
+                            "children": [
+                              {
+                                "text": "Monstre",
+                                "id": "niivkyjy",
+                                "name": "Label",
+                                "className": "Label"
+                              },
+                              {
+                                "id": "loc_mon",
+                                "name": "Checkbox",
+                                "className": "Checkbox"
+                              }
+                            ],
+                            "className": "Container",
+                            "layout": "horizontal"
+                          },
+                          {
+                            "id": "thwaijak",
+                            "name": "Container",
+                            "classes": "m-1",
+                            "children": [
+                              {
+                                "id": "loc_roll",
+                                "name": "Icon",
+                                "classes": "clickable text-large mt-1",
+                                "className": "Icon"
+                              }
+                            ],
+                            "className": "Container",
+                            "layout": "vertical"
+                          }
+                        ],
+                        "className": "Container",
+                        "layout": "horizontal"
+                      },
+                      {
+                        "id": "deroeccs",
+                        "name": "Container",
+                        "classes": "justify-content-center",
+                        "children": [
+                          {
+                            "text": "Résultat",
+                            "id": "loc_aff",
+                            "name": "Label",
+                            "className": "Label"
+                          }
+                        ],
+                        "className": "Container",
+                        "layout": "horizontal"
+                      }
+                    ],
+                    "className": "Column"
+                  }
+                ],
+                "className": "Row",
+                "collapsed": true
+              },
+              {
                 "id": "bksuctby",
                 "name": "Row titre - Dommages",
                 "classes": "text-title highlight-2 m-0 p-1 mt-1",
@@ -11768,14 +11876,14 @@
                     "className": "Column"
                   }
                 ],
-                "className": "Row"
+                "className": "Row",
+                "collapsed": true
               }
             ],
             "className": "Column"
           }
         ],
-        "className": "Row",
-        "collapsed": true
+        "className": "Row"
       }
     ],
     "className": "View"
@@ -12057,7 +12165,7 @@
             "children": [
               {
                 "placeholder": "Nom",
-                "id": "hryuzmws",
+                "id": "name",
                 "name": "TextInput",
                 "classes": "h-25px text-large text-bolder text-center mt-1 mb-1",
                 "className": "TextInput"
@@ -12838,7 +12946,7 @@
             "children": [
               {
                 "placeholder": "Nom",
-                "id": "hryuzmws",
+                "id": "name",
                 "name": "TextInput",
                 "classes": "h-25px text-large text-bolder text-center mt-1 mb-1",
                 "className": "TextInput"
@@ -12862,6 +12970,7 @@
                   }
                 ],
                 "className": "Container",
+                "collapsed": true,
                 "layout": "horizontal"
               },
               {
@@ -12869,6 +12978,22 @@
                 "name": "Row",
                 "classes": "border border-secondary m-3",
                 "className": "Row"
+              },
+              {
+                "id": "vqwtkfot",
+                "name": "Container",
+                "classes": "mb-1 ml-1 mr-1",
+                "children": [
+                  {
+                    "id": "race",
+                    "name": "Choice",
+                    "className": "Choice",
+                    "label": "id",
+                    "tableId": "race_list"
+                  }
+                ],
+                "className": "Container",
+                "layout": "horizontal"
               },
               {
                 "id": "qgrghhni",
@@ -12890,6 +13015,7 @@
                   }
                 ],
                 "className": "Container",
+                "collapsed": true,
                 "layout": "vertical"
               },
               {
@@ -12904,7 +13030,12 @@
                     "className": "Label"
                   },
                   {
-                    "id": "rcxyutxt",
+                    "id": "capacite",
+                    "name": "Label",
+                    "className": "Label"
+                  },
+                  {
+                    "id": "ptxslnhl",
                     "name": "Textarea",
                     "classes": "h-75px",
                     "className": "Textarea"
@@ -13027,7 +13158,8 @@
                     "className": "Column"
                   }
                 ],
-                "className": "Row"
+                "className": "Row",
+                "collapsed": true
               }
             ],
             "className": "Column"
@@ -16701,7 +16833,8 @@
                     "className": "Column"
                   }
                 ],
-                "className": "Row"
+                "className": "Row",
+                "collapsed": true
               },
               {
                 "id": "dsyillpm",
@@ -16856,6 +16989,114 @@
                         "children": [
                           {
                             "id": "ATQ_calc0",
+                            "name": "Label",
+                            "className": "Label"
+                          }
+                        ],
+                        "className": "Container",
+                        "layout": "horizontal"
+                      }
+                    ],
+                    "className": "Column"
+                  }
+                ],
+                "className": "Row",
+                "collapsed": true
+              },
+              {
+                "id": "fepoekni",
+                "name": "Row titre - Loc",
+                "classes": "text-title highlight-2 m-0 p-1 mt-1",
+                "children": [
+                  {
+                    "id": "wqjrztzb",
+                    "name": "Column",
+                    "classes": "d-flex",
+                    "children": [
+                      {
+                        "id": "ihfnnakn",
+                        "name": "Container",
+                        "classes": "justify-content-center w-100",
+                        "children": [
+                          {
+                            "text": "Localisation",
+                            "align": "Center",
+                            "id": "jeoqvigw",
+                            "name": "Label",
+                            "classes": "text-title",
+                            "className": "Label"
+                          }
+                        ],
+                        "className": "Container",
+                        "layout": "horizontal"
+                      }
+                    ],
+                    "className": "Column"
+                  }
+                ],
+                "className": "Row",
+                "collapsed": true
+              },
+              {
+                "id": "llnfxvfl",
+                "name": "Row",
+                "children": [
+                  {
+                    "id": "dngkzskk",
+                    "name": "Column",
+                    "children": [
+                      {
+                        "id": "vavfjhby",
+                        "name": "Container",
+                        "classes": "justify-content-center",
+                        "children": [
+                          {
+                            "id": "mfdeedyp",
+                            "name": "Container",
+                            "classes": "m-1 w-100px pt-2",
+                            "children": [
+                              {
+                                "text": "Monstre",
+                                "id": "kizgknlk",
+                                "name": "Label",
+                                "className": "Label"
+                              },
+                              {
+                                "id": "loc_mon",
+                                "name": "Checkbox",
+                                "className": "Checkbox"
+                              }
+                            ],
+                            "className": "Container",
+                            "layout": "horizontal"
+                          },
+                          {
+                            "id": "efxoogum",
+                            "name": "Container",
+                            "classes": "m-1",
+                            "children": [
+                              {
+                                "id": "loc_roll",
+                                "name": "Icon",
+                                "classes": "clickable text-large mt-1",
+                                "className": "Icon"
+                              }
+                            ],
+                            "className": "Container",
+                            "layout": "vertical"
+                          }
+                        ],
+                        "className": "Container",
+                        "layout": "horizontal"
+                      },
+                      {
+                        "id": "pbwdneix",
+                        "name": "Container",
+                        "classes": "justify-content-center",
+                        "children": [
+                          {
+                            "text": "Résultat",
+                            "id": "loc_aff",
                             "name": "Label",
                             "className": "Label"
                           }
@@ -17155,7 +17396,8 @@
                     "className": "Column"
                   }
                 ],
-                "className": "Row"
+                "className": "Row",
+                "collapsed": true
               },
               {
                 "id": "zbfiolot",
@@ -17524,7 +17766,8 @@
                     "className": "Column"
                   }
                 ],
-                "className": "Row"
+                "className": "Row",
+                "collapsed": true
               }
             ],
             "className": "Column"
@@ -17739,137 +17982,177 @@
             "name": "Column",
             "children": [
               {
-                "id": "nvkmktmw",
-                "name": "Container - trajet",
+                "id": "meafdyae",
+                "name": "Row",
                 "children": [
                   {
-                    "id": "geptclsp",
-                    "name": "Container - titre",
-                    "classes": "text-title highlight-2 m-0 p-1 mt-1 w-100 justify-content-center",
+                    "id": "axeojifi",
+                    "name": "Column",
                     "children": [
                       {
-                        "text": "Calculateur de trajet",
-                        "align": "Center",
-                        "id": "uwfmokzh",
-                        "name": "Label",
-                        "className": "Label"
-                      }
-                    ],
-                    "className": "Container",
-                    "collapsed": true,
-                    "layout": "horizontal"
-                  },
-                  {
-                    "id": "vyerzspp",
-                    "name": "Container - input",
-                    "classes": "m-2",
-                    "children": [
-                      {
-                        "id": "umsyevvk",
-                        "name": "Container",
-                        "classes": "w-100 justify-content-center",
+                        "id": "xaxroltf",
+                        "name": "Row",
                         "children": [
                           {
-                            "text": "Echelle:",
-                            "tooltip": true,
-                            "tooltipLabel": "1 Unitée = kilomètre",
-                            "id": "lorwkrag",
-                            "name": "Label",
-                            "className": "Label"
-                          },
-                          {
-                            "placeholder": "km",
-                            "id": "MJ_dist1",
-                            "name": "TextInput",
-                            "classes": "w-50px ml-3 text-center",
-                            "className": "TextInput"
+                            "id": "czzszivj",
+                            "name": "Column",
+                            "children": [
+                              {
+                                "id": "geptclsp",
+                                "name": "Container - titre",
+                                "classes": "text-title highlight-2 m-0 p-1 mt-1 w-100 justify-content-center",
+                                "children": [
+                                  {
+                                    "text": "Calculateur de trajet",
+                                    "align": "Center",
+                                    "clickable": true,
+                                    "id": "trip_trigger",
+                                    "name": "Label",
+                                    "className": "Label"
+                                  }
+                                ],
+                                "className": "Container",
+                                "collapsed": true,
+                                "layout": "horizontal"
+                              }
+                            ],
+                            "className": "Column"
                           }
                         ],
-                        "className": "Container",
-                        "layout": "horizontal"
+                        "className": "Row"
                       },
                       {
-                        "id": "csxqaeha",
-                        "name": "Container",
-                        "classes": "w-100 justify-content-center",
+                        "id": "trip_trigged",
+                        "name": "Row",
                         "children": [
                           {
-                            "text": "Distance:",
-                            "id": "aryexteu",
-                            "name": "Label",
-                            "className": "Label"
-                          },
-                          {
-                            "id": "MJ_dist2",
-                            "name": "TextInput",
-                            "classes": "w-50px ml-3  text-center",
-                            "className": "TextInput"
+                            "id": "zzhxgkfb",
+                            "name": "Column",
+                            "children": [
+                              {
+                                "id": "ebkqbcvv",
+                                "name": "Container - corps",
+                                "children": [
+                                  {
+                                    "id": "gcbcienm",
+                                    "name": "Container - input",
+                                    "classes": "m-2",
+                                    "children": [
+                                      {
+                                        "id": "tjnegiue",
+                                        "name": "Container",
+                                        "classes": "w-100 justify-content-center",
+                                        "children": [
+                                          {
+                                            "text": "Echelle:",
+                                            "tooltip": true,
+                                            "tooltipLabel": "1 Unitée = kilomètre",
+                                            "id": "vuxoylbl",
+                                            "name": "Label",
+                                            "className": "Label"
+                                          },
+                                          {
+                                            "placeholder": "km",
+                                            "id": "MJ_dist1",
+                                            "name": "TextInput",
+                                            "classes": "w-50px ml-3 text-center",
+                                            "className": "TextInput"
+                                          }
+                                        ],
+                                        "className": "Container",
+                                        "layout": "horizontal"
+                                      },
+                                      {
+                                        "id": "uximfzyv",
+                                        "name": "Container",
+                                        "classes": "w-100 justify-content-center",
+                                        "children": [
+                                          {
+                                            "text": "Distance:",
+                                            "id": "rnhqcutl",
+                                            "name": "Label",
+                                            "className": "Label"
+                                          },
+                                          {
+                                            "id": "MJ_dist2",
+                                            "name": "TextInput",
+                                            "classes": "w-50px ml-3  text-center",
+                                            "className": "TextInput"
+                                          }
+                                        ],
+                                        "className": "Container",
+                                        "layout": "horizontal"
+                                      }
+                                    ],
+                                    "className": "Container",
+                                    "collapsed": true,
+                                    "layout": "horizontal"
+                                  },
+                                  {
+                                    "id": "vcsaxnqb",
+                                    "name": "Container",
+                                    "classes": "w-100 justify-content-center",
+                                    "children": [
+                                      {
+                                        "text": "Résultat:",
+                                        "align": "Center",
+                                        "id": "MJ_dist_aff",
+                                        "name": "Label",
+                                        "classes": "w-100",
+                                        "className": "Label"
+                                      },
+                                      {
+                                        "align": "Center",
+                                        "id": "wrvsjamc",
+                                        "name": "Label",
+                                        "classes": "w-100 m-1",
+                                        "className": "Label"
+                                      },
+                                      {
+                                        "align": "Center",
+                                        "id": "jhyumucg",
+                                        "name": "Label",
+                                        "classes": "w-100 m-1",
+                                        "className": "Label"
+                                      }
+                                    ],
+                                    "className": "Container",
+                                    "collapsed": true,
+                                    "layout": "vertical"
+                                  },
+                                  {
+                                    "id": "nwwtqhtc",
+                                    "name": "Container",
+                                    "classes": "w-100 justify-content-center mt-3",
+                                    "children": [
+                                      {
+                                        "text": "<a target=\"_blank\" href=\"https://macnaab.github.io/Random-Tables/WM/\">Version détaillé ici</a>",
+                                        "id": "rtyjdlcq",
+                                        "name": "Label",
+                                        "className": "Label"
+                                      }
+                                    ],
+                                    "className": "Container",
+                                    "collapsed": true,
+                                    "layout": "horizontal"
+                                  }
+                                ],
+                                "className": "Container",
+                                "collapsed": true,
+                                "layout": "vertical"
+                              }
+                            ],
+                            "className": "Column"
                           }
                         ],
-                        "className": "Container",
-                        "layout": "horizontal"
+                        "className": "Row"
                       }
                     ],
-                    "className": "Container",
-                    "collapsed": true,
-                    "layout": "horizontal"
-                  },
-                  {
-                    "id": "dfeqpzge",
-                    "name": "Container",
-                    "classes": "w-100 justify-content-center",
-                    "children": [
-                      {
-                        "text": "Résultat:",
-                        "align": "Center",
-                        "id": "MJ_dist_aff",
-                        "name": "Label",
-                        "classes": "w-100",
-                        "className": "Label"
-                      },
-                      {
-                        "align": "Center",
-                        "id": "MJ_dist_T",
-                        "name": "Label",
-                        "classes": "w-100 m-1",
-                        "className": "Label"
-                      },
-                      {
-                        "align": "Center",
-                        "id": "MJ_dist_N",
-                        "name": "Label",
-                        "classes": "w-100 m-1",
-                        "className": "Label"
-                      }
-                    ],
-                    "className": "Container",
-                    "layout": "vertical"
-                  },
-                  {
-                    "id": "xyfgrnfh",
-                    "name": "Container",
-                    "classes": "w-100 justify-content-center mt-3",
-                    "children": [
-                      {
-                        "text": "<a target=\"_blank\" href=\"https://macnaab.github.io/Random-Tables/WM/\">Version détaillé ici</a>",
-                        "id": "blsnfihe",
-                        "name": "Label",
-                        "className": "Label"
-                      }
-                    ],
-                    "className": "Container",
-                    "layout": "horizontal"
+                    "className": "Column"
                   }
                 ],
-                "className": "Container",
-                "collapsed": true,
-                "layout": "vertical"
-              },
-              {
-                "id": "wzkmwezu",
-                "name": "Container",
-                "className": "Container",
-                "layout": "horizontal"
+                "className": "Row",
+                "collapsed": true
               },
               {
                 "id": "eknqhimu",
@@ -17889,20 +18172,152 @@
                 "layout": "horizontal"
               },
               {
-                "id": "uxahjbko",
-                "name": "Container",
+                "id": "lvopvudx",
+                "name": "Row",
                 "children": [
                   {
-                    "placeholder": "Notes...",
-                    "id": "dihpchka",
-                    "name": "Textarea",
-                    "classes": "h-150px m-1",
-                    "className": "Textarea"
+                    "id": "ocjfbdqh",
+                    "name": "Column",
+                    "children": [
+                      {
+                        "id": "gvsafeht",
+                        "name": "Row",
+                        "children": [
+                          {
+                            "id": "zctubavs",
+                            "name": "Column",
+                            "children": [
+                              {
+                                "text": "Système d'investigation",
+                                "align": "Center",
+                                "clickable": true,
+                                "id": "inves_trigger",
+                                "name": "Label",
+                                "classes": "text-title highlight-2 m-0 p-1 mt-1",
+                                "className": "Label"
+                              }
+                            ],
+                            "className": "Column"
+                          }
+                        ],
+                        "className": "Row"
+                      },
+                      {
+                        "id": "inves_trigged",
+                        "name": "Row",
+                        "children": [
+                          {
+                            "id": "gnbopapd",
+                            "name": "Column",
+                            "children": [
+                              {
+                                "id": "hgfmstvw",
+                                "name": "Container",
+                                "children": [
+                                  {
+                                    "id": "pxdhbmtj",
+                                    "name": "Container",
+                                    "classes": "w-100 m-1",
+                                    "children": [
+                                      {
+                                        "text": "Complexité:",
+                                        "align": "Right",
+                                        "id": "kdetlgst",
+                                        "name": "Label",
+                                        "classes": "w-100 mr-3 text-medium",
+                                        "className": "Label"
+                                      }
+                                    ],
+                                    "className": "Container",
+                                    "layout": "horizontal"
+                                  },
+                                  {
+                                    "id": "jyngozqx",
+                                    "name": "Container",
+                                    "classes": "w-100 m-1",
+                                    "children": [
+                                      {
+                                        "align": "Center",
+                                        "id": "jincufbx",
+                                        "name": "NumberInput",
+                                        "classes": "w-25px h-25px",
+                                        "className": "NumberInput"
+                                      },
+                                      {
+                                        "text": " / ",
+                                        "id": "nurlnrfa",
+                                        "name": "Label",
+                                        "classes": "text-medium ml-2 mr-2",
+                                        "className": "Label"
+                                      },
+                                      {
+                                        "align": "Center",
+                                        "id": "ylmiizwq",
+                                        "name": "NumberInput",
+                                        "classes": "w-25px h-25px",
+                                        "className": "NumberInput"
+                                      }
+                                    ],
+                                    "className": "Container",
+                                    "layout": "horizontal"
+                                  }
+                                ],
+                                "className": "Container",
+                                "collapsed": true,
+                                "layout": "horizontal"
+                              },
+                              {
+                                "id": "wwwlkgfb",
+                                "name": "Container",
+                                "children": [
+                                  {
+                                    "id": "hmahebfk",
+                                    "name": "Container",
+                                    "classes": "w-100 m-1",
+                                    "children": [
+                                      {
+                                        "placeholder": "Indices",
+                                        "id": "zodfchnd",
+                                        "name": "Textarea",
+                                        "classes": "h-150px",
+                                        "className": "Textarea"
+                                      }
+                                    ],
+                                    "className": "Container",
+                                    "layout": "horizontal"
+                                  },
+                                  {
+                                    "id": "crsjnxlg",
+                                    "name": "Container",
+                                    "classes": "w-100 m-1",
+                                    "children": [
+                                      {
+                                        "placeholder": "Obstacles",
+                                        "id": "prbzgttc",
+                                        "name": "Textarea",
+                                        "className": "Textarea"
+                                      }
+                                    ],
+                                    "className": "Container",
+                                    "layout": "horizontal"
+                                  }
+                                ],
+                                "className": "Container",
+                                "collapsed": true,
+                                "layout": "horizontal"
+                              }
+                            ],
+                            "className": "Column"
+                          }
+                        ],
+                        "className": "Row"
+                      }
+                    ],
+                    "className": "Column"
                   }
                 ],
-                "className": "Container",
-                "collapsed": true,
-                "layout": "horizontal"
+                "className": "Row",
+                "collapsed": true
               },
               {
                 "id": "risvlpiw",
@@ -17922,114 +18337,412 @@
                 "layout": "horizontal"
               },
               {
-                "id": "enmkpcoh",
-                "name": "Container",
+                "id": "lhxpsulf",
+                "name": "Row",
                 "children": [
                   {
-                    "text": "Système d'investigation",
-                    "align": "Center",
-                    "id": "ojoazjcp",
-                    "name": "Label",
-                    "classes": "text-title",
-                    "className": "Label"
-                  },
-                  {
-                    "id": "hgfmstvw",
-                    "name": "Container",
+                    "id": "dogeummx",
+                    "name": "Column",
                     "children": [
                       {
-                        "id": "pxdhbmtj",
-                        "name": "Container",
-                        "classes": "w-100 m-1",
+                        "id": "yapqykjm",
+                        "name": "Row",
                         "children": [
                           {
-                            "text": "Complexité:",
-                            "align": "Right",
-                            "id": "kdetlgst",
-                            "name": "Label",
-                            "classes": "w-100 mr-3 text-medium",
-                            "className": "Label"
+                            "id": "hzhmbqbm",
+                            "name": "Column",
+                            "children": [
+                              {
+                                "text": "Météorologie aléatoire*",
+                                "align": "Center",
+                                "clickable": true,
+                                "tooltip": true,
+                                "tooltipLabel": "From Terrain and Weather Charts Homebrew",
+                                "id": "meteo_trigger",
+                                "name": "Label",
+                                "classes": "text-title highlight-2 m-0 p-1 mt-1",
+                                "className": "Label"
+                              }
+                            ],
+                            "className": "Column"
                           }
                         ],
-                        "className": "Container",
-                        "layout": "horizontal"
+                        "className": "Row"
                       },
                       {
-                        "id": "jyngozqx",
-                        "name": "Container",
-                        "classes": "w-100 m-1",
+                        "id": "meteo_trigged",
+                        "name": "Row",
                         "children": [
                           {
-                            "align": "Center",
-                            "id": "jincufbx",
-                            "name": "NumberInput",
-                            "classes": "w-25px h-25px",
-                            "className": "NumberInput"
-                          },
-                          {
-                            "text": " / ",
-                            "id": "nurlnrfa",
-                            "name": "Label",
-                            "classes": "text-medium ml-2 mr-2",
-                            "className": "Label"
-                          },
-                          {
-                            "align": "Center",
-                            "id": "ylmiizwq",
-                            "name": "NumberInput",
-                            "classes": "w-25px h-25px",
-                            "className": "NumberInput"
+                            "id": "jvzspnrq",
+                            "name": "Column",
+                            "children": [
+                              {
+                                "id": "zfrdlour",
+                                "name": "Container",
+                                "children": [
+                                  {
+                                    "id": "dntitkxp",
+                                    "name": "Container",
+                                    "classes": "m-1 w-100",
+                                    "children": [
+                                      {
+                                        "text": "<u>Météo du jour</u>",
+                                        "id": "pgogwfno",
+                                        "name": "Label",
+                                        "classes": "text-medium ml-3",
+                                        "className": "Label"
+                                      },
+                                      {
+                                        "id": "pdtrlexk",
+                                        "name": "Container",
+                                        "classes": "justify-content-center w-100 m-1",
+                                        "children": [
+                                          {
+                                            "id": "meteo_jour",
+                                            "name": "Choice",
+                                            "classes": "ml-1 mr-1 w-150px",
+                                            "className": "Choice",
+                                            "label": "t",
+                                            "tableId": "meteo_jour"
+                                          },
+                                          {
+                                            "id": "meteo_jour_roll",
+                                            "name": "Icon",
+                                            "classes": "ml-1 clickable text-medium",
+                                            "className": "Icon"
+                                          }
+                                        ],
+                                        "className": "Container",
+                                        "collapsed": true,
+                                        "layout": "horizontal"
+                                      },
+                                      {
+                                        "align": "Center",
+                                        "id": "meteo_jour_aff",
+                                        "name": "Label",
+                                        "classes": "text-medium ml-3",
+                                        "className": "Label"
+                                      }
+                                    ],
+                                    "className": "Container",
+                                    "layout": "vertical"
+                                  },
+                                  {
+                                    "id": "xclmjran",
+                                    "name": "Container",
+                                    "classes": "m-1 w-100",
+                                    "children": [
+                                      {
+                                        "text": "<u>Vent du jour</u>",
+                                        "id": "nmqoeicf",
+                                        "name": "Label",
+                                        "classes": "text-medium ml-3",
+                                        "className": "Label"
+                                      },
+                                      {
+                                        "id": "kejwqfdy",
+                                        "name": "Container",
+                                        "classes": "justify-content-center w-100 m-1",
+                                        "children": [
+                                          {
+                                            "id": "meteo_vent",
+                                            "name": "Choice",
+                                            "classes": "ml-1 mr-1 w-150px",
+                                            "className": "Choice",
+                                            "label": "t",
+                                            "tableId": "meteo_vent"
+                                          },
+                                          {
+                                            "id": "meteo_vent_roll",
+                                            "name": "Icon",
+                                            "classes": "ml-1 clickable text-medium",
+                                            "className": "Icon"
+                                          }
+                                        ],
+                                        "className": "Container",
+                                        "collapsed": true,
+                                        "layout": "horizontal"
+                                      },
+                                      {
+                                        "align": "Center",
+                                        "id": "meteo_vent_aff",
+                                        "name": "Label",
+                                        "classes": "text-medium ml-3",
+                                        "className": "Label"
+                                      }
+                                    ],
+                                    "className": "Container",
+                                    "layout": "vertical"
+                                  }
+                                ],
+                                "className": "Container",
+                                "collapsed": true,
+                                "layout": "horizontal"
+                              }
+                            ],
+                            "className": "Column"
                           }
                         ],
-                        "className": "Container",
-                        "layout": "horizontal"
+                        "className": "Row"
                       }
                     ],
-                    "className": "Container",
-                    "layout": "horizontal"
-                  },
+                    "className": "Column"
+                  }
+                ],
+                "className": "Row"
+              },
+              {
+                "id": "hehkisee",
+                "name": "Container",
+                "classes": "ml-5 mr-5",
+                "children": [
                   {
-                    "id": "wwwlkgfb",
+                    "id": "exhatioh",
                     "name": "Container",
-                    "children": [
-                      {
-                        "id": "hmahebfk",
-                        "name": "Container",
-                        "classes": "w-100 m-1",
-                        "children": [
-                          {
-                            "placeholder": "Indices",
-                            "id": "zodfchnd",
-                            "name": "Textarea",
-                            "classes": "h-150px",
-                            "className": "Textarea"
-                          }
-                        ],
-                        "className": "Container",
-                        "layout": "horizontal"
-                      },
-                      {
-                        "id": "crsjnxlg",
-                        "name": "Container",
-                        "classes": "w-100 m-1",
-                        "children": [
-                          {
-                            "placeholder": "Obstacles",
-                            "id": "prbzgttc",
-                            "name": "Textarea",
-                            "className": "Textarea"
-                          }
-                        ],
-                        "className": "Container",
-                        "layout": "horizontal"
-                      }
-                    ],
+                    "classes": "border m-3 w-100",
                     "className": "Container",
                     "layout": "horizontal"
                   }
                 ],
                 "className": "Container",
-                "layout": "vertical"
+                "collapsed": true,
+                "layout": "horizontal"
+              },
+              {
+                "id": "bdvuqvdl",
+                "name": "Row",
+                "children": [
+                  {
+                    "id": "idsyeizv",
+                    "name": "Column",
+                    "children": [
+                      {
+                        "id": "zntpaaks",
+                        "name": "Row",
+                        "children": [
+                          {
+                            "id": "esvqdmss",
+                            "name": "Column",
+                            "children": [
+                              {
+                                "text": "Monnaie",
+                                "align": "Center",
+                                "clickable": true,
+                                "id": "monnaie_trigger",
+                                "name": "Label",
+                                "classes": "text-title highlight-2 m-0 p-1 mt-1",
+                                "className": "Label"
+                              }
+                            ],
+                            "className": "Column"
+                          }
+                        ],
+                        "className": "Row"
+                      },
+                      {
+                        "id": "monnaie_trigged",
+                        "name": "Row",
+                        "children": [
+                          {
+                            "id": "frpyapty",
+                            "name": "Column",
+                            "children": [
+                              {
+                                "text": "<u>Taux d'échange:</u>",
+                                "id": "vqrecpyd",
+                                "name": "Label",
+                                "classes": "m-1",
+                                "className": "Label"
+                              },
+                              {
+                                "id": "vzdqqxrh",
+                                "name": "Container",
+                                "children": [
+                                  {
+                                    "id": "knlwenkh",
+                                    "name": "Container",
+                                    "classes": "justify-content-center w-100 m-1",
+                                    "children": [
+                                      {
+                                        "align": "Center",
+                                        "id": "Monnaie_A",
+                                        "name": "NumberInput",
+                                        "classes": "w-50px",
+                                        "className": "NumberInput"
+                                      },
+                                      {
+                                        "id": "Monnaie_B",
+                                        "name": "Choice",
+                                        "classes": "ml-1 mr-1 w-150px",
+                                        "className": "Choice",
+                                        "label": "t",
+                                        "tableId": "monnaie"
+                                      }
+                                    ],
+                                    "className": "Container",
+                                    "collapsed": true,
+                                    "layout": "horizontal"
+                                  },
+                                  {
+                                    "id": "ayhjlfmd",
+                                    "name": "Container",
+                                    "children": [
+                                      {
+                                        "text": "<==>",
+                                        "id": "honrizxo",
+                                        "name": "Label",
+                                        "classes": "mt-2",
+                                        "className": "Label"
+                                      }
+                                    ],
+                                    "className": "Container",
+                                    "collapsed": true,
+                                    "layout": "horizontal"
+                                  },
+                                  {
+                                    "id": "yegaejtv",
+                                    "name": "Container",
+                                    "classes": "justify-content-center w-100 m-1",
+                                    "children": [
+                                      {
+                                        "align": "Center",
+                                        "id": "Monnaie_D",
+                                        "name": "NumberInput",
+                                        "classes": "w-50px",
+                                        "className": "NumberInput"
+                                      },
+                                      {
+                                        "id": "Monnaie_C",
+                                        "name": "Choice",
+                                        "classes": "ml-1 mr-1 w-150px",
+                                        "className": "Choice",
+                                        "label": "t",
+                                        "tableId": "monnaie"
+                                      }
+                                    ],
+                                    "className": "Container",
+                                    "collapsed": true,
+                                    "layout": "horizontal"
+                                  }
+                                ],
+                                "className": "Container",
+                                "collapsed": true,
+                                "layout": "horizontal"
+                              },
+                              {
+                                "text": "<u>Revente:</u>",
+                                "id": "qtxhcwfg",
+                                "name": "Label",
+                                "classes": "m-1",
+                                "className": "Label"
+                              },
+                              {
+                                "id": "zbnqkyxv",
+                                "name": "Container",
+                                "children": [
+                                  {
+                                    "id": "ivslutqs",
+                                    "name": "Container",
+                                    "classes": "justify-content-center w-100 m-1",
+                                    "children": [
+                                      {
+                                        "text": "Différence Jet - SD:",
+                                        "id": "vfeljjzl",
+                                        "name": "Label",
+                                        "classes": "mt-1 mr-2",
+                                        "className": "Label"
+                                      },
+                                      {
+                                        "align": "Center",
+                                        "id": "revente1",
+                                        "name": "NumberInput",
+                                        "classes": "w-50px",
+                                        "className": "NumberInput"
+                                      }
+                                    ],
+                                    "className": "Container",
+                                    "layout": "horizontal"
+                                  },
+                                  {
+                                    "id": "txiqeaxp",
+                                    "name": "Container",
+                                    "children": [
+                                      {
+                                        "text": "<==>",
+                                        "id": "xoorffsg",
+                                        "name": "Label",
+                                        "classes": "mt-2",
+                                        "className": "Label"
+                                      }
+                                    ],
+                                    "className": "Container",
+                                    "collapsed": true,
+                                    "layout": "horizontal"
+                                  },
+                                  {
+                                    "id": "irbstdyw",
+                                    "name": "Container",
+                                    "classes": "justify-content-center w-100 m-1",
+                                    "children": [
+                                      {
+                                        "text": "% du prix du marché",
+                                        "id": "revente2",
+                                        "name": "Label",
+                                        "className": "Label"
+                                      }
+                                    ],
+                                    "className": "Container",
+                                    "layout": "horizontal"
+                                  }
+                                ],
+                                "className": "Container",
+                                "layout": "horizontal"
+                              }
+                            ],
+                            "className": "Column"
+                          }
+                        ],
+                        "className": "Row"
+                      }
+                    ],
+                    "className": "Column"
+                  }
+                ],
+                "className": "Row"
+              },
+              {
+                "id": "hlaahclu",
+                "name": "Container",
+                "classes": "ml-5 mr-5",
+                "children": [
+                  {
+                    "id": "thqykqeo",
+                    "name": "Container",
+                    "classes": "border m-3 w-100",
+                    "className": "Container",
+                    "layout": "horizontal"
+                  }
+                ],
+                "className": "Container",
+                "collapsed": true,
+                "layout": "horizontal"
+              },
+              {
+                "id": "uxahjbko",
+                "name": "Container - Notes",
+                "children": [
+                  {
+                    "placeholder": "Notes...",
+                    "id": "dihpchka",
+                    "name": "Textarea",
+                    "classes": "h-150px m-1",
+                    "className": "Textarea"
+                  }
+                ],
+                "className": "Container",
+                "collapsed": true,
+                "layout": "horizontal"
               },
               {
                 "id": "dzcdtuda",
@@ -18049,21 +18762,36 @@
                 "layout": "horizontal"
               },
               {
-                "id": "lquitqfs",
-                "name": "Container",
+                "id": "lgjriwmh",
+                "name": "Row",
                 "children": [
                   {
-                    "text": "**Ressources:**\n[Wiki](https://github.com/MacNaab/lets-role-system-witcher/wiki)\n:flag: English\n- [Reddit](https://www.reddit.com/r/WitcherTRPG/)\n:flag: Français\n- [Site de la communauté francophone](https://www.the-witcher-jdr.fr/)\n- [Tables aléatoires, générateurs d'environnement urbain, gestionnaire de trajets et autres](https://macnaab.github.io/Random-Tables/)",
-                    "markdown": true,
-                    "id": "qfjeoezl",
-                    "name": "Label",
-                    "classes": "ml-5",
-                    "className": "Label"
+                    "id": "xwdfdylh",
+                    "name": "Column",
+                    "children": [
+                      {
+                        "id": "lquitqfs",
+                        "name": "Container",
+                        "children": [
+                          {
+                            "text": "**Ressources:**\n[Wiki](https://github.com/MacNaab/lets-role-system-witcher/wiki)\n:flag: English\n- [Reddit](https://www.reddit.com/r/WitcherTRPG/)\n- [Terrain and Weather Charts Homebrew](https://www.reddit.com/r/WitcherTRPG/comments/mojsn0/terrain_and_weather_charts_homebrew/) from [Durins Cat](https://www.reddit.com/user/Durins_Cat)\n:flag: Français\n- [Site de la communauté francophone](https://www.the-witcher-jdr.fr/)\n- [Tables aléatoires, générateurs d'environnement urbain, gestionnaire de trajets et autres](https://macnaab.github.io/Random-Tables/)",
+                            "markdown": true,
+                            "id": "qfjeoezl",
+                            "name": "Label",
+                            "classes": "ml-5",
+                            "className": "Label"
+                          }
+                        ],
+                        "className": "Container",
+                        "collapsed": true,
+                        "layout": "horizontal"
+                      }
+                    ],
+                    "className": "Column"
                   }
                 ],
-                "className": "Container",
-                "collapsed": true,
-                "layout": "horizontal"
+                "className": "Row",
+                "collapsed": true
               }
             ],
             "className": "Column"
@@ -18101,6 +18829,28 @@
                     "name": "Label",
                     "classes": "text-title m-1",
                     "className": "Label"
+                  },
+                  {
+                    "id": "gavnrsts",
+                    "name": "Container",
+                    "classes": "justify-content-center w-100",
+                    "children": [
+                      {
+                        "id": "adre_auto",
+                        "name": "Checkbox",
+                        "className": "Checkbox"
+                      },
+                      {
+                        "text": "Automatisation",
+                        "tooltip": true,
+                        "tooltipLabel": "La génération des dés se fera automatiquement à chaque critique. ",
+                        "id": "folyqpwu",
+                        "name": "Label",
+                        "className": "Label"
+                      }
+                    ],
+                    "className": "Container",
+                    "layout": "horizontal"
                   },
                   {
                     "id": "julgrxhr",
@@ -18234,11 +18984,11 @@
                       }
                     ],
                     "className": "Container",
+                    "collapsed": true,
                     "layout": "horizontal"
                   }
                 ],
                 "className": "Container",
-                "collapsed": true,
                 "layout": "vertical"
               },
               {
@@ -18260,7 +19010,7 @@
               },
               {
                 "id": "vbhhosqk",
-                "name": "Container",
+                "name": "Combat verbal",
                 "classes": "Combat verbal",
                 "children": [
                   {
@@ -18470,6 +19220,7 @@
                           }
                         ],
                         "className": "Container",
+                        "collapsed": true,
                         "layout": "vertical"
                       }
                     ],
@@ -18478,6 +19229,7 @@
                   }
                 ],
                 "className": "Container",
+                "collapsed": true,
                 "layout": "vertical"
               }
             ],
