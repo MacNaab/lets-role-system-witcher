@@ -41,10 +41,10 @@ const initMain = function(sheet) {
 }
 
 //region ------------------- Caract & Compt -----------------------------
-	// Sommes Poings & Pieds à faire
 const initCC = function(sheet){
 	cII(sheet);
 	sheet.get('class').on('update', function(){cII(sheet);});
+	sheet.get('COR_3').on('update', function(){cII(sheet);});
 	// Sommes Poings & Pieds
 	var list2 = ['POINGS','PIEDS']
 	list2.forEach(function(e){
@@ -75,7 +75,7 @@ const initCC = function(sheet){
 	});
 
 	ComptCom(sheet);
-	sheet.get('Repeat_CE').on('update', function(){Inventaire(sheet);});
+	sheet.get('Repeat_CE').on('update', function(){ComptCom(sheet);});
 }
 
 // Calcul Caractéristiques Secondaires
@@ -107,6 +107,9 @@ function SommesPP(sheet,e){
 const ComptCom = function(sheet){
     let compt = sheet.get('Repeat_CE').value();  // Repeat_CE is the id of the repeater
     each(compt, function(entryData, entryIndex) {
+		let bgClass = sheet.get("Repeat_CE."+entryIndex+".xjjrqvql").value();
+		sheet.get("Repeat_CE."+entryIndex).addClass(bgClass);
+		sheet.get("Repeat_CE."+entryIndex+".xjjrqvql").hide();
         let cptName = "Repeat_CE."+entryIndex+".rjrpkmmo";  // rjrpkmmo is the id of the component you want to change
         let cpt = sheet.get(cptName);
         if(cpt != null){
@@ -129,12 +132,12 @@ const ComptCom = function(sheet){
 
 function CoupPoings(e){
   var f = 0;if(e%2 != 0){f = Math.trunc(e/2)+1;}else{f = Math.trunc(e/2);}
-  var g = -4+2*f;if(g==0){g="";}if(g>0){g='+'+g;}
+  var g = -6+2*f;if(g==0){g="";}if(g>0){g='+'+g;}
   return '1d6'+g;
 }
 function CoupPieds(e){
   var f = 0;if(e%2 != 0){f = Math.trunc(e/2)+1;}else{f = Math.trunc(e/2);}
-  var g = 0+2*f;if(g==0){g="";}if(g>0){g='+'+g;}
+  var g = -2+2*f;if(g==0){g="";}if(g>0){g='+'+g;}
   return '1d6'+g;
 }
 //endregion
@@ -440,6 +443,7 @@ function Inventaire(sheet){
 		let	entry5 = sheet.get(paa).value();
 		let entry4 = entry.find('armor_6').value();	// VE
 		poids += Number(entry4);
+		VE += Number(entry4);
 
 		function calculpa(e,ee,eee){
 			// e:	1 = tete	2 = torse	3 = pant
@@ -599,6 +603,7 @@ const initCombat = function(sheet){
 			arm_t.push(entry.value());
 			let entry1 = entry.find('arme_1').value(); // nom
 			let entry22 = entry.find('arme_22').value(); // type
+				if(entry22 == null){entry22 = "Épée";}
 			let line = Tables.get("arme_list").get(entry22);
 				if(line.type == 'cac'){choice_cac[entry1] = entry1;}else{choice_dist[entry1] = entry1;}
 			choice_dble[entry1] = entry1;
@@ -610,34 +615,17 @@ const initCombat = function(sheet){
 
 	initArm('arme_repeater'); // ajout des armes de la fiche
 	sheet.get('arme_repeater').on('update', function(){initArm('arme_repeater');});
+	log('fin de arme_repeater!')
 
 	sheet.get('ATQ_cac_roll').on('click', function(){	// ATQ CaC
 		var arme = sheet.get('arm_1').value();
 		var line;
-			arm_t.forEach(function(e){
-				if(e.arme_1 == arme){line = e;}
-			});
-		var c = Number(sheet.get('cac_1').value())+Number(sheet.get('cac_2').value())+Number(sheet.get('cac_3').value())+Number(sheet.get('cac_4').value())+Number(line.arme_3);
-
+		arm_t.forEach(function(e){
+			if(e.arme_1 == arme){line = e;}
+		});
+		var c = Number(line.arme_3);
 		let line2 = Tables.get("arme_list").get(line.arme_22);
-
-		var affichage = _('Jet ');
-		var aff = affichage+arme;
-			var b_1 = sheet.get(line2.c+'_3').value();
-				if(b_1==""||b_1==null){b_1=0;}
-			var b_2 = sheet.get(line2.compt+'_3').value();
-				if(b_2==""||b_2==null){b_2=0;}	
-			var b = Number(b_1)+Number(b_2);
-
-		var v = 'visible';
-		var lejet = new RollBuilder(sheet);
-		lejet.expression('1d10')
-		.visibility(v)
-		.onRoll(function(result){
-			var a = result.values[0];
-			Roll_Cust(sheet,aff,a,b,c,v);
-		})
-		.roll();
+		ATQcac(sheet,arme,c,line2,3);
 	});
 
 	sheet.get('ATQ_dist_roll').on('click', function(){	// ATQ Distance
@@ -646,76 +634,16 @@ const initCombat = function(sheet){
 			arm_t.forEach(function(e){
 				if(e.arme_1 == arme){line = e;}
 			});
-		var c = Number(sheet.get('dist_1').value())+Number(sheet.get('dist_2').value())+Number(sheet.get('dist_3').value())+Number(sheet.get('dist_4').value())+Number(sheet.get('dist_5').value())+Number(line.arme_3);
-
+		var c = Number(line.arme_3);
 		let line2 = Tables.get("arme_list").get(line.arme_22);
-
-		var affichage = _('Jet ');
-		var aff = affichage+arme;
-			var b_1 = sheet.get(line2.c+'_3').value();
-				if(b_1==""||b_1==null){b_1=0;}
-			var b_2 = sheet.get(line2.compt+'_3').value();
-				if(b_2==""||b_2==null){b_2=0;}	
-			var b = Number(b_1)+Number(b_2);
-
-		var v = 'visible';
-		var lejet = new RollBuilder(sheet);
-		lejet.expression('1d10')
-		.visibility(v)
-		.onRoll(function(result){
-			var a = result.values[0];
-			Roll_Cust(sheet,aff,a,b,c,v);
-		})
-		.roll();
+		ATQdist(sheet,arme,c,line2,3);
 	});
 
 	sheet.get('ATQ_calc').on('click', function(){
-		var atq = sheet.get('ATQ_calc1').value();
-		var loc = sheet.get('ATQ_calc2').value();
-			var line0 = Tables.get("loc_list").get(loc);
-			var mod = line0.malus;
-		var def = sheet.get('ATQ_calc3').value();
-		var som = Number(atq)-Number(mod)-Number(def);
-			if(som<=0){
-				let line = _("Échec de l'attaque!");
-				var aff = line+" ("+(Number(atq)-Number(mod))+" VS "+def+")";
-			}else{
-				let line = _("Réussite de l'attaque!");
-				var aff = line+" ("+(Number(atq)-Number(mod))+" VS "+def+")";
-				if(som >6){
-					// Calcul des CC
-					if(loc == 0){	// Pas de visée
-						var lejet = new RollBuilder(sheet);
-							lejet.expression('2d6')
-							.onRoll(function(result){
-								var a = result.values[0]+result.values[1];
-								CC(sheet,a,som,loc,'ATQ_calc0');
-							})
-							.roll();
-					}else if(loc!=5){	// visée
-						if(loc==1||loc==2){
-							var lejet = new RollBuilder(sheet);
-							lejet.expression('1d6')
-							.onRoll(function(result){
-								var a = result.values[0];
-								CC(sheet,a,som,loc,'ATQ_calc0');
-							})
-							.roll();
-						}else{
-							CC(sheet,0,som,loc,'ATQ_calc0');
-						}
-					}
-				}else{
-					sheet.get('Dom_5').value(0);
-					sheet.get('ATQ_calc0').text('');
-				}
-			}
-		sheet.get('ATQ_calc00').text(aff);
+		ATQcalc(sheet);
 	});
 
 	sheet.get('dommages_roll').on('click', function(){	// Dommages
-		// Dégâts: ([(dmg + modCor)*FP]-PA)*loca*RV + cc
-
 		if(sheet.get('Dom_1').value() != null && sheet.get('Dom_1').value() != ''){
 			var dmg = sheet.get('Dom_1').value();
 			var affichage = _('Dégâts: ');
@@ -733,116 +661,233 @@ const initCombat = function(sheet){
 				return error;	// Fin de la fonction
 			}
 		}
-		var c = dmg.split('+');
-			if(c[1]){
-				var dice = Dice.create(c[0]).add(c[1]);
-			}else{
-				c=dmg.split('-');
-				if(c[1]){var dice = Dice.create(c[0]).minus(c[1]);}else{var dice = Dice.create(c[0]);}
-			}
-		if(sheet.get('Dom_3A').value() == true){
-			var Cor = Number(sheet.get('COR_3').text());
-			var modCor = -4 + (2*(Math.ceil(Cor)/2)-1);
-			dice = dice.add(modCor);
-		}
-		if(sheet.get('Dom_3B').value() == true){
-			dice = dice.multiply(2);
-		}
-		var PA = sheet.get('Dom_7').value();if(PA == null || PA == ''){PA=0;}
-			dice = dice.minus(PA);
-		if(sheet.get('Dom_2').value()==0){
-			// Random loc;
-			var Rand = Math.floor(Math.random() * Math.floor(10))+1;
-			if(sheet.get('Dom_3B').value() == true){
-				if(Rand == '1'){var a = '1';var b = "Tête";}
-				if(Rand > '1' && Rand < '6'){var a = '2';var b = "Torse";}
-				if(Rand > '5' && Rand < '10'){var a = '3';var b = "Membre gauche";}
-				if(Rand == '10'){var a = '4';var b = "Queue ou Aile";}
-			}
-			else{
-				if(Rand == '1'){var a = '1';var b = "Tête";}
-				if(Rand > '1' && Rand < '5'){var a = '2';var b = "Torse";}
-				if(Rand == '5'){var a = '3';var b = "Bras droit";}
-				if(Rand == '6'){var a = '3';var b = "Bras gauche";}
-				if(Rand > '6'){var a = '4';var b = "Jambe";}
-			}
-			var loca_line = Tables.get("loc_list").get(a);
-			aff += " ("+loca_line.loc+")";
-			var loca = Number(loca_line.mult);
-		}else{
-			var loca_line = Tables.get("loc_list").get(sheet.get('Dom_2').value());
-			aff += " ("+loca_line.loc+")";
-			var loca = Number(loca_line.mult);
-		}
-		dice = dice.multiply(loca);
-		var RV = Number(sheet.get('Dom_6').value());
-			if(RV!=1){dice = dice.multiply(RV);}
-		var cc = Number(sheet.get('Dom_5').value());
-			if(cc>0){dice.add(cc);}
-		
-		Dice.roll(sheet, dice, aff);
+		DMGroll(sheet,dmg,aff,3);
 	});
 
 	sheet.get('dmg_complet_roll').on('click',function(){
-		// Dégâts: (dmg-PA)*loca*RV + cc
-		var dmg = sheet.get('dmg_complet_1').value();
-		var cc = sheet.get('dmg_complet_2').value();
-		var RV = sheet.get('dmg_complet_3').value();
-		var PA = [
-			{n:'dmg_complet_4A',l:3,t:'Tête',i:1},
-			{n:'dmg_complet_4B',l:1,t:'Torse',i:2},
-			{n:'dmg_complet_4C',l:0.5,t:'Membre G',i:3},
-			{n:'dmg_complet_4D',l:0.5,t:'Membre D',i:4},
-			{n:'dmg_complet_4E',l:0.5,t:'Jambe G',i:5},
-			{n:'dmg_complet_4F',l:0.5,t:'Jambe D',i:6}
-		];
-
-		sheet.get('dmg_complet_L').value('');
-
-		var i = 0;
-		var rand = function(){
-			var e = PA[i];i += 1;
-			var affichage = _('Dommages totaux: ');
-			var aff = affichage+e.t;			
-			var pa = sheet.get(e.n).value();
-			var lejet = Dice.create(dmg).minus(pa).multiply(e.l);
-				if(RV!=1){lejet.multiply(RV);}
-				if(cc>0){lejet.add(cc);}
-
-			var RB = new RollBuilder(sheet);
-				RB.expression(lejet)
-				.title(aff)
-				.onRoll(function(result){
-					var a = result.total;if(a<0){a=0;}
-					DomTot(a,e.i);
-				})
-				.roll();
-		}
-		var Timer = 0;
-			PA.forEach(function(){
-				Timer += 1500;
-				wait(Timer,rand);
-			});
-
-		var som = 0;
-		function DomTot(e,f){
-			som += Number(e);
-			if(f==6){
-				var affichage = _('Dommages totaux: ');
-				sheet.get('dmg_complet_L').value(affichage+som);
-			}
-		}
+		DMGcomplet(sheet,3);
 	});
 
 	sheet.get('loc_roll').on('click',function(){
 		var lejet = new RollBuilder(sheet);
-				lejet.expression('1d10')
-				.title(_('Localisation'))
+			lejet.expression('1d10')
+			.title(_('Localisation'))
+			.onRoll(function(result){
+				Loca(sheet,result.total);
+			})
+			.roll();
+	});
+}
+
+function ATQcac(sheet,arme,c,line2,sheetid){
+	c += Number(sheet.get('cac_1').value())+Number(sheet.get('cac_2').value())+Number(sheet.get('cac_3').value())+Number(sheet.get('cac_4').value());
+
+	var affichage = _('Jet ');
+	var aff = affichage+arme;
+	if(sheetid === 1){
+		var b_1 = sheet.get(line2.c+'_1').value();
+		var b_2 = sheet.get(line2.id+'_1').value();
+	}else{
+		var b_1 = sheet.get(line2.c+'_3').text();
+		var b_2 = sheet.get(line2.compt+'_3').text();
+	}
+	if(b_1==""||b_1==null){b_1=0;}
+	if(b_2==""||b_2==null){b_2=0;}	
+	var b = Number(b_1)+Number(b_2);
+
+	var v = 'visible';
+	var lejet = new RollBuilder(sheet);
+		lejet.expression('1d10')
+		.visibility(v)
+		.onRoll(function(result){
+			var a = result.values[0];
+			Roll_Cust(sheet,aff,a,b,c,v);
+		})
+		.roll();
+}
+
+function ATQdist(sheet,arme,c,line2,sheetid){
+	c += Number(sheet.get('dist_1').value())+Number(sheet.get('dist_2').value())+Number(sheet.get('dist_3').value())+Number(sheet.get('dist_4').value())+Number(sheet.get('dist_5').value());
+
+	var affichage = _('Jet ');
+	var aff = affichage+arme;
+	if(sheetid === 1){
+		var b_1 = sheet.get(line2.c+'_1').value();
+		var b_2 = sheet.get(line2.id+'_1').value();
+	}else{
+		var b_1 = sheet.get(line2.c+'_3').value();
+		var b_2 = sheet.get(line2.compt+'_3').value();
+	}
+	if(b_1==""||b_1==null){b_1=0;}
+	if(b_2==""||b_2==null){b_2=0;}	
+	var b = Number(b_1)+Number(b_2);
+
+	var v = 'visible';
+	var lejet = new RollBuilder(sheet);
+		lejet.expression('1d10')
+		.visibility(v)
+		.onRoll(function(result){
+			var a = result.values[0];
+			Roll_Cust(sheet,aff,a,b,c,v);
+		})
+		.roll();
+}
+
+function ATQcalc(sheet){
+	var atq = sheet.get('ATQ_calc1').value();
+	var loc = sheet.get('ATQ_calc2').value();
+	var line0 = Tables.get("loc_list").get(loc);
+	var mod = line0.malus;
+	var def = sheet.get('ATQ_calc3').value();
+	var som = Number(atq)-Number(mod)-Number(def);
+	if(som<=0){
+		let line = _("Échec de l'attaque!");
+		var aff = line+" ("+(Number(atq)-Number(mod))+" VS "+def+")";
+	}else{
+		let line = _("Réussite de l'attaque!");
+		var aff = line+" ("+(Number(atq)-Number(mod))+" VS "+def+")";
+		if(som >6){
+		// Calcul des CC
+			if(loc == 0){	// Pas de visée
+				var lejet = new RollBuilder(sheet);
+				lejet.expression('2d6')
 				.onRoll(function(result){
-					Loca(sheet,result.total);
+					var a = result.values[0]+result.values[1];
+					CC(sheet,a,som,loc,'ATQ_calc0');
 				})
 				.roll();
+			}else if(loc!=5){	// visée
+				if(loc==1||loc==2){
+					var lejet = new RollBuilder(sheet);
+					lejet.expression('1d6')
+					.onRoll(function(result){
+						var a = result.values[0];
+						CC(sheet,a,som,loc,'ATQ_calc0');
+					})
+					.roll();
+				}else{
+					CC(sheet,0,som,loc,'ATQ_calc0');
+				}
+			}
+		}else{
+			sheet.get('Dom_5').value(0);
+			sheet.get('ATQ_calc0').text('');
+		}
+	}
+	sheet.get('ATQ_calc00').text(aff);
+}
+
+function DMGroll(sheet,dmg,aff,sheetid){
+	// Dégâts: ([(dmg + modCor)*FP]-PA)*loca*RV + cc
+	var c = dmg.split('+');
+	if(c[1]){
+		var dice = Dice.create(c[0]).add(c[1]);
+	}else{
+		c=dmg.split('-');
+		if(c[1]){var dice = Dice.create(c[0]).minus(c[1]);}else{var dice = Dice.create(c[0]);}
+	}
+	if(sheet.get('Dom_3A').value() == true){
+		var Cor = Number(sheet.get('COR_'+sheetid).text());
+		var modCor = -4 + (2*(Math.ceil(Cor)/2)-1);
+		dice = dice.add(modCor);
+	}
+	if(sheet.get('Dom_3B').value() == true){
+		dice = dice.multiply(2);
+	}
+
+	var PA = sheet.get('Dom_7').value();if(PA == null || PA == ''){PA=0;}
+	dice = dice.minus(PA);
+
+	if(sheet.get('Dom_2').value()==0){
+		// Random loc;
+		var Rand = Math.floor(Math.random() * Math.floor(10))+1;
+		if(sheet.get('Dom_3B').value() == true){
+			if(Rand == '1'){var a = '1';var b = "Tête";}
+			if(Rand > '1' && Rand < '6'){var a = '2';var b = "Torse";}
+			if(Rand > '5' && Rand < '10'){var a = '3';var b = "Membre gauche";}
+			if(Rand == '10'){var a = '4';var b = "Queue ou Aile";}
+		}
+		else{
+			if(Rand == '1'){var a = '1';var b = "Tête";}
+			if(Rand > '1' && Rand < '5'){var a = '2';var b = "Torse";}
+			if(Rand == '5'){var a = '3';var b = "Bras droit";}
+			if(Rand == '6'){var a = '3';var b = "Bras gauche";}
+			if(Rand > '6'){var a = '4';var b = "Jambe";}
+		}
+		var loca_line = Tables.get("loc_list").get(a);
+		aff += " ("+loca_line.loc+")";
+		var loca = Number(loca_line.mult);
+	}else{
+		var loca_line = Tables.get("loc_list").get(sheet.get('Dom_2').value());
+		aff += " ("+loca_line.loc+")";
+		var loca = Number(loca_line.mult);
+	}
+
+	dice = dice.multiply(loca);
+	var RV = Number(sheet.get('Dom_6').value());
+	if(RV!=1){dice = dice.multiply(RV);}
+	var cc = Number(sheet.get('Dom_5').value());
+	if(cc>0){dice.add(cc);}
+			
+	Dice.roll(sheet, dice, aff);
+}
+
+function DMGcomplet(sheet,sheetid){
+	var dmg = sheet.get('dmg_complet_1').value();
+	var cc = sheet.get('dmg_complet_2').value();
+	var RV = sheet.get('dmg_complet_3').value();
+	var PA = [
+		{n:'dmg_complet_4A',l:3,t:'Tête',i:1},
+		{n:'dmg_complet_4B',l:1,t:'Torse',i:2},
+		{n:'dmg_complet_4C',l:0.5,t:'Membre G',i:3},
+		{n:'dmg_complet_4D',l:0.5,t:'Membre D',i:4},
+		{n:'dmg_complet_4E',l:0.5,t:'Jambe G',i:5},
+		{n:'dmg_complet_4F',l:0.5,t:'Jambe D',i:6}
+	];
+
+	if(sheetid === 1){
+		sheet.get('dmg_complet_aff').value('');
+	}else{
+		sheet.get('dmg_complet_L').value('');
+	}
+
+	var i = 0;
+	var rand = function(){
+		var e = PA[i];i += 1;
+		var affichage = _('Dommages totaux: ');
+		var aff = affichage+e.t;			
+		var pa = sheet.get(e.n).value();
+		var lejet = Dice.create(dmg).minus(pa).multiply(e.l);
+			if(RV!=1){lejet.multiply(RV);}
+			if(cc>0){lejet.add(cc);}
+
+		var RB = new RollBuilder(sheet);
+			RB.expression(lejet)
+			.title(aff)
+			.onRoll(function(result){
+				var a = result.total;if(a<0){a=0;}
+				DomTot(a,e.i);
+			})
+			.roll();
+	}
+	var Timer = 0;
+	PA.forEach(function(){
+		Timer += 1500;
+		wait(Timer,rand);
 	});
+
+	var som = 0;
+	function DomTot(e,f){
+		som += Number(e);
+		if(f==6){
+			var affichage = _('Dommages totaux: ');
+			if(sheetid === 1){
+				sheet.get('dmg_complet_aff').value(affichage+som);
+			}else{
+				sheet.get('dmg_complet_L').value(affichage+som);
+			}
+		}
+	}
 }
 
 function Dommages(sheet,aff,o){
@@ -1151,27 +1196,14 @@ const jet = function(sheet){
 	sheet.get('Rapid_init').on("click", function(){initiative1()});
 
 	sheet.get('Rapid_sauv').on("click", function(){
-		var aff = Tables.get("trad").get('6').t;
 		var b = sheet.get('ETOU_3').text();
-			if(b==""||b==null){b=0;}
-		Roll_P1(sheet,aff,b)
+		if(b==""||b==null){b=0;}
+		Roll_SAUV(sheet,b);
 	});
 
 	var list3 = [{o:'Rapid_com',n:'Rapid_com2',i:'compt_combat'},{o:'Rapid_mag',n:'Rapid_mag2',i:'compt_magic'}];
 	list3.forEach(function(e){
-		sheet.get(e.o).on("click", function(){
-			if(sheet.get(e.n).value() != 0){
-				var nb1 = Tables.get(e.i).get(sheet.get(e.n).value());
-				var affichage = _('Jet ');
-				var aff = affichage+nb1.n;
-				var b_1 = sheet.get(nb1.c+'_3').value();
-					if(b_1==""||b_1==null){b_1=0;}
-				var b_2 = sheet.get(sheet.get(e.n).value()+'_3').value();
-					if(b_2==""||b_2==null){b_2=0;}	
-				var b = Number(b_1)+Number(b_2);				
-				Roll_P1(sheet,aff,b)
-			}
-		});	
+		Roll_Rapid(sheet,e,3);
 	});
 
 	sheet.get('Rapid_ind').on('click', function(){
@@ -1285,6 +1317,39 @@ function Roll_Init(sheet,a,b,c,v){
 		dice = dice.add(b).add(c).tag("initiative");
 
 	Dice.roll(sheet, dice, aff, v);	
+}
+
+function Roll_SAUV(sheet,b){
+	var aff = _('Jet SAUVEGARDE');
+	sheet.prompt(aff, 'rollprompt', function(result) {
+		var r = result;
+		if(r.Mod_prompt){var c = r.Mod_prompt;}else{var c = 0;}
+		b = Number(b)+Number(c);
+		if(r.Vis_prompt){var v = r.Vis_prompt;}else{var v = 'visible';}
+		let dice = Dice.create('1d10 < '+b)
+        Dice.roll(sheet, dice, aff, v);
+	});
+}
+
+function Roll_Rapid(sheet,e,sheetid){
+	sheet.get(e.o).on("click", function(){
+		if(sheet.get(e.n).value() != 0){
+			var nb1 = Tables.get(e.i).get(sheet.get(e.n).value());
+			var affichage = _('Jet ');
+			var aff = affichage+nb1.n;
+			if(sheetid === 1){
+				var b_1 = sheet.get(nb1.c+'_'+sheetid).value();
+				var b_2 = sheet.get(sheet.get(e.n).value()+'_1').value();
+			}else{
+				var b_1 = sheet.get(nb1.c+'_'+sheetid).text();
+				var b_2 = sheet.get(sheet.get(e.n).value()+'_'+sheetid).text();
+			}
+			if(b_1==""||b_1==null){b_1=0;}
+			if(b_2==""||b_2==null){b_2=0;}	
+			var b = Number(b_1)+Number(b_2);
+			Roll_P1(sheet,aff,b)
+			}
+	});
 }
 //endregion
 
@@ -1520,28 +1585,15 @@ const initPNJcc = function(sheet){
 
 	// Sauvegarde = Etourdissement
 	sheet.get('Rapid_sauv').on("click", function(){
-		var aff = Tables.get("trad").get('6').t;
-		var b = sheet.get('ETOU_3').value();
-			if(b==""||b==null){b=0;}
-		Roll_P1(sheet,aff,b)
+		var b = sheet.get('ETOU_1').value();
+		if(b==""||b==null){b=0;}
+		Roll_SAUV(sheet,b);
 	});
 
 	// Rapid
 	var list3 = [{o:'Rapid_com',n:'Rapid_com2',i:'compt_combat'},{o:'Rapid_mag',n:'Rapid_mag2',i:'compt_magic'}];
 	list3.forEach(function(e){
-		sheet.get(e.o).on("click", function(){
-			if(sheet.get(e.n).value() != 0){
-				var nb1 = Tables.get(e.i).get(sheet.get(e.n).value());
-				var affichage = _('Jet ');
-				var aff = affichage+nb1.n;
-				var b_1 = sheet.get(nb1.c+'_1').value();
-					if(b_1==""||b_1==null){b_1=0;}
-				var b_2 = sheet.get(sheet.get(e.n).value()+'_1').value();
-					if(b_2==""||b_2==null){b_2=0;}	
-				var b = Number(b_1)+Number(b_2);				
-				Roll_P1(sheet,aff,b)
-			}
-		});	
+		Roll_Rapid(sheet,e,1);
 	});
 };
 
@@ -1573,105 +1625,31 @@ const initPNJcombat = function(sheet){
 	sheet.get('ATQ_cac_roll').on('click', function(){	// ATQ CaC
 		var arme = sheet.get('arm_1').value();
 		var line;
-			arm_t.forEach(function(e){
-				if(e.pnj_arme_1 == arme){line = e;}
-			});
+		arm_t.forEach(function(e){
+			if(e.pnj_arme_1 == arme){line = e;}
+		});
 		var pre = line.pnj_arme_6;
-		var c = Number(sheet.get('cac_1').value())+Number(sheet.get('cac_2').value())+Number(sheet.get('cac_3').value())+Number(sheet.get('cac_4').value())+Number(pre);
-
-		let line2 = Tables.get("compt_combat").get(line.pnj_arme_5);
-
-		var affichage = _('Jet ');
-		var aff = affichage+arme;
-			var b_1 = sheet.get(line2.c+'_1').value();
-				if(b_1==""||b_1==null){b_1=0;}
-			var b_2 = sheet.get(line2.id+'_1').value();
-				if(b_2==""||b_2==null){b_2=0;}	
-			var b = Number(b_1)+Number(b_2);
-
-		var v = 'visible';
-		var lejet = new RollBuilder(sheet);
-		lejet.expression('1d10')
-		.visibility(v)
-		.onRoll(function(result){
-			var a = result.values[0];
-			Roll_Cust(sheet,aff,a,b,c,v);
-		})
-		.roll();
+		var c = Number(pre);
+		let line2 = Tables.get("compt_combat").get(line.pnj_arme_5);	
+		
+		ATQcac(sheet,arme,c,line2,1);
 	});
 
 	sheet.get('ATQ_dist_roll').on('click', function(){	// ATQ Distance
 		var arme = sheet.get('arm_2').value();
 		var line;
-			arm_t.forEach(function(e){
-				if(e.pnj_arme_1 == arme){line = e;}
-			});
+		arm_t.forEach(function(e){
+			if(e.pnj_arme_1 == arme){line = e;}
+		});
 		var pre = line.pnj_arme_6;
-		var c = Number(sheet.get('dist_1').value())+Number(sheet.get('dist_2').value())+Number(sheet.get('dist_3').value())+Number(sheet.get('dist_4').value())+Number(sheet.get('dist_5').value())+Number(pre);
-
+		var c = Number(pre);
 		let line2 = Tables.get("compt_combat").get(line.pnj_arme_5);
 
-		var affichage = _('Jet ');
-		var aff = affichage+arme;
-			var b_1 = sheet.get(line2.c+'_1').value();
-				if(b_1==""||b_1==null){b_1=0;}
-			var b_2 = sheet.get(line2.id+'_1').value();
-				if(b_2==""||b_2==null){b_2=0;}	
-			var b = Number(b_1)+Number(b_2);
-
-		var v = 'visible';
-		var lejet = new RollBuilder(sheet);
-		lejet.expression('1d10')
-		.visibility(v)
-		.onRoll(function(result){
-			var a = result.values[0];
-			Roll_Cust(sheet,aff,a,b,c,v);
-		})
-		.roll();
+		ATQdist(sheet,arme,c,line2,1);
 	});
 
 	sheet.get('ATQ_calc').on('click', function(){
-		var atq = sheet.get('ATQ_calc1').value();
-		var loc = sheet.get('ATQ_calc2').value();
-			var line0 = Tables.get("loc_list").get(loc);
-			var mod = line0.malus;
-		var def = sheet.get('ATQ_calc3').value();
-		var som = Number(atq)-Number(mod)-Number(def);
-			if(som<=0){
-				let line = _("Échec de l'attaque!");
-				var aff = line+" ("+(Number(atq)-Number(mod))+" VS "+def+")";
-			}else{
-				let line = _("Réussite de l'attaque!");
-				var aff = line+" ("+(Number(atq)-Number(mod))+" VS "+def+")";
-				if(som >6){
-					// Calcul des CC
-					if(loc == 0){	// Pas de visée
-						var lejet = new RollBuilder(sheet);
-							lejet.expression('2d6')
-							.onRoll(function(result){
-								var a = result.values[0]+result.values[1];
-								CC(sheet,a,som,loc,'ATQ_calc0');
-							})
-							.roll();
-					}else if(loc!=5){	// visée
-						if(loc==1||loc==2){
-							var lejet = new RollBuilder(sheet);
-							lejet.expression('1d6')
-							.onRoll(function(result){
-								var a = result.values[0];
-								CC(sheet,a,som,loc,'ATQ_calc0');
-							})
-							.roll();
-						}else{
-							CC(sheet,0,som,loc,'ATQ_calc0');
-						}
-					}
-				}else{
-					sheet.get('Dom_5').value(0);
-					sheet.get('ATQ_calc0').text('');
-				}
-			}
-		sheet.get('ATQ_calc00').text(aff);
+		ATQcalc(sheet);
 	});
 
 	sheet.get('dommages_roll').on('click', function(){	// Dommages
@@ -1694,105 +1672,11 @@ const initPNJcombat = function(sheet){
 				return log(error);	// Fin de la fonction
 			}
 		}
-		var c = dmg.split('+');
-			if(c[1]){
-				var dice = Dice.create(c[0]).add(c[1]);
-			}else{
-				c=dmg.split('-');
-				if(c[1]){var dice = Dice.create(c[0]).minus(c[1]);}else{var dice = Dice.create(c[0]);}
-			}
-		if(sheet.get('Dom_3A').value() == true){
-			var Cor = Number(sheet.get('COR_1').text());
-			var modCor = -4 + (2*(Math.ceil(Cor)/2)-1);
-			dice = dice.add(modCor);
-		}
-		if(sheet.get('Dom_3B').value() == true){
-			dice = dice.multiply(2);
-		}
-		var PA = sheet.get('Dom_7').value();if(PA == null || PA == ''){PA=0;}
-			dice = dice.minus(PA);
-		if(sheet.get('Dom_2').value()==0){
-			// Random loc;
-			var Rand = Math.floor(Math.random() * Math.floor(10))+1;
-			if(sheet.get('Dom_3B').value() == true){
-				if(Rand == '1'){var a = '1';var b = "Tête";}
-				if(Rand > '1' && Rand < '6'){var a = '2';var b = "Torse";}
-				if(Rand > '5' && Rand < '10'){var a = '3';var b = "Membre gauche";}
-				if(Rand == '10'){var a = '4';var b = "Queue ou Aile";}
-			}
-			else{
-				if(Rand == '1'){var a = '1';var b = "Tête";}
-				if(Rand > '1' && Rand < '5'){var a = '2';var b = "Torse";}
-				if(Rand == '5'){var a = '3';var b = "Bras droit";}
-				if(Rand == '6'){var a = '3';var b = "Bras gauche";}
-				if(Rand > '6'){var a = '4';var b = "Jambe";}
-			}
-			var loca_line = Tables.get("loc_list").get(a);
-			aff += " ("+loca_line.loc+")";
-			var loca = Number(loca_line.mult);
-		}else{
-			var loca_line = Tables.get("loc_list").get(sheet.get('Dom_2').value());
-			aff += " ("+loca_line.loc+")";
-			var loca = Number(loca_line.mult);
-		}
-		dice = dice.multiply(loca);
-		var RV = Number(sheet.get('Dom_6').value());
-			if(RV!=1){dice = dice.multiply(RV);}
-		var cc = Number(sheet.get('Dom_5').value());
-			if(cc>0){dice.add(cc);}
-		
-		Dice.roll(sheet, dice, aff);
+		DMGroll(sheet,dmg,aff,1);
 	});
 
 	sheet.get('dmg_complet_roll').on('click',function(){
-		// Dégâts: (dmg-PA)*loca*RV + cc
-		var dmg = sheet.get('dmg_complet_1').value();
-		var cc = sheet.get('dmg_complet_2').value();
-		var RV = sheet.get('dmg_complet_3').value();
-		var PA = [
-			{n:'dmg_complet_4A',l:3,t:'Tête',i:1},
-			{n:'dmg_complet_4B',l:1,t:'Torse',i:2},
-			{n:'dmg_complet_4C',l:0.5,t:'Membre G',i:3},
-			{n:'dmg_complet_4D',l:0.5,t:'Membre D',i:4},
-			{n:'dmg_complet_4E',l:0.5,t:'Jambe G',i:5},
-			{n:'dmg_complet_4F',l:0.5,t:'Jambe D',i:6}
-		];
-
-		sheet.get('dmg_complet_aff').value('');
-
-		var i = 0;
-		var rand = function(){
-			var e = PA[i];i += 1;
-			var affichage = _('Dommages totaux: ');
-			var aff = affichage+e.t;			
-			var pa = sheet.get(e.n).value();
-			var lejet = Dice.create(dmg).minus(pa).multiply(e.l);
-				if(RV!=1){lejet.multiply(RV);}
-				if(cc>0){lejet.add(cc);}
-
-			var RB = new RollBuilder(sheet);
-				RB.expression(lejet)
-				.title(aff)
-				.onRoll(function(result){
-					var a = result.total;if(a<0){a=0;}
-					DomTot(a,e.i);
-				})
-				.roll();
-		}
-		var Timer = 0;
-			PA.forEach(function(){
-				Timer += 1500;
-				wait(Timer,rand);
-			});
-
-		var som = 0;
-		function DomTot(e,f){
-			som += Number(e);
-			if(f==6){
-				var affichage = _('Dommages totaux: ');
-				sheet.get('dmg_complet_aff').value(affichage+som);
-			}
-		}
+		DMGcomplet(sheet,1);
 	});
 
 	sheet.get('loc_roll').on('click',function(){

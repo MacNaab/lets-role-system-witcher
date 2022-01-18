@@ -1,5 +1,29 @@
 Source,Translation
-Défense,
+Tempête,Storm
+Vent hurlant,Howling Wind
+Vent fort,Strong Wind
+Vent modéré,Modarate Wind
+Pas de vent,Light Wind
+Clairsemé,Sparse
+Nuagé,Medium Clouds
+Couvert,Overcast
+Chute légère,Light Fall
+Chute moyenne,Medium Fall
+Chute lourde (vent de tempête),Heavy Fall (Storm Wind)
+Chute torrentielle (vent de tempête),Torrential Fall (Storm Wind)
+Brouillard léger (vent léger),Light Fog (Light Wind)
+Brouillard moyen (vent léger),Medium Fog (Light Wind)
+Brouillard épais (vent léger),Light Fog (Light Wind)
+Vent du jour,The Day's Wind
+Météo du jour,The Day's Weather
+Jambe gauche,L. Leg
+Jambe droite,R. Leg
+Bras gauche,L. Arm
+Bras droit,R. Arm
+Spécial,Special
+Membre gauche,R. Limb
+Membre droit,L. Limb
+Défense,Defense
 Réussite de l'attaque!,Attack successful!
 Échec de l'attaque!,Attack failure!
 Terrestre,On land
@@ -155,7 +179,6 @@ Récupération,Recovery
 Poings,Punch
 Pieds,Kick
 Compétences,Skills
-<u>Intelligence:</u>,
 Con. de la rue,Streetwise
 Con. monstres,Monster Lore
 Déduction,Deduction
@@ -168,16 +191,12 @@ Langue naine,Dwarf lang
 Négoce,Business
 Survie,Wilderness Survival
 Vigilance,Awareness
-<u>Réflexes:</u>,<u>Reflex:</u>
 Équitation,Riding
 Navigation,Sailing
-<u>Dextérité:</u>,<u>Dexterity:</u>
 Adresse,Sleight of Hand
 Furtivité,Stealth
-<u>Corps:</u>,<u>body:</u>
 Physique,
 Résilience,Endurance
-<u>Empathie:</u>,<u>Empathy:</u>
 Beaux-arts,Fine Arts
 Charisme,Charisma
 Commandement,Leadership
@@ -196,7 +215,6 @@ Crochetage,Pick Lock
 Déguisement,Disguise
 Fab. pièges,Trap Crafting
 Premiers soins,First Aid
-<u>Volonté:</u>,<u>Will:</u>
 Courage,
 Intimidation,Intimidation
 Rés. contrainte,Resist Coercion
@@ -218,7 +236,6 @@ PA - Tête,SP - Head
 Ce rempli automatiquement à la sélection de la meta-armure,
 PA - Torse,SP - Torso
 PA - Jambes,SP - Leg
-<u>notes</u>,
 Ecrivez vos notes ici !,Write your notes here!
 "VE: ","EV: "
 Armes,Weapons
@@ -264,61 +281,13 @@ Mains nues,Bare hands
 1/1,
 Focus:,
 Valeur du focus,Focus value
-#arme_1,
-#arme_2,
-#arme_3,
-#arme_4,
-#arme_5,
-#arme_6,
-#arme_7,
-#arme_8,
-#arme_9,
-#arme_10,
-#arme_11,
 Tête,Head
 "Tête, Torse","Head, Torso"
 "Tête, Torse, Jambes","Head, Torso, Legs"
 Torse,Torso
 "Torse, Jambes","Torso, Legs"
 Jambes,Legs
-#armor_name,
-#armor_2,
-#armor_3,
-#armor_4,
-#armor_effect,
-#armor_6,
-#armor_7,
-#inv_name,
-#inv_2,
-#inv_3,
-#inv_4,
-#inv_5,
-#schema_1,
-#schema_2,
-#schema_3,
-#schema_4,
-#sort_1,
-#sort_2,
-#sort_3,
-#sort_4,
-#sort_5,
-#rituel_1,
-#rituel_2,
-#rituel_3,
-#rituel_4,
-#rituel_5,
-#rituel_6,
-#rituel_7,
-#envout_1,
-#envout_2,
-#envout_3,
-#envout_4,
 Aucune,Any
-#ComptExcl_1,
-#ComptExcl_2,
-#ComptExcl_3,
-#ComptExcl_4,
-#ComptExcl_6,
 Mâchoire fêlée,Cracked Jaw
 Cicatrice défigurante,Disfiguring Scar
 Côtes fêlées,Cracked Ribs
@@ -346,18 +315,11 @@ Jambe arrachée,Dismembered Leg
 Critique,Critical
 Stabilisé,Stabilized
 Traité,Treated
-#Blessure_1,
-#Blessure_2,
-#Blessure_3,
 Connaissance de la rue,Streetwise
 Connaissance des monstres,Monster Lore
 Langue commune,Common language
 Fabrication de pièges,Trap Crafting
 Résistance à la contrainte,Resist Coercion
-#Nmod_1,
-#Nmod_2,
-#Nmod_3,
-#Nmod_4,
 initiative,
 Cliquez pour lancer l'initiative !,Click to roll initiative!
 Attaque,Attack
@@ -411,7 +373,6 @@ Vulnérabilité,Vulnerability
 Résistance,Resistance
 Pouvoir d'Arrêt,Shield Power
 Dommages - complet,Damage - all location
-<u>Pourvoir d'arrêt</u>,<u>Shield Power</u>
 Membre G,
 Membre D,
 Jambe G,L Leg
@@ -421,22 +382,11 @@ Visibilité du jet:,Roll visibility:
 Visible,
 MJ,GM
 Uniquement le MJ,GM only
-<h5><u>Explication du fonctionnement de la fiche:</u></h5>,<h5><u>Explanation of how the sheet works:</u></h5>
-"<h6><u>Jet Rapide&nbsp;:</u></h6>
-<ul> <li>Initiative&nbsp;: jet d&rsquo;initiative</li> <li>Sauvegarde&nbsp;: jet d&rsquo;&Eacute;tourdissement</li> <li>Combat&nbsp;: liste des comp&eacute;tences de combat</li> <li>Magie&nbsp;: liste des comp&eacute;tences magiques</li> <li>Indice&nbsp;: jet de d&eacute;g&acirc;ts des indices</li> </ul> ","<h6><u>Quick roll:</u></h6>
-<ul> <li> Initiative: initiative roll </li> <li> Saving: stun roll </li> <li> Combat: list of combat skills </li> <li> Magic: list of magic skills </li> <li> Hint: hint damage roll </li> </ul> "
-<u>Vulnérabilités</u>,<u>Vulnerabilities</u>
-<u>Capacités</u>,<u>Abilities</u>
 Menace:,Threat:
 Fort simple,Hard Difficult
 Récompense:,Bounty:
 1200 couronnes,1200 crowns
 Armure:,Armor:
-"Tête:
-Torse:
-Jambes:","Head:
-Torso:
-Leg:"
 Information,
 Compétences & Caractéristiques,Statistics & Skills
 Prétiré:,
@@ -446,10 +396,6 @@ Poids:,Weight:
 Poids humain,Around 13kg
 Intelligence:,
 Humaine,
-<u>Environnement:</u>,<u>Environment:</u>
-<u>Organisation:</u>,<u>Organization:</u>
-<u>Butin:</u>,<u>Loot:</u>
-<u>Armes:</u>,<u>Weapons:</u>
 Att/tour,ROF
 "POR: 4m, Poison (75%)",
 1,
@@ -457,10 +403,6 @@ Compétence:,Skill:
 La plupart des monstres utilisent la compétence Mêlée,Most monsters use the Melee skill
 PRÉ:,WA:
 Valeur de la Précision,Weapon accuracy value
-#pnj_arme_1,
-#pnj_arme_2,
-#pnj_arme_3,
-#pnj_arme_4,
 Calculateur de trajet,Trip calculator
 Echelle:,Scale:
 En kilomètre*,In kilometers*
@@ -468,32 +410,16 @@ km,
 Distance:,
 Résultat:,
 Notes...,
-"<h6><u>Onglets&nbsp;:</u></h6>
-<p><u>I.<span style=""white-space:pre;"">&nbsp; &nbsp;&nbsp;</span>Profil</u></p> <ul> <li>Histoire : noter votre histoire</li> <li>Description : noter votre description&nbsp;</li> </ul> <p><u>II.<span style=""white-space:pre;"">&nbsp; &nbsp;&nbsp;</span>Carac &amp; Compt</u></p> <p>Pour g&eacute;n&eacute;rer un jet, cliquez sur le nom de la caract&eacute;ristique ou de la comp&eacute;tence. Une fen&ecirc;tre s&rsquo;ouvrira vous demandant :</p> <ul> <li>Modificateur: valeur du modificateur propre &agrave; la situation</li> <li>Visibilit&eacute; : Visible (tout le monde verra le jet), MJ (seul le MJ et vous verront le jet) et Uniquement le MJ (seul le MJ verra le jet)&nbsp;</li> </ul> <p>La valeur affich&eacute;e sera sous la forme:</p> <p style=""text-align: center;"">1d10 + Base (Caract&eacute;ristique + Comp&eacute;tence) + Modificateur</p> <ul> <li>&nbsp;Tableaux:<ul> <li>Base repr&eacute;sente votre niveau dans la caract&eacute;ristique ou comp&eacute;tence.</li> <li>Mod repr&eacute;sente les modificateurs actifs (calcul automatique)</li> <li>Final est la somme de Base et Mod</li> </ul> </li> <li>Comp&eacute;tences exclusives correspond aux comp&eacute;tences de profession a rentrer manuelle en cliquant sur le bouton &laquo; Add&hellip; &raquo;</li> <li>Modificateurs actifs liste les modificateurs permanents ou temporaires:<ul> <li>&Eacute;tat : liste les modificateurs actifs</li> <li>Blessure critique permet de rajouter une blessure</li> <li>Nouveau modificateur permet de rajouter un modificateur qui ne serait pas pris en compte.</li> </ul> </li> </ul>","<h6><u>Tabs:</u></h6>
-<p> <u> I. <span style = "" white-space: pre; ""> & nbsp; & nbsp; & nbsp; </span> Profile </u> </p> <ul> <li> Story: write your story </li> <li> Description: write your description </li> </ul> < p> <u> II. <span style = "" white-space: pre; ""> & nbsp; & nbsp; & nbsp; </span> Carac & amp; Account </u> </p> <p> To generate a roll, click on the name of the characteristic or skill. A window will open asking you: </p> <ul> <li> Modifier: value of own modifier & agrave; the situation </li> <li> Visibility; : Visible (everyone will see the roll), GM (only the GM and you will see the roll) and Only the GM (only the GM will see the roll) & nbsp; </li> </ul> <p> The displayed value ; e will be in the form: </p> <p style = "" text-align: center; ""> 1d10 + Base (Characteristic + Skill) + Modifier </p> <ul> <li> & nbsp; Tables: <ul> <li> Base represents your level in the characteristic or skill. </li> <li> Mod represents active modifiers (automatic calculation) </li> <li > Final is the sum of Base and Mod </li> </ul> </li> <li> Exclusive skills corresponds to the skills of the profession to be entered manually by clicking on the button & laquo; Add & hellip; & raquo; </li> <li> Active modifiers lists permanent or temporary modifiers: <ul> <li> & Eacute; state: lists active modifiers </li> <li> Critical injury allows you to add a wound </li> <li> New modifier allows you to add a modifier that would not be taken into account. </li> </ul> </li> </ul> "
-"<p><u>III.<span style=""white-space:pre;"">&nbsp; &nbsp;&nbsp;</span>Inventaire</u></p> <ul> <li>La valeur PA max est calcul&eacute; automatiquement contrairement &agrave; la valeur actuelle qui est &agrave; rentrer manuellement&nbsp;</li> </ul> <p><u>IV.<span style=""white-space:pre;"">&nbsp; &nbsp;&nbsp;</span>Magie</u></p> <ul> <li>Le focus et la vigueur sont calcul&eacute;s automatiquement&nbsp;</li> </ul> <p><u>V.<span style=""white-space:pre;"">&nbsp; &nbsp;&nbsp;</span>Combat</u></p> <ul> <li>Initiative: jet d&rsquo;initiative</li> <li>Attaque<ul> <li>Corps &agrave; corps : permet de faire un jet d&rsquo;attaque avec une arme de corps &agrave; corps disponible dans l&rsquo;inventaire</li> <li>Distance : permet de faire un jet d&rsquo;attaque avec une arme &agrave; distance pr&eacute;sente dans l&rsquo;inventaire</li> </ul> </li> <li>Calcul:<ul> <li>Calcul si l&rsquo;attaque touche ou non</li> </ul> </li> <li>Dommages<ul> <li>Calcul des d&eacute;g&acirc;ts pour une seule localisation</li> </ul> </li> <li>Dommages &ndash; complet<ul> <li>Calcul les d&eacute;g&acirc;ts pour toute les localisations&nbsp;</li> </ul> </li> </ul> <p><u>VI.<span style=""white-space:pre;"">&nbsp; &nbsp;&nbsp;</span>Notes</u></p> <p><br></p>","<p> <u> III. <span style = white-space: pre; > & nbsp; & nbsp; & nbsp; </span> Inventory </u> </p> <ul> <li> The max PA value is calculated automatically unlike the current value which has to be entered manually </li> </ul> <p> <u> IV. <span style = "" white-space: pre; "" > & nbsp; & nbsp; & nbsp; </span> Magic </u> </p> <ul> <li> Focus and stamina are calculated automatically & nbsp; </li> </ul> <p> <u > V. <span style = "" white-space: pre; ""> & nbsp; & nbsp; & nbsp; </span> Combat </u> </p> <ul> <li> Initiative: initiative roll < / li> <li> Attack <ul> <li> Body: allows you to make an attack roll with a body weapon available in the inventory </li> <li> Distance: allows you to make an attack roll with a ranged weapon present in inventory </li> </ul> </li> <li> Calculation: <ul> <li> Calculation whether the attack hits or not </li> </ul> </li> <li> Damage <ul> <li> Calculation of damage for a single location ation </li> </ul> </li> <li> Damage & ndash; complete <ul> <li> Calculate damage for all locations </li> </ul> </li> </ul> <p> <u> VI. <span style = "" white -space: pre; ""> & nbsp; & nbsp; & nbsp; </span> Notes </u> </p> <p> <br> </p> "
 1 Unitée = kilomètre,1 Unit = kilometer
-"<a target=""_blank"" href=""https://macnaab.github.io/Random-Tables/WM/"">Version détaillé ici</a>","<a target=""_blank"" href=""https://macnaab.github.io/Random-Tables/WM/""> Detailed version here </a>"
 Caractéristiques & Compétences,Statistics & Skills
 Règles optionnelles,Optional Rules
 Fiabilité max,Reliability's max
 PA max,SP's max
-"<a href=""https://github.com/MacNaab/lets-role-system-witcher/wiki"" target=""_blank"">Wiki</a>",
-"**Ressources:**
-[Wiki](https://github.com/MacNaab/lets-role-system-witcher/wiki)
-:flag: English
-- [Reddit](https://www.reddit.com/r/WitcherTRPG/)
-:flag: Français
-- [Site de la communauté francophone](https://www.the-witcher-jdr.fr/)
-- [Tables aléatoires, générateurs d'environnement urbain, gestionnaire de trajets et autres](https://macnaab.github.io/Random-Tables/)",
 Adrénaline,Adrenaline
 Génération :dice:,"Generate :dice:	"
-<u>Dés adrénaline:</u>,"<u>Adrenaline dice:</u>	"
 Dégâts supplémentaires :hammer:,additional damage :hammer:
 PS temporaires :heartbeat:,Temporary HP :heartbeat:
 Combat verbal,Verbal Combat
-<u>Détermination:</u>,"<u>Resolve:</u>	"
-<u>Attaques:</u>,"<u>Attacks:</u>	"
 Attaque Empathique,Empathetic Attacks
 Séduire,Seduce
 Persuader,Persuade
@@ -503,15 +429,142 @@ Attaque Antagonique,Antagonistic Attacks
 Tromper,Deceive
 Ridiculiser,Ridicule
 Intimider,Intimidate
-<u>Défense:</u>,"<u>Defense:</u>	"
 Ignorer,Ignore
 Contre-argumenter,Counterargue
 Changer de sujet,Change the subject
 Désengagement,Disengage
-<u>Outils:</u>,<u>Tools:</u>
 Outil Empathique,Empathetic Tools
 Charmer,Romance
 Observer,Study
 Outil Antagonique,Antagonistic Tools
 Insinuer,Imply
 Soudoyer,Bribe
+Système d'investigation,
+Complexité:,
+Indices,
+Obstacles,
+Météorologie aléatoire*,Terrain and Weather Charts
+From Terrain and Weather Charts Homebrew,
+Matin (4h-9h),Morning (4am-9am)
+Midi (10h-15h),Noon (10am-3pm)
+Après-midi (16h-21h),Afternoon (4pm-9pm)
+Nuit (22h-3h),Night (10pm-3am)
+Vent léger,Wind
+Vent de tempête,Storm Winds
+"**Ressources:**
+[Wiki](https://github.com/MacNaab/lets-role-system-witcher/wiki)
+:flag: English
+- [Reddit](https://www.reddit.com/r/WitcherTRPG/)
+- [Terrain and Weather Charts Homebrew](https://www.reddit.com/r/WitcherTRPG/comments/mojsn0/terrain_and_weather_charts_homebrew/) from [Durins Cat](https://www.reddit.com/user/Durins_Cat)
+:flag: Français
+- [Site de la communauté francophone](https://www.the-witcher-jdr.fr/)
+- [Tables aléatoires, générateurs d'environnement urbain, gestionnaire de trajets et autres](https://macnaab.github.io/Random-Tables/)",
+Automatisation,
+"La génération des dés se fera automatiquement à chaque critique. ",
+Ein Ichaer,
+Courtisane,
+Chasseur de sorcière,
+Agent secret,
+Chevalier,
+Berserker,
+Chasseur,
+Herboriste,
+Devin,
+Psionique,
+Démonologiste,
+Nécromancien,
+Source,
+Archer,
+Mercenaire,
+Érudit,
+Sorcière,
+jet rapide,quick roll
+Événements,Events:
+Dextérité:,DEX:
+Corps:,BOXY:
+Empathie:,EMP:
+Technique:,CRAFT:
+Volonté:,VOL:
+notes,
+Bouclier,Shield
+Couleur de fond:,Background color:
+Bleu,Blue
+Gris,Grey
+Vert,Green
+Rouge,Red
+Jaune,Yellow
+Cyan,
+Sombre,Dark
+Blanc,White
+Transparent,
+#bg,
+Pourvoir d'arrêt,Shield Power
+# Explication du fonctionnement de la fiche:,# Explanation of how the sheet works:
+[Wiki](https://github.com/MacNaab/lets-role-system-witcher/wiki),
+"#### Jet Rapide:
+*   Initiative : jet d’initiative
+*   Sauvegarde : jet d’Étourdissement
+*   Combat : liste des compétences de combat
+*   Magie : liste des compétences magiques
+*   Indice : jet de dégâts des indices",#### Quick Roll:<br /> * Initiative: Initiative roll<br /> * Save: Stun roll<br /> * Combat: List of combat skills<br /> * Magic: List of magic skills<br /> * Clue: Hint damage roll
+"#### Onglets:
+1.Profil
+  *   Histoire : noter votre histoire
+  *   Description : noter votre description 
+2.Carac & Compt
+Pour générer un jet, cliquez sur le nom de la caractéristique ou de la compétence. Une fenêtre s’ouvrira vous demandant :
+  *   Modificateur: valeur du modificateur propre à la situation
+  *   Visibilité : Visible (tout le monde verra le jet), MJ (seul le MJ et vous verront le jet) et Uniquement le MJ (seul le MJ verra le jet) 
+
+La valeur affichée sera sous la forme:
+> 1d10 + Base (Caractéristique + Compétence) + Modificateur
+*   Tableaux:
+    *   Base représente votre niveau dans la caractéristique ou compétence.
+    *   Mod représente les modificateurs actifs (calcul automatique)
+    *   Final est la somme de Base et Mod
+*   Compétences exclusives correspond aux compétences de profession a rentrer manuelle en cliquant sur le bouton « Add… »
+*   Modificateurs actifs liste les modificateurs permanents ou temporaires:
+    *   État : liste les modificateurs actifs
+    *   Blessure critique permet de rajouter une blessure
+    *   Nouveau modificateur permet de rajouter un modificateur qui ne serait pas pris en compte.",#### Quick Roll:<br /> * Initiative: Initiative roll<br /> * Save: Stun roll<br /> * Combat: List of combat skills<br /> * Magic: List of magic skills<br /> * Clue: Hint damage roll
+"3. Inventaire
+  *   La valeur PA max est calculé automatiquement contrairement à la valeur actuelle qui est à rentrer manuellement 
+4. Magie
+  *   Le focus et la vigueur sont calculés automatiquement 
+5. Combat
+  *   Initiative: jet d’initiative
+  *   Attaque
+    *   Corps à corps : permet de faire un jet d’attaque avec une arme de corps à corps disponible dans l’inventaire
+    *   Distance : permet de faire un jet d’attaque avec une arme à distance présente dans l’inventaire
+  *   Calcul:
+    *   Calcul si l’attaque touche ou non
+  *   Dommages
+    *   Calcul des dégâts pour une seule localisation
+  *   Dommages – complet
+    *   Calcul les dégâts pour toute les localisations 
+6.Notes",3. Inventory<br /> * The max PA value is calculated automatically unlike the current value which has to be entered manually <br /> 4. Magic<br /> * Focus and stamina are calculated automatically <br /> 5 Combat<br /> * Initiative: initiative roll<br /> * Attack<br /> * Melee: allows you to make an attack roll with a melee weapon available in the inventory<br /> * Distance: allows you to make an attack roll with a ranged weapon present in the inventory<br /> * Calculation:<br /> * Calculation if the attack hits or not<br /> * Damage< br /> * Calculate damage for a single location<br /> * Damage – complete<br /> * Calculate damage for all locations <br /> 6.Notes
+Vulnérabilités,Vulnerabilities
+Capacités,Abilities
+Environnement:,Environment:
+Organisation:,Organization:
+Butin:,Loots:
+Armes:,Weapon:
+[Version détaillé ici](https://macnaab.github.io/Random-Tables/WM/),
+Monnaie,Currency
+Taux d'échange:,Exchange rate:
+Couronne,Crown
+Orin,
+Florin,
+Ducat,
+Bizant,
+Lintar,
+Revente:,Resale:
+Différence Jet - SD:,Roll - DC
+% du prix du marché,% of market price
+Dés adrénaline:,Adrenaline Dice:
+COR,BODY
+Détermination:,Determination
+Réflexes:,REF:
+Attaques:,Attack:
+Défense:,Defense:
+Outils:,Tools:

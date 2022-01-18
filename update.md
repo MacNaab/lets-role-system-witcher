@@ -3,7 +3,16 @@
 - [:fr:](#fr)
 ---
 # En
-## 6 - Fri, 30 Apr 2021	[Current]
+## 8 - Tue, 18 Jan 2022 [Current]
+- Fixes:
+  - Awereness bonus correctly attributed (instead of VIGOR)
+  - Updated Feet/Weight as BODY values ​​change
+  - EV correctly displayed
+  - Monster, NPC and GM sheets correctly added
+  - Correctly initialized combat scripts
+## 7 - Sat, 15 Jan 2022
+Switch to Beta !
+## 6 - Fri, 30 Apr 2021
 - Fixes:
   - getBarAttributes
   - English translation
@@ -42,6 +51,15 @@
 
 ---
 # Fr
+## 8 - Tue, 18 Jan 2022 [Current]
+- Corrections:
+  - Bonus de Vigilance correctement attribué (à la place de vigueur)
+  - Pieds / Poids mis à jour au changement de valeurs de COR
+  - VE correctement affiché
+  - Fiches de monstre, PnJ et MJ correctement ajoutées
+  - Scripts de combats correctement initialisés
+## 7 - Sat, 15 Jan 2022
+Switch to Beta !
 ## 6 - 30/04/2021 [Actuel]
 - Corrections:
   - getBarAttributes
