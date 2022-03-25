@@ -3,7 +3,7 @@
     "type": "Main",
     "craft": null,
     "avatarId": "avatar",
-    "tokenizable": null,
+    "tokenizable": true,
     "droppable": null,
     "width": 1150,
     "height": 1024,
@@ -332,7 +332,7 @@
                             "text": ":dragon: Initiative",
                             "align": "Center",
                             "clickable": true,
-                            "quickBar": null,
+                            "quickBar": true,
                             "isTemplate": false,
                             "computed": null,
                             "roll": null,
@@ -349,7 +349,7 @@
                             "text": ":skull: sauvegarde",
                             "align": "Center",
                             "clickable": true,
-                            "quickBar": null,
+                            "quickBar": true,
                             "isTemplate": false,
                             "computed": null,
                             "roll": null,
@@ -2562,6 +2562,9 @@
   },
   {
     "type": "SubComponent",
+    "craft": null,
+    "tokenizable": null,
+    "droppable": null,
     "width": 1000,
     "height": 900,
     "id": "viewcarac",
@@ -2766,17 +2769,15 @@
                                     ]
                                   },
                                   {
+                                    "min": null,
+                                    "max": null,
                                     "align": "Center",
-                                    "clickable": null,
-                                    "quickBar": null,
                                     "computed": null,
-                                    "roll": null,
-                                    "tooltip": true,
-                                    "tooltipLabel": "calculé automatiquement",
+                                    "computedValue": null,
                                     "id": "INT_2",
-                                    "name": "Label",
+                                    "name": "baseint",
                                     "classes": "w-25px font-weight-normal text-tiny mr-3",
-                                    "className": "Label",
+                                    "className": "NumberInput",
                                     "collapsed": false,
                                     "references": [
                                       "INT_3",
@@ -2803,7 +2804,7 @@
                                   }
                                 ],
                                 "className": "Container",
-                                "collapsed": false,
+                                "collapsed": true,
                                 "references": [],
                                 "layout": "horizontal"
                               },
@@ -2842,17 +2843,15 @@
                                     ]
                                   },
                                   {
+                                    "min": null,
+                                    "max": null,
                                     "align": "Center",
-                                    "clickable": null,
-                                    "quickBar": null,
                                     "computed": null,
-                                    "roll": null,
-                                    "tooltip": true,
-                                    "tooltipLabel": "calculé automatiquement",
+                                    "computedValue": null,
                                     "id": "REF_2",
-                                    "name": "Label",
+                                    "name": "baseint",
                                     "classes": "w-25px font-weight-normal text-tiny mr-3",
-                                    "className": "Label",
+                                    "className": "NumberInput",
                                     "collapsed": false,
                                     "references": [
                                       "REF_3"
@@ -2874,7 +2873,7 @@
                                   }
                                 ],
                                 "className": "Container",
-                                "collapsed": false,
+                                "collapsed": true,
                                 "references": [],
                                 "layout": "horizontal"
                               },
@@ -2913,17 +2912,15 @@
                                     ]
                                   },
                                   {
+                                    "min": null,
+                                    "max": null,
                                     "align": "Center",
-                                    "clickable": null,
-                                    "quickBar": null,
                                     "computed": null,
-                                    "roll": null,
-                                    "tooltip": true,
-                                    "tooltipLabel": "calculé automatiquement",
+                                    "computedValue": null,
                                     "id": "DEX_2",
-                                    "name": "Label",
+                                    "name": "baseint",
                                     "classes": "w-25px font-weight-normal text-tiny mr-3",
-                                    "className": "Label",
+                                    "className": "NumberInput",
                                     "collapsed": false,
                                     "references": [
                                       "DEX_3"
@@ -2945,7 +2942,7 @@
                                   }
                                 ],
                                 "className": "Container",
-                                "collapsed": false,
+                                "collapsed": true,
                                 "references": [],
                                 "layout": "horizontal"
                               },
@@ -2994,17 +2991,15 @@
                                     ]
                                   },
                                   {
+                                    "min": null,
+                                    "max": null,
                                     "align": "Center",
-                                    "clickable": null,
-                                    "quickBar": null,
                                     "computed": null,
-                                    "roll": null,
-                                    "tooltip": true,
-                                    "tooltipLabel": "calculé automatiquement",
+                                    "computedValue": null,
                                     "id": "COR_2",
-                                    "name": "Label",
+                                    "name": "baseint",
                                     "classes": "w-25px font-weight-normal text-tiny mr-3",
-                                    "className": "Label",
+                                    "className": "NumberInput",
                                     "collapsed": false,
                                     "references": [
                                       "COR_3",
@@ -3047,7 +3042,7 @@
                                   }
                                 ],
                                 "className": "Container",
-                                "collapsed": false,
+                                "collapsed": true,
                                 "references": [],
                                 "layout": "horizontal"
                               },
@@ -3090,17 +3085,15 @@
                                     ]
                                   },
                                   {
+                                    "min": null,
+                                    "max": null,
                                     "align": "Center",
-                                    "clickable": null,
-                                    "quickBar": null,
                                     "computed": null,
-                                    "roll": null,
-                                    "tooltip": true,
-                                    "tooltipLabel": "calculé automatiquement",
+                                    "computedValue": null,
                                     "id": "VIT_2",
-                                    "name": "Label",
+                                    "name": "baseint",
                                     "classes": "w-25px font-weight-normal text-tiny mr-3",
-                                    "className": "Label",
+                                    "className": "NumberInput",
                                     "collapsed": false,
                                     "references": [
                                       "VIT_3",
@@ -3248,17 +3241,15 @@
                                     ]
                                   },
                                   {
+                                    "min": null,
+                                    "max": null,
                                     "align": "Center",
-                                    "clickable": null,
-                                    "quickBar": null,
                                     "computed": null,
-                                    "roll": null,
-                                    "tooltip": true,
-                                    "tooltipLabel": "calculé automatiquement",
+                                    "computedValue": null,
                                     "id": "EMP_2",
-                                    "name": "Label",
+                                    "name": "baseint",
                                     "classes": "w-25px font-weight-normal text-tiny mr-3",
-                                    "className": "Label",
+                                    "className": "NumberInput",
                                     "collapsed": false,
                                     "references": [
                                       "EMP_3"
@@ -3319,17 +3310,15 @@
                                     ]
                                   },
                                   {
+                                    "min": null,
+                                    "max": null,
                                     "align": "Center",
-                                    "clickable": null,
-                                    "quickBar": null,
                                     "computed": null,
-                                    "roll": null,
-                                    "tooltip": true,
-                                    "tooltipLabel": "calculé automatiquement",
+                                    "computedValue": null,
                                     "id": "TEC_2",
-                                    "name": "Label",
+                                    "name": "baseint",
                                     "classes": "w-25px font-weight-normal text-tiny mr-3",
-                                    "className": "Label",
+                                    "className": "NumberInput",
                                     "collapsed": false,
                                     "references": [
                                       "TEC_3"
@@ -3351,7 +3340,7 @@
                                   }
                                 ],
                                 "className": "Container",
-                                "collapsed": true,
+                                "collapsed": false,
                                 "references": [],
                                 "layout": "horizontal"
                               },
@@ -3400,17 +3389,15 @@
                                     ]
                                   },
                                   {
+                                    "min": null,
+                                    "max": null,
                                     "align": "Center",
-                                    "clickable": null,
-                                    "quickBar": null,
                                     "computed": null,
-                                    "roll": null,
-                                    "tooltip": true,
-                                    "tooltipLabel": "calculé automatiquement",
+                                    "computedValue": null,
                                     "id": "VOL_2",
-                                    "name": "Label",
+                                    "name": "baseint",
                                     "classes": "w-25px font-weight-normal text-tiny mr-3",
-                                    "className": "Label",
+                                    "className": "NumberInput",
                                     "collapsed": false,
                                     "references": [
                                       "VOL_3",
@@ -3453,7 +3440,7 @@
                                   }
                                 ],
                                 "className": "Container",
-                                "collapsed": true,
+                                "collapsed": false,
                                 "references": [],
                                 "layout": "horizontal"
                               },
@@ -3492,17 +3479,15 @@
                                     ]
                                   },
                                   {
+                                    "min": null,
+                                    "max": null,
                                     "align": "Center",
-                                    "clickable": null,
-                                    "quickBar": null,
                                     "computed": null,
-                                    "roll": null,
-                                    "tooltip": true,
-                                    "tooltipLabel": "calculé automatiquement",
+                                    "computedValue": null,
                                     "id": "CHA_2",
-                                    "name": "Label",
+                                    "name": "baseint",
                                     "classes": "w-25px font-weight-normal text-tiny mr-3",
-                                    "className": "Label",
+                                    "className": "NumberInput",
                                     "collapsed": false,
                                     "references": [
                                       "CHA_3"
@@ -3524,7 +3509,7 @@
                                   }
                                 ],
                                 "className": "Container",
-                                "collapsed": true,
+                                "collapsed": false,
                                 "references": [],
                                 "layout": "horizontal"
                               },
@@ -3597,7 +3582,7 @@
                                   }
                                 ],
                                 "className": "Container",
-                                "collapsed": false,
+                                "collapsed": true,
                                 "references": [],
                                 "layout": "horizontal"
                               }
@@ -4710,6 +4695,9 @@
                                     "quickBar": true,
                                     "computed": null,
                                     "roll": null,
+                                    "tooltip": true,
+                                    "tooltipLabel": " cette compétence ne concerne pas la géographie urbaine à proprement parler, mais plutôt le fonctionnement de cet environnement",
+                                    "tooltipPlacement": "bottom",
                                     "id": "RUE_0",
                                     "name": "nameint",
                                     "classes": "w-100px font-weight-normal mr-1 clickable pl-1",
@@ -4779,6 +4767,9 @@
                                     "quickBar": true,
                                     "computed": null,
                                     "roll": null,
+                                    "tooltip": true,
+                                    "tooltipLabel": "somme d’informations que vous possédez à propos des monstres",
+                                    "tooltipPlacement": "bottom",
                                     "id": "MON_0",
                                     "name": "nameint",
                                     "classes": "w-100px font-weight-normal mr-1 clickable pl-1",
@@ -4848,6 +4839,9 @@
                                     "quickBar": true,
                                     "computed": null,
                                     "roll": null,
+                                    "tooltip": true,
+                                    "tooltipLabel": "la capacité à formuler des conclusions grâce aux indices dont vous disposez",
+                                    "tooltipPlacement": "bottom",
                                     "id": "DED_0",
                                     "name": "nameint",
                                     "classes": "w-100px font-weight-normal mr-1 clickable pl-1",
@@ -4917,6 +4911,9 @@
                                     "quickBar": true,
                                     "computed": null,
                                     "roll": null,
+                                    "tooltip": true,
+                                    "tooltipLabel": "reflète votre niveau d’instruction",
+                                    "tooltipPlacement": "bottom",
                                     "id": "EDU_0",
                                     "name": "nameint",
                                     "classes": "w-100px font-weight-normal mr-1 clickable pl-1",
@@ -4986,6 +4983,9 @@
                                     "quickBar": true,
                                     "computed": null,
                                     "roll": null,
+                                    "tooltip": true,
+                                    "tooltipLabel": "capacité à dispenser son savoir",
+                                    "tooltipPlacement": "bottom",
                                     "id": "ENS_0",
                                     "name": "nameint",
                                     "classes": "w-100px font-weight-normal mr-1 clickable pl-1",
@@ -5055,6 +5055,9 @@
                                     "quickBar": true,
                                     "computed": null,
                                     "roll": null,
+                                    "tooltip": true,
+                                    "tooltipLabel": "la capacité à se fondre dans un environnement social et à ne pas se ridiculiser dans la bonne société",
+                                    "tooltipPlacement": "bottom",
                                     "id": "ETQ_0",
                                     "name": "nameint",
                                     "classes": "w-100px font-weight-normal mr-1 clickable pl-1",
@@ -5124,6 +5127,9 @@
                                     "quickBar": true,
                                     "computed": null,
                                     "roll": null,
+                                    "tooltip": true,
+                                    "tooltipLabel": "votre niveau de maîtrise de la langue (parlée par les Nilfgaardiens, les Skelligiens et tous les non-humains excepté les nain",
+                                    "tooltipPlacement": "bottom",
                                     "id": "LAN_0",
                                     "name": "nameint",
                                     "classes": "w-100px font-weight-normal mr-1 clickable pl-1",
@@ -5193,6 +5199,9 @@
                                     "quickBar": true,
                                     "computed": null,
                                     "roll": null,
+                                    "tooltip": true,
+                                    "tooltipLabel": "votre niveau de maîtrise de la langue (parlée dans les Royaumes du Nord",
+                                    "tooltipPlacement": "bottom",
                                     "id": "LCO_0",
                                     "name": "nameint",
                                     "classes": "w-100px font-weight-normal mr-1 clickable pl-1",
@@ -5262,6 +5271,9 @@
                                     "quickBar": true,
                                     "computed": null,
                                     "roll": null,
+                                    "tooltip": true,
+                                    "tooltipLabel": "votre niveau de maîtrise de la langue parlée par les nains",
+                                    "tooltipPlacement": "bottom",
                                     "id": "LNA_0",
                                     "name": "nameint",
                                     "classes": "w-100px font-weight-normal mr-1 clickable pl-1",
@@ -5331,6 +5343,9 @@
                                     "quickBar": true,
                                     "computed": null,
                                     "roll": null,
+                                    "tooltip": true,
+                                    "tooltipLabel": "l’art d’administrer un commerce",
+                                    "tooltipPlacement": "bottom",
                                     "id": "NEG_0",
                                     "name": "nameint",
                                     "classes": "w-100px font-weight-normal mr-1 clickable pl-1",
@@ -5400,6 +5415,9 @@
                                     "quickBar": true,
                                     "computed": null,
                                     "roll": null,
+                                    "tooltip": true,
+                                    "tooltipLabel": "comment survivre dans la nature et traquer des proies.",
+                                    "tooltipPlacement": "bottom",
                                     "id": "SUR_0",
                                     "name": "nameint",
                                     "classes": "w-100px font-weight-normal mr-1 clickable pl-1",
@@ -5469,6 +5487,9 @@
                                     "quickBar": true,
                                     "computed": null,
                                     "roll": null,
+                                    "tooltip": true,
+                                    "tooltipLabel": "permet d’anticiper les mouvements de l’ennemi pour mieux planifier ses actions",
+                                    "tooltipPlacement": "bottom",
                                     "id": "TAC_0",
                                     "name": "nameint",
                                     "classes": "w-100px font-weight-normal mr-1 clickable pl-1",
@@ -5538,6 +5559,9 @@
                                     "quickBar": true,
                                     "computed": null,
                                     "roll": null,
+                                    "tooltip": true,
+                                    "tooltipLabel": " permet de déceler des anomalies ou des détails dans votre environnement",
+                                    "tooltipPlacement": "bottom",
                                     "id": "VIGi_0",
                                     "name": "nameint",
                                     "classes": "w-100px font-weight-normal mr-1 clickable pl-1",
@@ -5710,6 +5734,9 @@
                                     "quickBar": true,
                                     "computed": null,
                                     "roll": null,
+                                    "tooltip": true,
+                                    "tooltipLabel": "l’art de se battre à mains nues et d’asséner des coups de pied ou d’autre chose",
+                                    "tooltipPlacement": "bottom",
                                     "id": "BAG_0",
                                     "name": "nameint",
                                     "classes": "w-100px font-weight-normal mr-1 clickable pl-1",
@@ -5779,6 +5806,9 @@
                                     "quickBar": true,
                                     "computed": null,
                                     "roll": null,
+                                    "tooltip": true,
+                                    "tooltipLabel": "l’usage d’armes longues telles que les bâtons, les haches d’armes et les lances",
+                                    "tooltipPlacement": "bottom",
                                     "id": "BAT_0",
                                     "name": "nameint",
                                     "classes": "w-100px font-weight-normal mr-1 clickable pl-1",
@@ -5848,6 +5878,9 @@
                                     "quickBar": true,
                                     "computed": null,
                                     "roll": null,
+                                    "tooltip": true,
+                                    "tooltipLabel": "permet de monter à cheval et, dans certains cas, de chevaucher d’autres animaux ou des monstres",
+                                    "tooltipPlacement": "bottom",
                                     "id": "EQUI_0",
                                     "name": "nameint",
                                     "classes": "w-100px font-weight-normal mr-1 clickable pl-1",
@@ -5917,6 +5950,9 @@
                                     "quickBar": true,
                                     "computed": null,
                                     "roll": null,
+                                    "tooltip": true,
+                                    "tooltipLabel": "l’art de manier l’épée",
+                                    "tooltipPlacement": "bottom",
                                     "id": "ESC_0",
                                     "name": "nameint",
                                     "classes": "w-100px font-weight-normal mr-1 clickable pl-1",
@@ -5986,6 +6022,9 @@
                                     "quickBar": true,
                                     "computed": null,
                                     "roll": null,
+                                    "tooltip": true,
+                                    "tooltipLabel": "permet d’esquiver les attaques et les projectiles, et de vous soustraire aux prises des adversaires",
+                                    "tooltipPlacement": "bottom",
                                     "id": "ESQ_0",
                                     "name": "nameint",
                                     "classes": "w-100px font-weight-normal mr-1 clickable pl-1",
@@ -6055,6 +6094,9 @@
                                     "quickBar": true,
                                     "computed": null,
                                     "roll": null,
+                                    "tooltip": true,
+                                    "tooltipLabel": "l’utilisation d’armes légères telles que les dagues et les couperets",
+                                    "tooltipPlacement": "bottom",
                                     "id": "LAM_0",
                                     "name": "nameint",
                                     "classes": "w-100px font-weight-normal mr-1 clickable pl-1",
@@ -6124,6 +6166,9 @@
                                     "quickBar": true,
                                     "computed": null,
                                     "roll": null,
+                                    "tooltip": true,
+                                    "tooltipLabel": ": concerne l’utilisation des fouets, des matraques et des haches",
+                                    "tooltipPlacement": "bottom",
                                     "id": "MEL_0",
                                     "name": "nameint",
                                     "classes": "w-100px font-weight-normal mr-1 clickable pl-1",
@@ -6193,6 +6238,9 @@
                                     "quickBar": true,
                                     "computed": null,
                                     "roll": null,
+                                    "tooltip": true,
+                                    "tooltipLabel": " savoir manier la barre d’un vaisseau",
+                                    "tooltipPlacement": "bottom",
                                     "id": "NAV_0",
                                     "name": "nameint",
                                     "classes": "w-100px font-weight-normal mr-1 clickable pl-1",
@@ -6287,6 +6335,9 @@
                                     "quickBar": true,
                                     "computed": null,
                                     "roll": null,
+                                    "tooltip": true,
+                                    "tooltipLabel": " capacité à réaliser des tours de magie, à faire apparaître ou disparaître des objets, mais aussi à délester les gens de leurs biens ou à leur glisser discrètement un message",
+                                    "tooltipPlacement": "bottom",
                                     "id": "ADR_0",
                                     "name": "nameint",
                                     "classes": "w-100px font-weight-normal mr-1 clickable pl-1",
@@ -6356,6 +6407,9 @@
                                     "quickBar": true,
                                     "computed": null,
                                     "roll": null,
+                                    "tooltip": true,
+                                    "tooltipLabel": "savoir se servir d’une arbalète",
+                                    "tooltipPlacement": "bottom",
                                     "id": "ARB_0",
                                     "name": "nameint",
                                     "classes": "w-100px font-weight-normal mr-1 clickable pl-1",
@@ -6425,6 +6479,9 @@
                                     "quickBar": true,
                                     "computed": null,
                                     "roll": null,
+                                    "tooltip": true,
+                                    "tooltipLabel": "savoir décocher des flèches avec un arc",
+                                    "tooltipPlacement": "bottom",
                                     "id": "ARC_0",
                                     "name": "nameint",
                                     "classes": "w-100px font-weight-normal mr-1 clickable pl-1",
@@ -6494,6 +6551,9 @@
                                     "quickBar": true,
                                     "computed": null,
                                     "roll": null,
+                                    "tooltip": true,
+                                    "tooltipLabel": "escalader, rester en équilibre et lancer des armes",
+                                    "tooltipPlacement": "bottom",
                                     "id": "ATH_0",
                                     "name": "nameint",
                                     "classes": "w-100px font-weight-normal mr-1 clickable pl-1",
@@ -6563,6 +6623,9 @@
                                     "quickBar": true,
                                     "computed": null,
                                     "roll": null,
+                                    "tooltip": true,
+                                    "tooltipLabel": "l’art de la discrétion et du déplacement silencieux",
+                                    "tooltipPlacement": "bottom",
                                     "id": "FUR_0",
                                     "name": "nameint",
                                     "classes": "w-100px font-weight-normal mr-1 clickable pl-1",
@@ -6756,6 +6819,9 @@
                                     "quickBar": true,
                                     "computed": null,
                                     "roll": null,
+                                    "tooltip": true,
+                                    "tooltipLabel": "capacité à soulever, fendre et tordre des objets lourds et solides",
+                                    "tooltipPlacement": "bottom",
                                     "id": "PHY_0",
                                     "name": "nameint",
                                     "classes": "w-100px font-weight-normal mr-1 clickable pl-1",
@@ -6825,6 +6891,9 @@
                                     "quickBar": true,
                                     "computed": null,
                                     "roll": null,
+                                    "tooltip": true,
+                                    "tooltipLabel": "mesure votre résistance à la fatigue, à la douleur et aux drogues",
+                                    "tooltipPlacement": "bottom",
                                     "id": "RES_0",
                                     "name": "nameint",
                                     "classes": "w-100px font-weight-normal mr-1 clickable pl-1",
@@ -6919,6 +6988,9 @@
                                     "quickBar": true,
                                     "computed": null,
                                     "roll": null,
+                                    "tooltip": true,
+                                    "tooltipLabel": "création d’œuvres d’art, allant de la peinture à l’écriture de chansons en passant par la fabrication du verre",
+                                    "tooltipPlacement": "bottom",
                                     "id": "BEAU_0",
                                     "name": "nameint",
                                     "classes": "w-100px font-weight-normal mr-1 clickable pl-1",
@@ -6988,6 +7060,9 @@
                                     "quickBar": true,
                                     "computed": null,
                                     "roll": null,
+                                    "tooltip": true,
+                                    "tooltipLabel": " vos relations avec les autres",
+                                    "tooltipPlacement": "bottom",
                                     "id": "CHAR_0",
                                     "name": "nameint",
                                     "classes": "w-100px font-weight-normal mr-1 clickable pl-1",
@@ -7057,6 +7132,9 @@
                                     "quickBar": true,
                                     "computed": null,
                                     "roll": null,
+                                    "tooltip": true,
+                                    "tooltipLabel": "savoir rallier les autres autour de sa bannière ou simplement prendre le contrôle de la situation en se faisant obéir",
+                                    "tooltipPlacement": "bottom",
                                     "id": "COM_0",
                                     "name": "nameint",
                                     "classes": "w-100px font-weight-normal mr-1 clickable pl-1",
@@ -7126,6 +7204,9 @@
                                     "quickBar": true,
                                     "computed": null,
                                     "roll": null,
+                                    "tooltip": true,
+                                    "tooltipLabel": " l’art du mensonge et de la tromperie",
+                                    "tooltipPlacement": "bottom",
                                     "id": "DUP_0",
                                     "name": "nameint",
                                     "classes": "w-100px font-weight-normal mr-1 clickable pl-1",
@@ -7195,6 +7276,9 @@
                                     "quickBar": true,
                                     "computed": null,
                                     "roll": null,
+                                    "tooltip": true,
+                                    "tooltipLabel": "calcul des probabilités et connaissance des risques pour gagner de l’argent aux jeux de hasard. Notez toutefois que, si les jeux de dés font appel à la compétence Jeu, le gwynt dépend plutôt de la Tactique",
+                                    "tooltipPlacement": "bottom",
                                     "id": "JEU_0",
                                     "name": "nameint",
                                     "classes": "w-100px font-weight-normal mr-1 clickable pl-1",
@@ -7264,6 +7348,9 @@
                                     "quickBar": true,
                                     "computed": null,
                                     "roll": null,
+                                    "tooltip": true,
+                                    "tooltipLabel": "convaincre les gens que vous avez raison ou les persuader d’accomplir une tâche pour vous",
+                                    "tooltipPlacement": "bottom",
                                     "id": "PER_0",
                                     "name": "nameint",
                                     "classes": "w-100px font-weight-normal mr-1 clickable pl-1",
@@ -7333,6 +7420,9 @@
                                     "quickBar": true,
                                     "computed": null,
                                     "roll": null,
+                                    "tooltip": true,
+                                    "tooltipLabel": "savoir déchiffrer les émotions d’autrui",
+                                    "tooltipPlacement": "bottom",
                                     "id": "PSY_0",
                                     "name": "nameint",
                                     "classes": "w-100px font-weight-normal mr-1 clickable pl-1",
@@ -7402,6 +7492,9 @@
                                     "quickBar": true,
                                     "computed": null,
                                     "roll": null,
+                                    "tooltip": true,
+                                    "tooltipLabel": "jouer de la musique, chanter ou incarner un rôle théâtral",
+                                    "tooltipPlacement": "bottom",
                                     "id": "REP_0",
                                     "name": "nameint",
                                     "classes": "w-100px font-weight-normal mr-1 clickable pl-1",
@@ -7471,6 +7564,9 @@
                                     "quickBar": true,
                                     "computed": null,
                                     "roll": null,
+                                    "tooltip": true,
+                                    "tooltipLabel": " définit vos talents de séducteurs et vos performances sexuelles",
+                                    "tooltipPlacement": "bottom",
                                     "id": "SED_0",
                                     "name": "nameint",
                                     "classes": "w-100px font-weight-normal mr-1 clickable pl-1",
@@ -7540,6 +7636,9 @@
                                     "quickBar": true,
                                     "computed": null,
                                     "roll": null,
+                                    "tooltip": true,
+                                    "tooltipLabel": "savoir mettre en valeur ses atouts naturels et revêtir une tenue élégante pour faire bonne impression",
+                                    "tooltipPlacement": "bottom",
                                     "id": "STYL_0",
                                     "name": "nameint",
                                     "classes": "w-100px font-weight-normal mr-1 clickable pl-1",
@@ -7712,6 +7811,9 @@
                                     "quickBar": true,
                                     "computed": null,
                                     "roll": null,
+                                    "tooltip": true,
+                                    "tooltipLabel": "l’art de préparer des potions, des huiles, des décoctions et bien d’autres breuvages",
+                                    "tooltipPlacement": "bottom",
                                     "id": "ALC_0",
                                     "name": "nameint",
                                     "classes": "w-100px font-weight-normal mr-1 clickable pl-1",
@@ -7781,6 +7883,9 @@
                                     "quickBar": true,
                                     "computed": null,
                                     "roll": null,
+                                    "tooltip": true,
+                                    "tooltipLabel": " fabrication et réparation d’armes ou d’armures",
+                                    "tooltipPlacement": "bottom",
                                     "id": "ART_0",
                                     "name": "nameint",
                                     "classes": "w-100px font-weight-normal mr-1 clickable pl-1",
@@ -7850,6 +7955,9 @@
                                     "quickBar": true,
                                     "computed": null,
                                     "roll": null,
+                                    "tooltip": true,
+                                    "tooltipLabel": "la falsification de documents et de papiers officiels, ainsi que la fabrication de fausses pièces",
+                                    "tooltipPlacement": "bottom",
                                     "id": "CONT_0",
                                     "name": "nameint",
                                     "classes": "w-100px font-weight-normal mr-1 clickable pl-1",
@@ -7919,6 +8027,9 @@
                                     "quickBar": true,
                                     "computed": null,
                                     "roll": null,
+                                    "tooltip": true,
+                                    "tooltipLabel": "ouvrir des serrures sans la clef",
+                                    "tooltipPlacement": "bottom",
                                     "id": "CRO_0",
                                     "name": "nameint",
                                     "classes": "w-100px font-weight-normal mr-1 clickable pl-1",
@@ -7988,6 +8099,9 @@
                                     "quickBar": true,
                                     "computed": null,
                                     "roll": null,
+                                    "tooltip": true,
+                                    "tooltipLabel": " vous savez vous grimer ou déguiser les autres",
+                                    "tooltipPlacement": "bottom",
                                     "id": "DEG_0",
                                     "name": "nameint",
                                     "classes": "w-100px font-weight-normal mr-1 clickable pl-1",
@@ -8057,6 +8171,9 @@
                                     "quickBar": true,
                                     "computed": null,
                                     "roll": null,
+                                    "tooltip": true,
+                                    "tooltipLabel": "création et désarmement de pièges",
+                                    "tooltipPlacement": "bottom",
                                     "id": "PIEGE_0",
                                     "name": "nameint",
                                     "classes": "w-100px font-weight-normal mr-1 clickable pl-1",
@@ -8126,6 +8243,9 @@
                                     "quickBar": true,
                                     "computed": null,
                                     "roll": null,
+                                    "tooltip": true,
+                                    "tooltipLabel": "permet de stopper des hémorragies, de réparer les fractures et de contrer les effets des poisons",
+                                    "tooltipPlacement": "bottom",
                                     "id": "SOI_0",
                                     "name": "nameint",
                                     "classes": "w-100px font-weight-normal mr-1 clickable pl-1",
@@ -8220,6 +8340,9 @@
                                     "quickBar": true,
                                     "computed": null,
                                     "roll": null,
+                                    "tooltip": true,
+                                    "tooltipLabel": "la capacité à résister à la peur",
+                                    "tooltipPlacement": "bottom",
                                     "id": "COUR_0",
                                     "name": "nameint",
                                     "classes": "w-100px font-weight-normal mr-1 clickable pl-1",
@@ -8289,6 +8412,9 @@
                                     "quickBar": true,
                                     "computed": null,
                                     "roll": null,
+                                    "tooltip": true,
+                                    "tooltipLabel": "maudire des lieux ou des personnes",
+                                    "tooltipPlacement": "bottom",
                                     "id": "ENV_0",
                                     "name": "nameint",
                                     "classes": "w-100px font-weight-normal mr-1 clickable pl-1",
@@ -8358,6 +8484,9 @@
                                     "quickBar": true,
                                     "computed": null,
                                     "roll": null,
+                                    "tooltip": true,
+                                    "tooltipLabel": " l’utilisation de la magie sous forme de sorts ou d’une variante simplifiée, les Signes",
+                                    "tooltipPlacement": "bottom",
                                     "id": "INC_0",
                                     "name": "nameint",
                                     "classes": "w-100px font-weight-normal mr-1 clickable pl-1",
@@ -8427,6 +8556,9 @@
                                     "quickBar": true,
                                     "computed": null,
                                     "roll": null,
+                                    "tooltip": true,
+                                    "tooltipLabel": "vous savez effrayer les gens pour les pousser à s’enfuir ou à vous obéir",
+                                    "tooltipPlacement": "bottom",
                                     "id": "INTI_0",
                                     "name": "nameint",
                                     "classes": "w-100px font-weight-normal mr-1 clickable pl-1",
@@ -8496,6 +8628,9 @@
                                     "quickBar": true,
                                     "computed": null,
                                     "roll": null,
+                                    "tooltip": true,
+                                    "tooltipLabel": "rester inébranlable face aux tentatives de persuasion, de séduction et autres procédés de manipulation",
+                                    "tooltipPlacement": "bottom",
                                     "id": "RCON_0",
                                     "name": "nameint",
                                     "classes": "w-100px font-weight-normal mr-1 clickable pl-1",
@@ -8565,6 +8700,9 @@
                                     "quickBar": true,
                                     "computed": null,
                                     "roll": null,
+                                    "tooltip": true,
+                                    "tooltipLabel": "capacité à contrer les énergies magiques",
+                                    "tooltipPlacement": "bottom",
                                     "id": "RMAG_0",
                                     "name": "nameint",
                                     "classes": "w-100px font-weight-normal mr-1 clickable pl-1",
@@ -8634,6 +8772,9 @@
                                     "quickBar": true,
                                     "computed": null,
                                     "roll": null,
+                                    "tooltip": true,
+                                    "tooltipLabel": "l’art de la magie rituelle",
+                                    "tooltipPlacement": "bottom",
                                     "id": "RIT_0",
                                     "name": "nameint",
                                     "classes": "w-100px font-weight-normal mr-1 clickable pl-1",
@@ -9325,7 +9466,7 @@
                   }
                 ],
                 "className": "Row",
-                "collapsed": false,
+                "collapsed": true,
                 "references": []
               }
             ],
@@ -10452,7 +10593,7 @@
           }
         ],
         "className": "Row",
-        "collapsed": false,
+        "collapsed": true,
         "references": []
       },
       {
@@ -10685,7 +10826,7 @@
           }
         ],
         "className": "Row",
-        "collapsed": false,
+        "collapsed": true,
         "references": []
       },
       {
@@ -10862,7 +11003,7 @@
           }
         ],
         "className": "Row",
-        "collapsed": false,
+        "collapsed": true,
         "references": []
       },
       {
@@ -11022,7 +11163,7 @@
           }
         ],
         "className": "Row",
-        "collapsed": false,
+        "collapsed": true,
         "references": []
       },
       {
@@ -11174,6 +11315,415 @@
                 "className": "Repeater",
                 "collapsed": false,
                 "references": []
+              }
+            ],
+            "className": "Column",
+            "collapsed": false,
+            "references": []
+          }
+        ],
+        "className": "Row",
+        "collapsed": true,
+        "references": []
+      },
+      {
+        "id": "ckkxhniv",
+        "name": "Row title Composants",
+        "classes": "text-title highlight-1 m-1 p-1",
+        "children": [
+          {
+            "size": null,
+            "id": "jyzbjxnw",
+            "name": "Column",
+            "classes": null,
+            "children": [
+              {
+                "text": "Substances alchimiques",
+                "align": "Center",
+                "clickable": null,
+                "quickBar": null,
+                "computed": null,
+                "roll": null,
+                "id": "ccriegwu",
+                "name": "Label",
+                "classes": "text-title",
+                "className": "Label",
+                "collapsed": false,
+                "references": []
+              }
+            ],
+            "className": "Column",
+            "collapsed": false,
+            "references": []
+          }
+        ],
+        "className": "Row",
+        "collapsed": true,
+        "references": []
+      },
+      {
+        "id": "utrqvshz",
+        "name": "Row - Tableau",
+        "classes": "m-1 p-1",
+        "children": [
+          {
+            "size": null,
+            "id": "nsfbtlwm",
+            "name": "Column",
+            "classes": null,
+            "children": [
+              {
+                "id": "qejppwep",
+                "name": "Container",
+                "classes": "ml-3 mr-1",
+                "children": [
+                  {
+                    "id": "rxkihwid",
+                    "name": "Container",
+                    "classes": "ml-1 mr-1",
+                    "children": [
+                      {
+                        "text": "Vitriol",
+                        "align": null,
+                        "clickable": null,
+                        "quickBar": null,
+                        "computed": null,
+                        "roll": null,
+                        "id": "kbzmcsgu",
+                        "name": "Label",
+                        "classes": null,
+                        "className": "Label",
+                        "collapsed": false,
+                        "references": []
+                      },
+                      {
+                        "min": null,
+                        "max": null,
+                        "align": "Center",
+                        "computed": null,
+                        "computedValue": null,
+                        "id": "ypfatrkx",
+                        "name": "NumberInput",
+                        "classes": "ml-1 w-25px mr-1",
+                        "className": "NumberInput",
+                        "collapsed": false,
+                        "references": []
+                      }
+                    ],
+                    "className": "Container",
+                    "collapsed": true,
+                    "references": [],
+                    "layout": "horizontal"
+                  },
+                  {
+                    "id": "ljoxvkvu",
+                    "name": "Container",
+                    "classes": "ml-1 mr-1",
+                    "children": [
+                      {
+                        "text": "Rebis",
+                        "align": null,
+                        "clickable": null,
+                        "quickBar": null,
+                        "computed": null,
+                        "roll": null,
+                        "id": "ebkdenyc",
+                        "name": "Label",
+                        "classes": null,
+                        "className": "Label",
+                        "collapsed": false,
+                        "references": []
+                      },
+                      {
+                        "min": null,
+                        "max": null,
+                        "align": "Center",
+                        "computed": null,
+                        "computedValue": null,
+                        "id": "uqsfnhgg",
+                        "name": "NumberInput",
+                        "classes": "ml-1 w-25px mr-1",
+                        "className": "NumberInput",
+                        "collapsed": false,
+                        "references": []
+                      }
+                    ],
+                    "className": "Container",
+                    "collapsed": true,
+                    "references": [],
+                    "layout": "horizontal"
+                  },
+                  {
+                    "id": "lspjveuy",
+                    "name": "Container",
+                    "classes": "ml-1 mr-1",
+                    "children": [
+                      {
+                        "text": "Éther",
+                        "align": null,
+                        "clickable": null,
+                        "quickBar": null,
+                        "computed": null,
+                        "roll": null,
+                        "id": "ggfrdvrn",
+                        "name": "Label",
+                        "classes": null,
+                        "className": "Label",
+                        "collapsed": false,
+                        "references": []
+                      },
+                      {
+                        "min": null,
+                        "max": null,
+                        "align": "Center",
+                        "computed": null,
+                        "computedValue": null,
+                        "id": "wwrzxbkn",
+                        "name": "NumberInput",
+                        "classes": "ml-1 w-25px mr-1",
+                        "className": "NumberInput",
+                        "collapsed": false,
+                        "references": []
+                      }
+                    ],
+                    "className": "Container",
+                    "collapsed": true,
+                    "references": [],
+                    "layout": "horizontal"
+                  },
+                  {
+                    "id": "jyaginjq",
+                    "name": "Container",
+                    "classes": "ml-1 mr-1",
+                    "children": [
+                      {
+                        "text": "Quebrith",
+                        "align": null,
+                        "clickable": null,
+                        "quickBar": null,
+                        "computed": null,
+                        "roll": null,
+                        "id": "olakjtlj",
+                        "name": "Label",
+                        "classes": null,
+                        "className": "Label",
+                        "collapsed": false,
+                        "references": []
+                      },
+                      {
+                        "min": null,
+                        "max": null,
+                        "align": "Center",
+                        "computed": null,
+                        "computedValue": null,
+                        "id": "tdwscrsv",
+                        "name": "NumberInput",
+                        "classes": "ml-1 w-25px mr-1",
+                        "className": "NumberInput",
+                        "collapsed": false,
+                        "references": []
+                      }
+                    ],
+                    "className": "Container",
+                    "collapsed": true,
+                    "references": [],
+                    "layout": "horizontal"
+                  },
+                  {
+                    "id": "xwvkxdor",
+                    "name": "Container",
+                    "classes": "ml-1 mr-1",
+                    "children": [
+                      {
+                        "text": "Hydragenum",
+                        "align": null,
+                        "clickable": null,
+                        "quickBar": null,
+                        "computed": null,
+                        "roll": null,
+                        "id": "ztpkejfc",
+                        "name": "Label",
+                        "classes": null,
+                        "className": "Label",
+                        "collapsed": false,
+                        "references": []
+                      },
+                      {
+                        "min": null,
+                        "max": null,
+                        "align": "Center",
+                        "computed": null,
+                        "computedValue": null,
+                        "id": "tpgglllt",
+                        "name": "NumberInput",
+                        "classes": "ml-1 w-25px mr-1",
+                        "className": "NumberInput",
+                        "collapsed": false,
+                        "references": []
+                      }
+                    ],
+                    "className": "Container",
+                    "collapsed": true,
+                    "references": [],
+                    "layout": "horizontal"
+                  },
+                  {
+                    "id": "rwrlfyqp",
+                    "name": "Container",
+                    "classes": "ml-1 mr-1",
+                    "children": [
+                      {
+                        "text": "Vermillon",
+                        "align": null,
+                        "clickable": null,
+                        "quickBar": null,
+                        "computed": null,
+                        "roll": null,
+                        "id": "spfdveup",
+                        "name": "Label",
+                        "classes": null,
+                        "className": "Label",
+                        "collapsed": false,
+                        "references": []
+                      },
+                      {
+                        "min": null,
+                        "max": null,
+                        "align": "Center",
+                        "computed": null,
+                        "computedValue": null,
+                        "id": "egdkkrdu",
+                        "name": "NumberInput",
+                        "classes": "ml-1 w-25px mr-1",
+                        "className": "NumberInput",
+                        "collapsed": false,
+                        "references": []
+                      }
+                    ],
+                    "className": "Container",
+                    "collapsed": true,
+                    "references": [],
+                    "layout": "horizontal"
+                  },
+                  {
+                    "id": "tqvzjgej",
+                    "name": "Container",
+                    "classes": "ml-1 mr-1",
+                    "children": [
+                      {
+                        "text": "Sol",
+                        "align": null,
+                        "clickable": null,
+                        "quickBar": null,
+                        "computed": null,
+                        "roll": null,
+                        "id": "kolcmetd",
+                        "name": "Label",
+                        "classes": null,
+                        "className": "Label",
+                        "collapsed": false,
+                        "references": []
+                      },
+                      {
+                        "min": null,
+                        "max": null,
+                        "align": "Center",
+                        "computed": null,
+                        "computedValue": null,
+                        "id": "nibbnuxh",
+                        "name": "NumberInput",
+                        "classes": "ml-1 w-25px mr-1",
+                        "className": "NumberInput",
+                        "collapsed": false,
+                        "references": []
+                      }
+                    ],
+                    "className": "Container",
+                    "collapsed": true,
+                    "references": [],
+                    "layout": "horizontal"
+                  },
+                  {
+                    "id": "askcoofx",
+                    "name": "Container",
+                    "classes": "ml-1 mr-1",
+                    "children": [
+                      {
+                        "text": "Caelum",
+                        "align": null,
+                        "clickable": null,
+                        "quickBar": null,
+                        "computed": null,
+                        "roll": null,
+                        "id": "hiazazll",
+                        "name": "Label",
+                        "classes": null,
+                        "className": "Label",
+                        "collapsed": false,
+                        "references": []
+                      },
+                      {
+                        "min": null,
+                        "max": null,
+                        "align": "Center",
+                        "computed": null,
+                        "computedValue": null,
+                        "id": "hjnntgzw",
+                        "name": "NumberInput",
+                        "classes": "ml-1 w-25px mr-1",
+                        "className": "NumberInput",
+                        "collapsed": false,
+                        "references": []
+                      }
+                    ],
+                    "className": "Container",
+                    "collapsed": true,
+                    "references": [],
+                    "layout": "horizontal"
+                  },
+                  {
+                    "id": "yqfgvcig",
+                    "name": "Container",
+                    "classes": "ml-1 mr-1",
+                    "children": [
+                      {
+                        "text": "Fulgur",
+                        "align": null,
+                        "clickable": null,
+                        "quickBar": null,
+                        "computed": null,
+                        "roll": null,
+                        "id": "gismpyqa",
+                        "name": "Label",
+                        "classes": null,
+                        "className": "Label",
+                        "collapsed": false,
+                        "references": []
+                      },
+                      {
+                        "min": null,
+                        "max": null,
+                        "align": "Center",
+                        "computed": null,
+                        "computedValue": null,
+                        "id": "qfsxyjbb",
+                        "name": "NumberInput",
+                        "classes": "ml-1 w-25px mr-1",
+                        "className": "NumberInput",
+                        "collapsed": false,
+                        "references": []
+                      }
+                    ],
+                    "className": "Container",
+                    "collapsed": true,
+                    "references": [],
+                    "layout": "horizontal"
+                  }
+                ],
+                "className": "Container",
+                "collapsed": false,
+                "references": [],
+                "layout": "horizontal"
               }
             ],
             "className": "Column",
@@ -12741,6 +13291,9 @@
   },
   {
     "type": "SubComponent",
+    "craft": null,
+    "tokenizable": null,
+    "droppable": null,
     "width": 1000,
     "height": 900,
     "id": "viewnotes",
@@ -12790,10 +13343,11 @@
                 "classes": null,
                 "children": [
                   {
+                    "placeholder": "Nom",
                     "computed": null,
                     "id": "arme_1",
                     "name": "TextInput",
-                    "classes": "w-150px mr-1",
+                    "classes": "w-150px mr-1 text-center",
                     "className": "TextInput",
                     "collapsed": false,
                     "references": []
@@ -12804,10 +13358,11 @@
                     "classes": "w-50px mr-1",
                     "children": [
                       {
+                        "placeholder": "Type",
                         "computed": null,
                         "id": "arme_2",
                         "name": "TextInput",
-                        "classes": null,
+                        "classes": "text-center",
                         "className": "TextInput",
                         "collapsed": false,
                         "references": []
@@ -12833,10 +13388,11 @@
                     "layout": "vertical"
                   },
                   {
+                    "placeholder": "PRÉ",
                     "computed": null,
                     "id": "arme_3",
                     "name": "TextInput",
-                    "classes": "w-50px mr-1",
+                    "classes": "w-50px mr-1 text-center",
                     "className": "TextInput",
                     "collapsed": false,
                     "references": []
@@ -12846,7 +13402,7 @@
                     "computed": null,
                     "id": "arme_4",
                     "name": "TextInput",
-                    "classes": "w-75px mr-1",
+                    "classes": "w-75px mr-1 text-center",
                     "className": "TextInput",
                     "collapsed": false,
                     "references": []
@@ -12868,24 +13424,27 @@
                     "references": []
                   },
                   {
+                    "placeholder": "Mains",
                     "computed": null,
                     "id": "arme_6",
                     "name": "TextInput",
-                    "classes": "w-50px mr-1",
+                    "classes": "w-50px mr-1 text-center",
                     "className": "TextInput",
                     "collapsed": false,
                     "references": []
                   },
                   {
+                    "placeholder": "POR",
                     "computed": null,
                     "id": "arme_7",
                     "name": "TextInput",
-                    "classes": "w-50px mr-1",
+                    "classes": "w-50px mr-1 text-center",
                     "className": "TextInput",
                     "collapsed": false,
                     "references": []
                   },
                   {
+                    "placeholder": "Effet",
                     "computed": null,
                     "id": "arme_8",
                     "name": "TextInput",
@@ -12895,19 +13454,21 @@
                     "references": []
                   },
                   {
+                    "placeholder": "Diss",
                     "computed": null,
                     "id": "arme_9",
                     "name": "TextInput",
-                    "classes": "w-50px mr-1",
+                    "classes": "w-50px mr-1 text-center",
                     "className": "TextInput",
                     "collapsed": false,
                     "references": []
                   },
                   {
+                    "placeholder": "AM",
                     "computed": null,
                     "id": "arme_10",
                     "name": "TextInput",
-                    "classes": "w-50px mr-1",
+                    "classes": "w-50px mr-1 text-center",
                     "className": "TextInput",
                     "collapsed": false,
                     "references": []
@@ -12918,6 +13479,8 @@
                     "align": "Center",
                     "computed": null,
                     "computedValue": null,
+                    "tooltipLabel": "Poids",
+                    "tooltipPlacement": "bottom",
                     "id": "arme_11",
                     "name": "NumberInput",
                     "classes": "w-50px mr-1",
@@ -12927,19 +13490,19 @@
                   }
                 ],
                 "className": "Container",
-                "collapsed": false,
+                "collapsed": true,
                 "references": [],
                 "layout": "horizontal"
               },
               {
                 "id": "jbjrbccj",
                 "name": "Container",
-                "classes": "w-25 mr-1",
+                "classes": "w-25 mx-1 my-2",
                 "children": [
                   {
                     "id": "wdjihoym",
                     "name": "Container",
-                    "classes": null,
+                    "classes": "mx-1",
                     "children": [
                       {
                         "text": "Focus:",
@@ -12975,12 +13538,49 @@
                     "collapsed": false,
                     "references": [],
                     "layout": "horizontal"
+                  },
+                  {
+                    "id": "aarvhmrr",
+                    "name": "Container",
+                    "classes": "mx-1",
+                    "children": [
+                      {
+                        "text": "Formule:",
+                        "align": null,
+                        "clickable": null,
+                        "quickBar": null,
+                        "computed": null,
+                        "roll": null,
+                        "tooltipLabel": "Valeur du focus",
+                        "tooltipPlacement": "bottom",
+                        "id": "omzssfjj",
+                        "name": "Label",
+                        "classes": "m-1",
+                        "className": "Label",
+                        "collapsed": false,
+                        "references": []
+                      },
+                      {
+                        "placeholder": "[text](1d6+2),[name](1d3)",
+                        "computed": null,
+                        "id": "arme_formule",
+                        "name": "TextInput",
+                        "classes": "w-200px",
+                        "className": "TextInput",
+                        "collapsed": false,
+                        "references": []
+                      }
+                    ],
+                    "className": "Container",
+                    "collapsed": false,
+                    "references": [],
+                    "layout": "horizontal"
                   }
                 ],
                 "className": "Container",
-                "collapsed": true,
+                "collapsed": false,
                 "references": [],
-                "layout": "vertical"
+                "layout": "horizontal"
               }
             ],
             "className": "Column",
@@ -12999,6 +13599,9 @@
   },
   {
     "type": "SubComponent",
+    "craft": null,
+    "tokenizable": null,
+    "droppable": null,
     "width": 1000,
     "height": 400,
     "id": "arme_view",
@@ -13008,46 +13611,74 @@
       {
         "id": "eqxhyeuf",
         "name": "Row",
+        "classes": null,
         "children": [
           {
+            "size": null,
             "id": "shsovqbg",
             "name": "Column",
+            "classes": null,
             "children": [
               {
                 "id": "rxcyobyt",
                 "name": "Container - View",
+                "classes": null,
                 "children": [
                   {
                     "text": "#arme_1",
+                    "align": null,
+                    "clickable": null,
+                    "quickBar": null,
                     "computed": true,
+                    "roll": null,
                     "id": "rxlsnjhn",
                     "name": "Label",
                     "classes": "w-150px mr-1",
-                    "className": "Label"
+                    "className": "Label",
+                    "collapsed": false,
+                    "references": []
                   },
                   {
                     "text": "#arme_2",
+                    "align": null,
+                    "clickable": null,
+                    "quickBar": null,
                     "computed": true,
+                    "roll": null,
                     "id": "zxrjhqvv",
                     "name": "Label",
                     "classes": "w-50px mr-1",
-                    "className": "Label"
+                    "className": "Label",
+                    "collapsed": false,
+                    "references": []
                   },
                   {
                     "text": "#arme_3",
+                    "align": null,
+                    "clickable": null,
+                    "quickBar": null,
                     "computed": true,
+                    "roll": null,
                     "id": "znsnjfvh",
                     "name": "Label",
                     "classes": "w-50px mr-1",
-                    "className": "Label"
+                    "className": "Label",
+                    "collapsed": false,
+                    "references": []
                   },
                   {
                     "text": "#arme_4",
+                    "align": null,
+                    "clickable": null,
+                    "quickBar": null,
                     "computed": true,
+                    "roll": null,
                     "id": "zleittwn",
                     "name": "Label",
                     "classes": "w-75px mr-1",
-                    "className": "Label"
+                    "className": "Label",
+                    "collapsed": false,
+                    "references": []
                   },
                   {
                     "id": "ktyyjpql",
@@ -13055,96 +13686,156 @@
                     "classes": "w-50px mr-1",
                     "children": [
                       {
+                        "min": null,
+                        "max": null,
                         "align": "Center",
+                        "computed": null,
+                        "computedValue": null,
                         "id": "samxsmnq",
                         "name": "NumberInput",
-                        "className": "NumberInput"
+                        "classes": null,
+                        "className": "NumberInput",
+                        "collapsed": false,
+                        "references": []
                       },
                       {
                         "text": "/",
+                        "align": null,
+                        "clickable": null,
+                        "quickBar": null,
+                        "computed": null,
+                        "roll": null,
                         "id": "sibemlay",
                         "name": "Label",
                         "classes": "mr-1 ml-1",
-                        "className": "Label"
+                        "className": "Label",
+                        "collapsed": false,
+                        "references": []
                       },
                       {
                         "text": "#arme_5",
+                        "align": null,
+                        "clickable": null,
+                        "quickBar": null,
                         "computed": true,
+                        "roll": null,
                         "id": "djroywju",
                         "name": "Label",
                         "classes": "w-25px",
-                        "className": "Label"
+                        "className": "Label",
+                        "collapsed": false,
+                        "references": []
                       }
                     ],
                     "className": "Container",
+                    "collapsed": false,
+                    "references": [],
                     "layout": "horizontal"
                   },
                   {
                     "text": "#arme_6",
                     "align": "Center",
+                    "clickable": null,
+                    "quickBar": null,
                     "computed": true,
+                    "roll": null,
                     "id": "zfmwglmg",
                     "name": "Label",
                     "classes": "w-50px mr-1",
-                    "className": "Label"
+                    "className": "Label",
+                    "collapsed": false,
+                    "references": []
                   },
                   {
                     "text": "#arme_7",
                     "align": "Center",
+                    "clickable": null,
+                    "quickBar": null,
                     "computed": true,
+                    "roll": null,
                     "id": "xhbusqsq",
                     "name": "Label",
                     "classes": "w-50px mr-1",
-                    "className": "Label"
+                    "className": "Label",
+                    "collapsed": false,
+                    "references": []
                   },
                   {
                     "text": "#arme_8",
                     "align": "Left",
+                    "clickable": null,
+                    "quickBar": null,
                     "computed": true,
+                    "roll": null,
                     "id": "pvjudujk",
                     "name": "Label - Effet",
                     "classes": "w-25 mr-1",
-                    "className": "Label"
+                    "className": "Label",
+                    "collapsed": false,
+                    "references": []
                   },
                   {
                     "text": "#arme_9",
                     "align": "Center",
+                    "clickable": null,
+                    "quickBar": null,
                     "computed": true,
+                    "roll": null,
                     "id": "iwptyjwq",
                     "name": "Label",
                     "classes": "w-50px mr-1",
-                    "className": "Label"
+                    "className": "Label",
+                    "collapsed": false,
+                    "references": []
                   },
                   {
                     "text": "#arme_10",
                     "align": "Center",
+                    "clickable": null,
+                    "quickBar": null,
                     "computed": true,
+                    "roll": null,
                     "id": "agyklahx",
                     "name": "Label",
                     "classes": "w-50px mr-1",
-                    "className": "Label"
+                    "className": "Label",
+                    "collapsed": false,
+                    "references": []
                   },
                   {
                     "text": "#arme_11",
                     "align": "Center",
+                    "clickable": null,
+                    "quickBar": null,
                     "computed": true,
+                    "roll": null,
                     "id": "lpbweiac",
                     "name": "Label",
                     "classes": "w-50px mr-1",
-                    "className": "Label"
+                    "className": "Label",
+                    "collapsed": false,
+                    "references": []
                   }
                 ],
                 "className": "Container",
+                "collapsed": false,
+                "references": [],
                 "layout": "horizontal"
               }
             ],
-            "className": "Column"
+            "className": "Column",
+            "collapsed": false,
+            "references": []
           }
         ],
-        "className": "Row"
+        "className": "Row",
+        "collapsed": false,
+        "references": []
       }
     ],
-    "className": "View"
+    "className": "View",
+    "collapsed": false,
+    "references": []
   },
   {
     "type": "SubComponent",
@@ -13174,10 +13865,11 @@
                 "classes": null,
                 "children": [
                   {
+                    "placeholder": "Nom",
                     "computed": null,
                     "id": "armor_name",
                     "name": "TextInput",
-                    "classes": "w-150px mr-1",
+                    "classes": "w-150px mr-1 text-center",
                     "className": "TextInput",
                     "collapsed": false,
                     "references": []
@@ -13213,15 +13905,17 @@
                     "references": []
                   },
                   {
+                    "placeholder": "AA",
                     "computed": null,
                     "id": "armor_4",
                     "name": "TextInput",
-                    "classes": "w-50px mr-1",
+                    "classes": "w-50px mr-1 text-center",
                     "className": "TextInput",
                     "collapsed": false,
                     "references": []
                   },
                   {
+                    "placeholder": "Effet",
                     "computed": null,
                     "id": "armor_effect",
                     "name": "TextInput",
@@ -13231,10 +13925,11 @@
                     "references": []
                   },
                   {
+                    "placeholder": "VE",
                     "computed": null,
                     "id": "armor_6",
                     "name": "TextInput",
-                    "classes": "w-50px mr-1",
+                    "classes": "w-50px mr-1 text-center",
                     "className": "TextInput",
                     "collapsed": false,
                     "references": []
@@ -13245,6 +13940,8 @@
                     "align": "Center",
                     "computed": null,
                     "computedValue": null,
+                    "tooltipLabel": "Poids",
+                    "tooltipPlacement": "bottom",
                     "id": "armor_7",
                     "name": "NumberInput",
                     "classes": "w-50px mr-1 text-center",
@@ -13387,6 +14084,9 @@
   },
   {
     "type": "SubComponent",
+    "craft": null,
+    "tokenizable": null,
+    "droppable": null,
     "width": 1000,
     "height": 400,
     "id": "inv_edit",
@@ -13558,6 +14258,9 @@
   },
   {
     "type": "SubComponent",
+    "craft": null,
+    "tokenizable": null,
+    "droppable": null,
     "width": 1000,
     "height": 400,
     "id": "schema_edit",
@@ -13567,51 +14270,79 @@
       {
         "id": "snudiank",
         "name": "Row",
+        "classes": null,
         "children": [
           {
+            "size": null,
             "id": "bmnotogy",
             "name": "Column",
+            "classes": null,
             "children": [
               {
                 "id": "mdgpzavp",
                 "name": "Container",
+                "classes": null,
                 "children": [
                   {
+                    "computed": null,
                     "id": "schema_1",
                     "name": "TextInput",
                     "classes": "w-150px mr-1",
-                    "className": "TextInput"
+                    "className": "TextInput",
+                    "collapsed": false,
+                    "references": []
                   },
                   {
+                    "min": null,
+                    "max": null,
+                    "align": null,
+                    "computed": null,
+                    "computedValue": null,
                     "id": "schema_2",
                     "name": "NumberInput",
                     "classes": "w-50px mr-1",
-                    "className": "NumberInput"
+                    "className": "NumberInput",
+                    "collapsed": false,
+                    "references": []
                   },
                   {
+                    "computed": null,
                     "id": "schema_3",
                     "name": "TextInput",
                     "classes": "w-75px mr-1",
-                    "className": "TextInput"
+                    "className": "TextInput",
+                    "collapsed": false,
+                    "references": []
                   },
                   {
+                    "computed": null,
                     "id": "schema_4",
                     "name": "Textarea",
-                    "className": "Textarea"
+                    "classes": null,
+                    "className": "Textarea",
+                    "collapsed": false,
+                    "references": []
                   }
                 ],
                 "className": "Container",
                 "collapsed": true,
+                "references": [],
                 "layout": "horizontal"
               }
             ],
-            "className": "Column"
+            "className": "Column",
+            "collapsed": false,
+            "references": []
           }
         ],
-        "className": "Row"
+        "className": "Row",
+        "collapsed": false,
+        "references": []
       }
     ],
-    "className": "View"
+    "className": "View",
+    "collapsed": false,
+    "references": []
   },
   {
     "type": "SubComponent",
@@ -13680,6 +14411,9 @@
   },
   {
     "type": "SubComponent",
+    "craft": null,
+    "tokenizable": null,
+    "droppable": null,
     "width": 1000,
     "height": 400,
     "id": "sort_edit",
@@ -13689,57 +14423,84 @@
       {
         "id": "rdrkpvaf",
         "name": "Row",
+        "classes": null,
         "children": [
           {
+            "size": null,
             "id": "gysfpuqu",
             "name": "Column",
+            "classes": null,
             "children": [
               {
                 "id": "qqwafcjv",
                 "name": "Container - Edit",
+                "classes": null,
                 "children": [
                   {
+                    "computed": null,
                     "id": "sort_1",
                     "name": "TextInput",
                     "classes": "w-150px mr-1",
-                    "className": "TextInput"
+                    "className": "TextInput",
+                    "collapsed": false,
+                    "references": []
                   },
                   {
+                    "computed": null,
                     "id": "sort_2",
                     "name": "TextInput",
                     "classes": "w-75px mr-1",
-                    "className": "TextInput"
+                    "className": "TextInput",
+                    "collapsed": false,
+                    "references": []
                   },
                   {
+                    "computed": null,
                     "id": "sort_3",
                     "name": "Textarea",
                     "classes": "w-50 mr-1",
-                    "className": "Textarea"
+                    "className": "Textarea",
+                    "collapsed": false,
+                    "references": []
                   },
                   {
+                    "computed": null,
                     "id": "sort_4",
                     "name": "TextInput",
                     "classes": "w-75px mr-1",
-                    "className": "TextInput"
+                    "className": "TextInput",
+                    "collapsed": false,
+                    "references": []
                   },
                   {
+                    "computed": null,
                     "id": "sort_5",
                     "name": "TextInput",
                     "classes": "w-75px mr-1",
-                    "className": "TextInput"
+                    "className": "TextInput",
+                    "collapsed": false,
+                    "references": []
                   }
                 ],
                 "className": "Container",
+                "collapsed": false,
+                "references": [],
                 "layout": "horizontal"
               }
             ],
-            "className": "Column"
+            "className": "Column",
+            "collapsed": false,
+            "references": []
           }
         ],
-        "className": "Row"
+        "className": "Row",
+        "collapsed": false,
+        "references": []
       }
     ],
-    "className": "View"
+    "className": "View",
+    "collapsed": false,
+    "references": []
   },
   {
     "type": "SubComponent",
@@ -13818,6 +14579,9 @@
   },
   {
     "type": "SubComponent",
+    "craft": null,
+    "tokenizable": null,
+    "droppable": null,
     "width": 1000,
     "height": 400,
     "id": "rituel_edit",
@@ -13827,70 +14591,102 @@
       {
         "id": "ltenmksl",
         "name": "Row",
+        "classes": null,
         "children": [
           {
+            "size": null,
             "id": "aopxgoip",
             "name": "Column",
+            "classes": null,
             "children": [
               {
                 "id": "ibyxydvn",
                 "name": "Container - Edit",
+                "classes": null,
                 "children": [
                   {
+                    "computed": null,
                     "id": "rituel_1",
                     "name": "TextInput",
                     "classes": "w-150px mr-1",
-                    "className": "TextInput"
+                    "className": "TextInput",
+                    "collapsed": false,
+                    "references": []
                   },
                   {
+                    "computed": null,
                     "id": "rituel_2",
                     "name": "TextInput",
                     "classes": "w-75px mr-1",
-                    "className": "TextInput"
+                    "className": "TextInput",
+                    "collapsed": false,
+                    "references": []
                   },
                   {
+                    "computed": null,
                     "id": "rituel_3",
                     "name": "Textarea",
                     "classes": "w-25 mr-1",
-                    "className": "Textarea"
+                    "className": "Textarea",
+                    "collapsed": false,
+                    "references": []
                   },
                   {
+                    "computed": null,
                     "id": "rituel_4",
                     "name": "TextInput",
                     "classes": "w-75px mr-1",
-                    "className": "TextInput"
+                    "className": "TextInput",
+                    "collapsed": false,
+                    "references": []
                   },
                   {
+                    "computed": null,
                     "id": "rituel_5",
                     "name": "TextInput",
                     "classes": "w-50px mr-1",
-                    "className": "TextInput"
+                    "className": "TextInput",
+                    "collapsed": false,
+                    "references": []
                   },
                   {
+                    "computed": null,
                     "id": "rituel_6",
                     "name": "TextInput",
                     "classes": "w-75px mr-1",
-                    "className": "TextInput"
+                    "className": "TextInput",
+                    "collapsed": false,
+                    "references": []
                   },
                   {
+                    "computed": null,
                     "id": "rituel_7",
                     "name": "Textarea",
                     "classes": "w-25 mr-1",
-                    "className": "Textarea"
+                    "className": "Textarea",
+                    "collapsed": false,
+                    "references": []
                   }
                 ],
                 "className": "Container",
                 "collapsed": true,
+                "references": [],
                 "layout": "horizontal"
               }
             ],
-            "className": "Column"
+            "className": "Column",
+            "collapsed": false,
+            "references": []
           }
         ],
-        "className": "Row"
+        "className": "Row",
+        "collapsed": false,
+        "references": []
       }
     ],
-    "className": "View"
+    "className": "View",
+    "collapsed": false,
+    "references": []
   },
   {
     "type": "SubComponent",
@@ -14289,6 +15085,9 @@
   },
   {
     "type": "SubComponent",
+    "craft": null,
+    "tokenizable": null,
+    "droppable": null,
     "width": 1000,
     "height": 400,
     "id": "blessure_edit",
@@ -14298,10 +15097,13 @@
       {
         "id": "egxopndx",
         "name": "Row",
+        "classes": null,
         "children": [
           {
+            "size": null,
             "id": "jmurlpdb",
             "name": "Column",
+            "classes": null,
             "children": [
               {
                 "id": "lhkrdoej",
@@ -14313,36 +15115,58 @@
                     "name": "Choice",
                     "classes": "w-100px mr-1 pl-1",
                     "className": "Choice",
+                    "collapsed": false,
+                    "references": [],
                     "label": "id",
-                    "tableId": "blessure_list"
+                    "tableId": "blessure_list",
+                    "optional": null,
+                    "expanded": null,
+                    "multiple": null,
+                    "expandedClass": null
                   },
                   {
                     "id": "Blessure_2",
                     "name": "Choice",
                     "classes": "w-100px mr-1 pl-1",
                     "className": "Choice",
+                    "collapsed": false,
+                    "references": [],
                     "label": "id",
-                    "tableId": "blessure_mode_list"
+                    "tableId": "blessure_mode_list",
+                    "optional": null,
+                    "expanded": null,
+                    "multiple": null,
+                    "expandedClass": null
                   },
                   {
+                    "computed": null,
                     "id": "Blessure_3",
                     "name": "Textarea",
                     "classes": "w-50 font-weight-normal text-tiny",
-                    "className": "Textarea"
+                    "className": "Textarea",
+                    "collapsed": false,
+                    "references": []
                   }
                 ],
                 "className": "Container",
                 "collapsed": true,
+                "references": [],
                 "layout": "horizontal"
               }
             ],
-            "className": "Column"
+            "className": "Column",
+            "collapsed": false,
+            "references": []
           }
         ],
-        "className": "Row"
+        "className": "Row",
+        "collapsed": false,
+        "references": []
       }
     ],
-    "className": "View"
+    "className": "View",
+    "collapsed": false,
+    "references": []
   },
   {
     "type": "SubComponent",
@@ -14540,6 +15364,9 @@
   },
   {
     "type": "SubComponent",
+    "craft": null,
+    "tokenizable": null,
+    "droppable": null,
     "width": 1000,
     "height": 900,
     "id": "viewcombat",
@@ -15233,7 +16060,7 @@
                   }
                 ],
                 "className": "Row",
-                "collapsed": true,
+                "collapsed": false,
                 "references": []
               },
               {
@@ -16667,22 +17494,33 @@
   },
   {
     "type": "SubComponent",
+    "craft": null,
+    "tokenizable": null,
+    "droppable": null,
     "width": 650,
     "height": 400,
     "id": "rollprompt",
     "name": "Prompt",
+    "classes": null,
     "children": [
       {
         "id": "rwqtiomd",
         "name": "Container",
+        "classes": null,
         "children": [
           {
             "text": "Modificateur:",
             "align": "Center",
+            "clickable": null,
+            "quickBar": null,
+            "computed": null,
+            "roll": null,
             "id": "pjcszxbg",
             "name": "Label",
             "classes": "text-large",
-            "className": "Label"
+            "className": "Label",
+            "collapsed": false,
+            "references": []
           },
           {
             "id": "ejvetqph",
@@ -16690,23 +17528,37 @@
             "classes": "d-flex justify-content-center",
             "children": [
               {
+                "min": null,
+                "max": null,
                 "align": "Center",
+                "computed": null,
+                "computedValue": null,
                 "id": "Mod_prompt",
                 "name": "NumberInput",
                 "classes": "w-75px text-giant h-75px",
-                "className": "NumberInput"
+                "className": "NumberInput",
+                "collapsed": false,
+                "references": []
               }
             ],
             "className": "Container",
+            "collapsed": false,
+            "references": [],
             "layout": "horizontal"
           },
           {
             "text": "Visibilité du jet:",
             "align": "Center",
+            "clickable": null,
+            "quickBar": null,
+            "computed": null,
+            "roll": null,
             "id": "akjzgzng",
             "name": "Label",
             "classes": "mt-1",
-            "className": "Label"
+            "className": "Label",
+            "collapsed": false,
+            "references": []
           },
           {
             "id": "mgvbjtag",
@@ -16718,154 +17570,292 @@
                 "name": "Choice",
                 "classes": "w-50",
                 "className": "Choice",
+                "collapsed": false,
+                "references": [],
                 "label": "aff",
-                "tableId": "jet_visibility_list"
+                "tableId": "jet_visibility_list",
+                "optional": null,
+                "expanded": null,
+                "multiple": null,
+                "expandedClass": null
               }
             ],
             "className": "Container",
+            "collapsed": false,
+            "references": [],
             "layout": "horizontal"
           }
         ],
         "className": "Container",
+        "collapsed": false,
+        "references": [],
         "layout": "vertical"
       }
     ],
-    "className": "View"
+    "className": "View",
+    "collapsed": false,
+    "references": []
   },
   {
     "type": "SubComponent",
+    "craft": null,
+    "tokenizable": null,
+    "droppable": null,
     "width": 650,
     "height": 400,
     "id": "resultCustom",
     "name": "Affichage Résultat",
+    "classes": null,
     "children": [
       {
+        "align": null,
+        "clickable": null,
+        "quickBar": null,
+        "computed": null,
+        "roll": null,
         "id": "interpretationText",
         "name": "interprétation ",
+        "classes": null,
         "className": "Label",
-        "collapsed": true
+        "collapsed": true,
+        "references": []
       },
       {
         "id": "dice_row",
         "name": "dice_row",
+        "classes": null,
         "children": [
           {
+            "size": null,
             "id": "djwxnube",
             "name": "Column",
+            "classes": null,
             "children": [
               {
+                "align": null,
+                "clickable": null,
+                "quickBar": null,
+                "computed": null,
+                "roll": null,
                 "id": "dice_0",
                 "name": "dice_0",
-                "className": "Label"
+                "classes": null,
+                "className": "Label",
+                "collapsed": false,
+                "references": []
               }
             ],
-            "className": "Column"
+            "className": "Column",
+            "collapsed": false,
+            "references": []
           },
           {
+            "size": null,
             "id": "bwcrsqzi",
             "name": "Column",
+            "classes": null,
             "children": [
               {
+                "align": null,
+                "clickable": null,
+                "quickBar": null,
+                "computed": null,
+                "roll": null,
                 "id": "dice_1",
                 "name": "dice_1",
-                "className": "Label"
+                "classes": null,
+                "className": "Label",
+                "collapsed": false,
+                "references": []
               }
             ],
-            "className": "Column"
+            "className": "Column",
+            "collapsed": false,
+            "references": []
           },
           {
+            "size": null,
             "id": "pyjmkdek",
             "name": "Column",
+            "classes": null,
             "children": [
               {
+                "align": null,
+                "clickable": null,
+                "quickBar": null,
+                "computed": null,
+                "roll": null,
                 "id": "dice_2",
                 "name": "dice_2",
-                "className": "Label"
+                "classes": null,
+                "className": "Label",
+                "collapsed": false,
+                "references": []
               }
             ],
-            "className": "Column"
+            "className": "Column",
+            "collapsed": false,
+            "references": []
           },
           {
+            "size": null,
             "id": "rvkbcjfp",
             "name": "Column",
+            "classes": null,
             "children": [
               {
+                "align": null,
+                "clickable": null,
+                "quickBar": null,
+                "computed": null,
+                "roll": null,
                 "id": "dice_3",
                 "name": "dice_3",
-                "className": "Label"
+                "classes": null,
+                "className": "Label",
+                "collapsed": false,
+                "references": []
               }
             ],
-            "className": "Column"
+            "className": "Column",
+            "collapsed": false,
+            "references": []
           },
           {
+            "size": null,
             "id": "slfdqqgv",
             "name": "Column",
+            "classes": null,
             "children": [
               {
+                "align": null,
+                "clickable": null,
+                "quickBar": null,
+                "computed": null,
+                "roll": null,
                 "id": "dice_4",
                 "name": "dice_4",
-                "className": "Label"
+                "classes": null,
+                "className": "Label",
+                "collapsed": false,
+                "references": []
               }
             ],
-            "className": "Column"
+            "className": "Column",
+            "collapsed": false,
+            "references": []
           },
           {
+            "size": null,
             "id": "vbbiesdn",
             "name": "Column",
+            "classes": null,
             "children": [
               {
+                "align": null,
+                "clickable": null,
+                "quickBar": null,
+                "computed": null,
+                "roll": null,
                 "id": "dice_5",
                 "name": "dice_5",
-                "className": "Label"
+                "classes": null,
+                "className": "Label",
+                "collapsed": false,
+                "references": []
               }
             ],
-            "className": "Column"
+            "className": "Column",
+            "collapsed": false,
+            "references": []
           },
           {
+            "size": null,
             "id": "hdemrzqz",
             "name": "Column",
+            "classes": null,
             "children": [
               {
+                "align": null,
+                "clickable": null,
+                "quickBar": null,
+                "computed": null,
+                "roll": null,
                 "id": "dice_6",
                 "name": "dice_6",
-                "className": "Label"
+                "classes": null,
+                "className": "Label",
+                "collapsed": false,
+                "references": []
               }
             ],
-            "className": "Column"
+            "className": "Column",
+            "collapsed": false,
+            "references": []
           },
           {
+            "size": null,
             "id": "gkofqien",
             "name": "Column",
+            "classes": null,
             "children": [
               {
+                "align": null,
+                "clickable": null,
+                "quickBar": null,
+                "computed": null,
+                "roll": null,
                 "id": "dice_7",
                 "name": "dice_7",
-                "className": "Label"
+                "classes": null,
+                "className": "Label",
+                "collapsed": false,
+                "references": []
               }
             ],
-            "className": "Column"
+            "className": "Column",
+            "collapsed": false,
+            "references": []
           },
           {
+            "size": null,
             "id": "fppeclwi",
             "name": "Column",
+            "classes": null,
             "children": [
               {
+                "align": null,
+                "clickable": null,
+                "quickBar": null,
+                "computed": null,
+                "roll": null,
                 "id": "dice_8",
                 "name": "dice_8",
-                "className": "Label"
+                "classes": null,
+                "className": "Label",
+                "collapsed": false,
+                "references": []
               }
             ],
-            "className": "Column"
+            "className": "Column",
+            "collapsed": false,
+            "references": []
           }
         ],
         "className": "Row",
-        "collapsed": true
+        "collapsed": true,
+        "references": []
       }
     ],
-    "className": "View"
+    "className": "View",
+    "collapsed": false,
+    "references": []
   },
   {
     "type": "SubComponent",
+    "craft": null,
+    "tokenizable": null,
+    "droppable": null,
     "width": 1000,
     "height": 400,
     "id": "viewguide",
@@ -16976,7 +17966,7 @@
   {
     "type": "Main",
     "craft": true,
-    "avatarId": "avatar_monster",
+    "avatarId": "avatar",
     "tokenizable": true,
     "droppable": null,
     "width": 650,
@@ -17022,7 +18012,7 @@
                 "classes": "justify-content-center",
                 "children": [
                   {
-                    "id": "avatar_monster",
+                    "id": "avatar",
                     "name": "Avatar",
                     "classes": null,
                     "className": "Avatar",
@@ -17293,7 +18283,7 @@
               }
             ],
             "className": "Column",
-            "collapsed": false,
+            "collapsed": true,
             "references": []
           },
           {
@@ -18048,7 +19038,7 @@
                       }
                     ],
                     "className": "Row",
-                    "collapsed": false,
+                    "collapsed": true,
                     "references": []
                   },
                   {
@@ -18101,7 +19091,7 @@
               }
             ],
             "className": "Column",
-            "collapsed": true,
+            "collapsed": false,
             "references": []
           }
         ],
@@ -18117,7 +19107,7 @@
   {
     "type": "Main",
     "craft": true,
-    "avatarId": "avatar_pnj",
+    "avatarId": "avatar",
     "tokenizable": true,
     "droppable": null,
     "width": 650,
@@ -18163,7 +19153,7 @@
                 "classes": "justify-content-center",
                 "children": [
                   {
-                    "id": "avatar_pnj",
+                    "id": "avatar",
                     "name": "Avatar",
                     "classes": null,
                     "className": "Avatar",
@@ -19286,6 +20276,9 @@
   },
   {
     "type": "SubComponent",
+    "craft": null,
+    "tokenizable": null,
+    "droppable": null,
     "width": 650,
     "height": 400,
     "id": "pnj_infoview",
@@ -19652,9 +20645,48 @@
                   }
                 ],
                 "className": "Container",
-                "collapsed": false,
+                "collapsed": true,
                 "references": [],
                 "layout": "vertical"
+              },
+              {
+                "id": "cmivbfdm",
+                "name": "Container",
+                "classes": "justify-content-center w-100",
+                "children": [
+                  {
+                    "text": "Exporter la fiche",
+                    "align": null,
+                    "clickable": true,
+                    "quickBar": null,
+                    "computed": null,
+                    "roll": null,
+                    "id": "save_fiche",
+                    "name": "Label",
+                    "classes": "border p-1 rounded bg-success mx-2",
+                    "className": "Label",
+                    "collapsed": false,
+                    "references": []
+                  },
+                  {
+                    "text": "Importer une fiche",
+                    "align": null,
+                    "clickable": true,
+                    "quickBar": null,
+                    "computed": null,
+                    "roll": null,
+                    "id": "import_fiche",
+                    "name": "Label",
+                    "classes": "border p-1 rounded bg-warning mx-2",
+                    "className": "Label",
+                    "collapsed": false,
+                    "references": []
+                  }
+                ],
+                "className": "Container",
+                "collapsed": false,
+                "references": [],
+                "layout": "horizontal"
               }
             ],
             "className": "Column",
@@ -19673,6 +20705,9 @@
   },
   {
     "type": "SubComponent",
+    "craft": null,
+    "tokenizable": null,
+    "droppable": null,
     "width": 650,
     "height": 400,
     "id": "pnj_ccview",
@@ -23287,6 +24322,9 @@
   },
   {
     "type": "SubComponent",
+    "craft": null,
+    "tokenizable": null,
+    "droppable": null,
     "width": 650,
     "height": 400,
     "id": "pnj_combatview",
@@ -25883,6 +26921,7 @@
                                         "quickBar": null,
                                         "computed": null,
                                         "roll": null,
+                                        "markdown": true,
                                         "id": "rtyjdlcq",
                                         "name": "Label",
                                         "classes": null,
@@ -26883,6 +27922,9 @@
   },
   {
     "type": "SubComponent",
+    "craft": null,
+    "tokenizable": null,
+    "droppable": null,
     "width": 1000,
     "height": 900,
     "id": "viewregle",
@@ -27531,6 +28573,56 @@
         "className": "Row",
         "collapsed": false,
         "references": []
+      }
+    ],
+    "className": "View",
+    "collapsed": false,
+    "references": []
+  },
+  {
+    "type": "SubComponent",
+    "craft": null,
+    "tokenizable": null,
+    "droppable": null,
+    "width": 650,
+    "height": 400,
+    "id": "promptjson",
+    "name": "Prompt JSON",
+    "classes": null,
+    "children": [
+      {
+        "id": "kjsoiymz",
+        "name": "Container",
+        "classes": "m-2",
+        "children": [
+          {
+            "text": "Copier / Coller les données ci-dessous:",
+            "align": null,
+            "clickable": null,
+            "quickBar": null,
+            "computed": null,
+            "roll": null,
+            "id": "pejpnkeu",
+            "name": "Label",
+            "classes": "m-2",
+            "className": "Label",
+            "collapsed": false,
+            "references": []
+          },
+          {
+            "computed": null,
+            "id": "jsonstr",
+            "name": "TextInput",
+            "classes": "h-100px",
+            "className": "TextInput",
+            "collapsed": false,
+            "references": []
+          }
+        ],
+        "className": "Container",
+        "collapsed": false,
+        "references": [],
+        "layout": "vertical"
       }
     ],
     "className": "View",

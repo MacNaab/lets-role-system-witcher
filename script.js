@@ -29,6 +29,63 @@ getBarAttributes = function(sheet) {
 
 // Attention pour les timer: wait(timer, rand) pas de rand()!
 
+//------------------- CONSTANTES -----------------------------
+// Compétences
+	const listCompt = [
+		{'N':'RUE','V':'INT'},
+		{'N':'MON','V':'INT'},
+		{'N':'DED','V':'INT'},
+		{'N':'EDU','V':'INT'},
+		{'N':'ENS','V':'INT'},
+		{'N':'ETQ','V':'INT'},
+		{'N':'LAN','V':'INT'},
+		{'N':'LCO','V':'INT'},
+		{'N':'LNA','V':'INT'},
+		{'N':'NEG','V':'INT'},
+		{'N':'SUR','V':'INT'},
+		{'N':'TAC','V':'INT'},
+		{'N':'VIGi','V':'INT'},
+		{'N':'BAG','V':'REF'},
+		{'N':'BAT','V':'REF'},
+		{'N':'EQUI','V':'REF'},
+		{'N':'ESC','V':'REF'},
+		{'N':'ESQ','V':'REF'},
+		{'N':'LAM','V':'REF'},
+		{'N':'MEL','V':'REF'},
+		{'N':'NAV','V':'REF'},
+		{'N':'ADR','V':'DEX'},
+		{'N':'ARB','V':'DEX'},
+		{'N':'ARC','V':'DEX'},
+		{'N':'ATH','V':'DEX'},
+		{'N':'FUR','V':'DEX'},
+		{'N':'PHY','V':'COR'},
+		{'N':'RES','V':'COR'},
+		{'N':'BEAU','V':'EMP'},
+		{'N':'CHAR','V':'EMP'},
+		{'N':'COM','V':'EMP'},
+		{'N':'DUP','V':'EMP'},
+		{'N':'JEU','V':'EMP'},
+		{'N':'PER','V':'EMP'},
+		{'N':'PSY','V':'EMP'},
+		{'N':'REP','V':'EMP'},
+		{'N':'SED','V':'EMP'},
+		{'N':'STYL','V':'EMP'},
+		{'N':'ALC','V':'TEC'},
+		{'N':'ART','V':'TEC'},
+		{'N':'CONT','V':'TEC'},
+		{'N':'CRO','V':'TEC'},
+		{'N':'DEG','V':'TEC'},
+		{'N':'PIEGE','V':'TEC'},
+		{'N':'SOI','V':'TEC'},
+		{'N':'COUR','V':'VOL'},
+		{'N':'ENV','V':'VOL'},
+		{'N':'INC','V':'VOL'},
+		{'N':'INTI','V':'VOL'},
+		{'N':'RCON','V':'VOL'},
+		{'N':'RMAG','V':'VOL'},
+		{'N':'RIT','V':'VOL'},
+	];
+
 //------------------- INIT MAIN -----------------------------
 const initMain = function(sheet) {
   initCC(sheet);
@@ -221,72 +278,34 @@ const initEtat = function(sheet){
 
 function Etat(sheet){
 	var Stock_Data = sheet.getData();
-	// Reini tous les mod:
-	var list1 = ['INT','REF','DEX','COR','VIT','EMP','TEC','VOL','CHA','VIG','ETOU','COU','SAUT','PS','END','ENC','REC','CON','POINGS','PIEDS'];
-	var timer = 0
-	list1.forEach(function(e){
-		timer += 500;
-		Stock_Data[e+"_2"] = 0;
-	});
-	var list2 = [
-		{'N':'RUE','V':'INT'},
-		{'N':'MON','V':'INT'},
-		{'N':'DED','V':'INT'},
-		{'N':'EDU','V':'INT'},
-		{'N':'ENS','V':'INT'},
-		{'N':'ETQ','V':'INT'},
-		{'N':'LAN','V':'INT'},
-		{'N':'LCO','V':'INT'},
-		{'N':'LNA','V':'INT'},
-		{'N':'NEG','V':'INT'},
-		{'N':'SUR','V':'INT'},
-		{'N':'TAC','V':'INT'},
-		{'N':'VIGi','V':'INT'},
-		{'N':'BAG','V':'REF'},
-		{'N':'BAT','V':'REF'},
-		{'N':'EQUI','V':'REF'},
-		{'N':'ESC','V':'REF'},
-		{'N':'ESQ','V':'REF'},
-		{'N':'LAM','V':'REF'},
-		{'N':'MEL','V':'REF'},
-		{'N':'NAV','V':'REF'},
-		{'N':'ADR','V':'DEX'},
-		{'N':'ARB','V':'DEX'},
-		{'N':'ARC','V':'DEX'},
-		{'N':'ATH','V':'DEX'},
-		{'N':'FUR','V':'DEX'},
-		{'N':'PHY','V':'COR'},
-		{'N':'RES','V':'COR'},
-		{'N':'BEAU','V':'EMP'},
-		{'N':'CHAR','V':'EMP'},
-		{'N':'COM','V':'EMP'},
-		{'N':'DUP','V':'EMP'},
-		{'N':'JEU','V':'EMP'},
-		{'N':'PER','V':'EMP'},
-		{'N':'PSY','V':'EMP'},
-		{'N':'REP','V':'EMP'},
-		{'N':'SED','V':'EMP'},
-		{'N':'STYL','V':'EMP'},
-		{'N':'ALC','V':'TEC'},
-		{'N':'ART','V':'TEC'},
-		{'N':'CONT','V':'TEC'},
-		{'N':'CRO','V':'TEC'},
-		{'N':'DEG','V':'TEC'},
-		{'N':'PIEGE','V':'TEC'},
-		{'N':'SOI','V':'TEC'},
-		{'N':'COUR','V':'VOL'},
-		{'N':'ENV','V':'VOL'},
-		{'N':'INC','V':'VOL'},
-		{'N':'INTI','V':'VOL'},
-		{'N':'RCON','V':'VOL'},
-		{'N':'RMAG','V':'VOL'},
-		{'N':'RIT','V':'VOL'},
-	];
-	timer=0;
-	list2.forEach(function(e){
-		timer += 500;
-		Stock_Data[e.N+"_2"] = 0;
-	});
+	function SumData(name){
+		return Number(Stock_Data[name+'_1']) + Number(Stock_Data[name+'_2'])
+	}
+	// Recalculer toutes les Caractéristiques secondaires
+	var tablePhy = Math.floor( (SumData("COR") + SumData("VOL")) / 2 )
+	Stock_Data["ETOU_1"] = tablePhy < 11 ? tablePhy : 10
+	Stock_Data["COU_1"] = SumData("VIT") * 3;
+	Stock_Data["SAUT_1"] = Math.floor( SumData("VIT") * 3/5 )
+	Stock_Data["PS_1"] = tablePhy * 5
+	Stock_Data["END_1"] = tablePhy * 5
+	Stock_Data["ENC_1"] = SumData("COR") * 10;
+	Stock_Data["REC_1"] = tablePhy
+	Stock_Data["CON_1"] = Math.floor( (SumData("VOL") + SumData("INT")) * 3/2 )
+
+	// Reini tous les mod: temporairement désactivité car non pris en compte depuis le portage béta..
+	function ReiniData(){
+		var list1 = ['INT','REF','DEX','COR','VIT','EMP','TEC','VOL','CHA','VIG','ETOU','COU','SAUT','PS','END','ENC','REC','CON','POINGS','PIEDS'];
+		var timer = 0
+		list1.forEach(function(e){
+			timer += 500;
+			Stock_Data[e+"_2"] = 0;
+		});
+		timer=0;
+		listCompt.forEach(function(e){
+			timer += 500;
+			Stock_Data[e.N+"_2"] = 0;
+		});
+	}
 
 	// Race
 	var race = sheet.get('race').value();
@@ -298,6 +317,7 @@ function Etat(sheet){
 					aff += '\n'+_(e);
 				});
 			sheet.get('Etat_race').value(aff);
+			/* temporairement désactivité car non pris en compte depuis le portage béta..
 			if(line_race.c != null && line_race != ""){
 				var a = line_race.c.split(',');
 				a.forEach(function(e){
@@ -305,12 +325,13 @@ function Etat(sheet){
 					Stock_Data[b[1]+"_2"] += Number(b[0]);
 				});
 			}
+			*/
 		}
 	// Origine
 	var ori = sheet.get('origin').value();
 		if(ori != 0){
 			var line_ori = Tables.get("origine_list").get(ori);
-					Stock_Data[line_ori.min+"_2"] += 1;
+			// Stock_Data[line_ori.min+"_2"] += 1;	---> temporairement désactivité car non pris en compte depuis le portage béta..
 			var affichage = _("Terre d'origine: +1 ");
 			sheet.get('Etat_ori').value(affichage+line_ori.effet);
 		}
@@ -321,36 +342,38 @@ function Etat(sheet){
 		each(sheet.get('BC_repeat').value(), function (entryData, entryIndex) {
 			let entry = sheet.get('BC_repeat').find(entryIndex);	// ligne
 			let entry1 = entry.find('Blessure_1').value(); // nom
+				if(entry1 == null){entry1 = "Mâchoire fêlée";}
 			let entry2 = entry.find('Blessure_2').value(); // stade
+				if(entry2 == null){entry2 = "Critique";}
 				var stade = Tables.get("blessure_mode_list").get(entry2).desc;
 				if(stade == 0){stade='critique';var min='c'}else if(stade == 1){stade='stabilise';var min='s';}else{stade='traite';var min='t';}
 			var line = Tables.get("blessure_list").get(entry1);
 			aff += '\n'+entry1+" - "+entry2+" ("+line[stade]+")";
 			if(line[min] == '4c'){
-				Stock_Data['REC_2'] += -Math.round(Number(Stock_Data['REC_3'])*0.75);
+				Stock_Data['REC_2'] += -Math.round( SumData('REC') * 0.75);
 			}else if(line[min] == '4s'){
-				Stock_Data['REC_2'] += -Math.round(Number(Stock_Data['REC_3'])*0.5);
+				Stock_Data['REC_2'] += -Math.round( SumData('REC') * 0.5);
 			}else if(line[min] == '18c' || line[min] == '24c' || line[min] == '24s'){
-				Stock_Data['VIT_2'] += -Math.round(Number(Stock_Data['VIT_3'])*0.75);
-				Stock_Data['ESQ_2'] += -Math.round(Number(Stock_Data['ESQ_3'])*0.75);
-				Stock_Data['ATH_2'] += -Math.round(Number(Stock_Data['ATH_3'])*0.75);
+				Stock_Data['VIT_2'] += -Math.round( SumData('VIT') *0.75);
+				Stock_Data['ESQ_2'] += -Math.round( SumData('ESQ') *0.75);
+				Stock_Data['ATH_2'] += -Math.round( SumData('ATH') *0.75);
 			}else if(line[min] == '18s'){
-				Stock_Data['VIT_2'] += -Math.round(Number(Stock_Data['VIT_3'])*0.5);
-				Stock_Data['ESQ_2'] += -Math.round(Number(Stock_Data['ESQ_3'])*0.5);
-				Stock_Data['ATH_2'] += -Math.round(Number(Stock_Data['ATH_3'])*0.5);
+				Stock_Data['VIT_2'] += -Math.round( SumData('VIT') *0.5);
+				Stock_Data['ESQ_2'] += -Math.round( SumData('ESQ') *0.5);
+				Stock_Data['ATH_2'] += -Math.round( SumData('ATH') *0.5);
 			}else if(line[min] == '21c'){
-				Stock_Data['VIT_2'] += -Math.round(Number(Stock_Data['VIT_3'])*0.75);
-				Stock_Data['END_2'] += -Math.round(Number(Stock_Data['END_3'])*0.75);
-				Stock_Data['COR_2'] += -Math.round(Number(Stock_Data['COR_3'])*0.75);
+				Stock_Data['VIT_2'] += -Math.round( SumData('VIT') *0.75);
+				Stock_Data['END_2'] += -Math.round( SumData('END') *0.75);
+				Stock_Data['COR_2'] += -Math.round( SumData('COR') *0.75);
 			}else if(line[min] == '21s'){
-				Stock_Data['VIT_2'] += -Math.round(Number(Stock_Data['VIT_3'])*0.5);
-				Stock_Data['END_2'] += -Math.round(Number(Stock_Data['END_3'])*0.5);
-				Stock_Data['COR_2'] += -Math.round(Number(Stock_Data['COR_3'])*0.5);
+				Stock_Data['VIT_2'] += -Math.round( SumData('VIT') *0.5);
+				Stock_Data['END_2'] += -Math.round( SumData('END') *0.5);
+				Stock_Data['COR_2'] += -Math.round( SumData('COR') *0.5);
 			}else if(line[min] == '22c'){
-				Stock_Data['END_2'] += -Math.round(Number(Stock_Data['END_3'])*0.5);
+				Stock_Data['END_2'] += -Math.round( SumData('END') *0.5);
 				Stock_Data['INT_2'] += -3;Stock_Data['VOL_2'] += -3;Stock_Data['REF_2'] += -3;Stock_Data['DEX_2'] += -3;
 			}else if(line[min] == '22s'){
-				Stock_Data['END_2'] += -Math.round(Number(Stock_Data['END_3'])*0.5);
+				Stock_Data['END_2'] += -Math.round( SumData('END') *0.5);
 				Stock_Data['INT_2'] += -1;Stock_Data['VOL_2'] += -1;Stock_Data['REF_2'] += -1;Stock_Data['DEX_2'] += -1;
 			}else{
 				var a = line[min].split(',');
@@ -374,21 +397,21 @@ function Etat(sheet){
 				var line = Tables.get("new_mod_list").get(e2);
 				let entry2 = line.ref;
 			let entry3 = entry.find('Nmod_3').value(); // val
-				Stock_Data[entry2+"_2"] += Number(entry3);
+			// Stock_Data[entry2+"_2"] += Number(entry3);	--> temporairement désactivité car non pris en compte depuis le portage béta..
 			if(Number(entry3)>0){entry3="+"+entry3;}
 			aff += '\n'+entry1+" ("+entry3+" "+entry2+")";
 		});
 		sheet.get('Etat_Nmod').value(aff);
 	}
 	Nmod();
-
 	// ENC
-	var ENC = Number(Stock_Data.enc)-Number(Stock_Data.ENC_3);
+	var enc_3_data = ( Number( Number(Stock_Data['COR_1']) +  Number(Stock_Data['COR_2'])) * 10 )
+	var ENC = Number(Stock_Data.enc)-Number(enc_3_data);
 		if(ENC>0){
-			Stock_Data['REF_2'] += -(Math.floor(Number(-ENC)/5)+1);
-			Stock_Data['DEX_2'] += -(Math.floor(Number(-ENC)/5)+1);
-			Stock_Data['VIT_2'] += -(Math.floor(Number(-ENC)/5)+1);
-			sheet.get('Etat_ENC').value('Encombré: '+Stock_Data.enc+'/'+Stock_Data.ENC_3+' (-'+(Math.floor(Number(-ENC)/5)+1)+' REF, DEX et VIT)');
+			Stock_Data['REF_2'] += -(Math.floor(Number(ENC)/5)+1);
+			Stock_Data['DEX_2'] += -(Math.floor(Number(ENC)/5)+1);
+			Stock_Data['VIT_2'] += -(Math.floor(Number(ENC)/5)+1);
+			sheet.get('Etat_ENC').value('Encombré: '+Stock_Data.enc+'/'+enc_3_data+' (-'+(Math.floor(Number(ENC)/5)+1)+' REF, DEX et VIT)');
 		}else{
 			sheet.get('Etat_ENC').value('');
 		}
@@ -402,6 +425,8 @@ function Etat(sheet){
 		sheet.get('Etat_VE').value(affichage+VE+' (-'+VE+' REF et DEX)');
 	}else{sheet.get('Etat_VE').value('');}
 
+	var list1 = ['INT','REF','DEX','COR','VIT','EMP','TEC','VOL','CHA','VIG','ETOU','COU','SAUT','PS','END','ENC','REC','CON','POINGS','PIEDS'];
+
 	list1.forEach(function(e){
 		if(Stock_Data[e+"_2"] != sheet.get(e+"_2").text()){
 			let ladata = {}
@@ -411,7 +436,7 @@ function Etat(sheet){
 		}
 	});		
 	timer=0;
-	list2.forEach(function(e){
+	listCompt.forEach(function(e){
 		if(Stock_Data[e.N+"_2"] != sheet.get(e.N+"_2").value()){
 			wait(timer, sheet.get(e.N+"_2").value(Stock_Data[e.N+"_2"]));
 			timer += 500;
@@ -437,6 +462,7 @@ function Inventaire(sheet){
 		let entry1 = entry.find('armor_7').value();	// poids
 		poids += Number(entry1);
 		let entry2 = entry.find('armor_2').value();	// Type
+			if(!entry2){ entry2 = "Tête"}
 			var line = Tables.get("amortype_list").get(entry2);
 		let entry3 = entry.find('armor_3').value();	// PA max
 		let paa = "armure_repeater."+entryIndex+".pa";  // PA actuelle
@@ -615,10 +641,10 @@ const initCombat = function(sheet){
 
 	initArm('arme_repeater'); // ajout des armes de la fiche
 	sheet.get('arme_repeater').on('update', function(){initArm('arme_repeater');});
-	log('fin de arme_repeater!')
 
 	sheet.get('ATQ_cac_roll').on('click', function(){	// ATQ CaC
 		var arme = sheet.get('arm_1').value();
+		sheet.get('arm_3').value(arme);
 		var line;
 		arm_t.forEach(function(e){
 			if(e.arme_1 == arme){line = e;}
@@ -630,6 +656,7 @@ const initCombat = function(sheet){
 
 	sheet.get('ATQ_dist_roll').on('click', function(){	// ATQ Distance
 		var arme = sheet.get('arm_2').value();
+		sheet.get('arm_3').value(arme);
 		var line;
 			arm_t.forEach(function(e){
 				if(e.arme_1 == arme){line = e;}
@@ -648,6 +675,7 @@ const initCombat = function(sheet){
 			var dmg = sheet.get('Dom_1').value();
 			var affichage = _('Dégâts: ');
 			var aff = affichage+dmg;
+			DMGroll(sheet,dmg,aff,3);
 		}else{
 			var arme = sheet.get('arm_3').value();
 			var affichage = _('Dégâts: ');
@@ -660,8 +688,9 @@ const initCombat = function(sheet){
 			} catch (error) {
 				return error;	// Fin de la fonction
 			}
+			DMGroll(sheet,dmg,aff,3);
+			Arme_formule(sheet, line);
 		}
-		DMGroll(sheet,dmg,aff,3);
 	});
 
 	sheet.get('dmg_complet_roll').on('click',function(){
@@ -677,6 +706,23 @@ const initCombat = function(sheet){
 			})
 			.roll();
 	});
+}
+
+function Arme_formule(sheet, arme){
+	if(!arme.arme_formule){
+		return; // si pas de formule, ne fait rien
+	}
+	var list1 = arme.arme_formule.split(",");	// liste des formules	[text](dice),[text](dice)
+	each(list1, function(e){
+		var list2 = e.split("](");
+		try{
+			var text = list2[0].replace('[', '');	// nom
+			var dice = list2[1].replace(')', '');	// dé
+			Dice.roll(sheet, dice, text);
+		}catch(err){
+			log(err);
+		}
+	})
 }
 
 function ATQcac(sheet,arme,c,line2,sheetid){
@@ -736,6 +782,7 @@ function ATQdist(sheet,arme,c,line2,sheetid){
 function ATQcalc(sheet){
 	var atq = sheet.get('ATQ_calc1').value();
 	var loc = sheet.get('ATQ_calc2').value();
+	sheet.get('Dom_2').value(loc);	// automatiser la localisation dans DOMMAGE
 	var line0 = Tables.get("loc_list").get(loc);
 	var mod = line0.malus;
 	var def = sheet.get('ATQ_calc3').value();
@@ -1107,61 +1154,7 @@ const jet = function(sheet){
 	});
 
 	// Compétences
-	var list2 = [
-		{'N':'RUE','V':'INT'},
-		{'N':'MON','V':'INT'},
-		{'N':'DED','V':'INT'},
-		{'N':'EDU','V':'INT'},
-		{'N':'ENS','V':'INT'},
-		{'N':'ETQ','V':'INT'},
-		{'N':'LAN','V':'INT'},
-		{'N':'LCO','V':'INT'},
-		{'N':'LNA','V':'INT'},
-		{'N':'NEG','V':'INT'},
-		{'N':'SUR','V':'INT'},
-		{'N':'TAC','V':'INT'},
-		{'N':'VIGi','V':'INT'},
-		{'N':'BAG','V':'REF'},
-		{'N':'BAT','V':'REF'},
-		{'N':'EQUI','V':'REF'},
-		{'N':'ESC','V':'REF'},
-		{'N':'ESQ','V':'REF'},
-		{'N':'LAM','V':'REF'},
-		{'N':'MEL','V':'REF'},
-		{'N':'NAV','V':'REF'},
-		{'N':'ADR','V':'DEX'},
-		{'N':'ARB','V':'DEX'},
-		{'N':'ARC','V':'DEX'},
-		{'N':'ATH','V':'DEX'},
-		{'N':'FUR','V':'DEX'},
-		{'N':'PHY','V':'COR'},
-		{'N':'RES','V':'COR'},
-		{'N':'BEAU','V':'EMP'},
-		{'N':'CHAR','V':'EMP'},
-		{'N':'COM','V':'EMP'},
-		{'N':'DUP','V':'EMP'},
-		{'N':'JEU','V':'EMP'},
-		{'N':'PER','V':'EMP'},
-		{'N':'PSY','V':'EMP'},
-		{'N':'REP','V':'EMP'},
-		{'N':'SED','V':'EMP'},
-		{'N':'STYL','V':'EMP'},
-		{'N':'ALC','V':'TEC'},
-		{'N':'ART','V':'TEC'},
-		{'N':'CONT','V':'TEC'},
-		{'N':'CRO','V':'TEC'},
-		{'N':'DEG','V':'TEC'},
-		{'N':'PIEGE','V':'TEC'},
-		{'N':'SOI','V':'TEC'},
-		{'N':'COUR','V':'VOL'},
-		{'N':'ENV','V':'VOL'},
-		{'N':'INC','V':'VOL'},
-		{'N':'INTI','V':'VOL'},
-		{'N':'RCON','V':'VOL'},
-		{'N':'RMAG','V':'VOL'},
-		{'N':'RIT','V':'VOL'},
-	];
-	list2.forEach(function(e){
+	listCompt.forEach(function(e){
 		sheet.get(e.N+'_0').on("click", function(){
 			var affichage = _('Jet ');
 			var aff = affichage+sheet.get(e.N+'_0').value();
@@ -1495,61 +1488,7 @@ const initPNJcc = function(sheet){
 		});	
 	});
 	// Compétences
-	var list2 = [
-			{'N':'RUE','V':'INT'},
-			{'N':'MON','V':'INT'},
-			{'N':'DED','V':'INT'},
-			{'N':'EDU','V':'INT'},
-			{'N':'ENS','V':'INT'},
-			{'N':'ETQ','V':'INT'},
-			{'N':'LAN','V':'INT'},
-			{'N':'LCO','V':'INT'},
-			{'N':'LNA','V':'INT'},
-			{'N':'NEG','V':'INT'},
-			{'N':'SUR','V':'INT'},
-			{'N':'TAC','V':'INT'},
-			{'N':'VIGi','V':'INT'},
-			{'N':'BAG','V':'REF'},
-			{'N':'BAT','V':'REF'},
-			{'N':'EQUI','V':'REF'},
-			{'N':'ESC','V':'REF'},
-			{'N':'ESQ','V':'REF'},
-			{'N':'LAM','V':'REF'},
-			{'N':'MEL','V':'REF'},
-			{'N':'NAV','V':'REF'},
-			{'N':'ADR','V':'DEX'},
-			{'N':'ARB','V':'DEX'},
-			{'N':'ARC','V':'DEX'},
-			{'N':'ATH','V':'DEX'},
-			{'N':'FUR','V':'DEX'},
-			{'N':'PHY','V':'COR'},
-			{'N':'RES','V':'COR'},
-			{'N':'BEAU','V':'EMP'},
-			{'N':'CHAR','V':'EMP'},
-			{'N':'COM','V':'EMP'},
-			{'N':'DUP','V':'EMP'},
-			{'N':'JEU','V':'EMP'},
-			{'N':'PER','V':'EMP'},
-			{'N':'PSY','V':'EMP'},
-			{'N':'REP','V':'EMP'},
-			{'N':'SED','V':'EMP'},
-			{'N':'STYL','V':'EMP'},
-			{'N':'ALC','V':'TEC'},
-			{'N':'ART','V':'TEC'},
-			{'N':'CONT','V':'TEC'},
-			{'N':'CRO','V':'TEC'},
-			{'N':'DEG','V':'TEC'},
-			{'N':'PIEGE','V':'TEC'},
-			{'N':'SOI','V':'TEC'},
-			{'N':'COUR','V':'VOL'},
-			{'N':'ENV','V':'VOL'},
-			{'N':'INC','V':'VOL'},
-			{'N':'INTI','V':'VOL'},
-			{'N':'RCON','V':'VOL'},
-			{'N':'RMAG','V':'VOL'},
-			{'N':'RIT','V':'VOL'},
-	];
-	list2.forEach(function(e){
+	listCompt.forEach(function(e){
 		sheet.get(e.N).on("click", function(){
 			var affichage = _('Jet ');
 			var aff = affichage+sheet.get(e.N).value();
@@ -1595,6 +1534,8 @@ const initPNJcc = function(sheet){
 	list3.forEach(function(e){
 		Roll_Rapid(sheet,e,1);
 	});
+
+	
 };
 
 const initPNJcombat = function(sheet){
@@ -1624,6 +1565,7 @@ const initPNJcombat = function(sheet){
 
 	sheet.get('ATQ_cac_roll').on('click', function(){	// ATQ CaC
 		var arme = sheet.get('arm_1').value();
+		sheet.get('arm_3').value(arme);
 		var line;
 		arm_t.forEach(function(e){
 			if(e.pnj_arme_1 == arme){line = e;}
@@ -1637,6 +1579,7 @@ const initPNJcombat = function(sheet){
 
 	sheet.get('ATQ_dist_roll').on('click', function(){	// ATQ Distance
 		var arme = sheet.get('arm_2').value();
+		sheet.get('arm_3').value(arme);
 		var line;
 		arm_t.forEach(function(e){
 			if(e.pnj_arme_1 == arme){line = e;}
@@ -1659,10 +1602,12 @@ const initPNJcombat = function(sheet){
 			var dmg = sheet.get('Dom_1').value();
 			var affichage = _('Dégâts: ');
 			var aff = affichage+dmg;
+			DMGroll(sheet,dmg,aff,1);
 		}else{
 			var arme = sheet.get('arm_3').value();
 			var affichage = _('Dégâts: ');
-			var aff = affichage+arme; var line;
+			var aff = affichage+arme;
+			var line;
 			arm_t.forEach(function(e){
 				if(e.pnj_arme_1 == arme){line = e;}
 			});
@@ -1671,8 +1616,9 @@ const initPNJcombat = function(sheet){
 			} catch (error) {
 				return log(error);	// Fin de la fonction
 			}
+			DMGroll(sheet,dmg,aff,1);
+			Arme_formule(sheet, line);
 		}
-		DMGroll(sheet,dmg,aff,1);
 	});
 
 	sheet.get('dmg_complet_roll').on('click',function(){
@@ -1732,6 +1678,7 @@ const initMonster = function(sheet) {
 	initPNJcc(sheet);
 	initPNJcombat(sheet);
 	initPNJJauges(sheet);
+	initImportExport(sheet);
 	log('fin de l\'initiation Monstre!');
 };
 
@@ -1743,6 +1690,7 @@ const initPnj = function(sheet) {
 	PnJadd(sheet);
 	PnJRace(sheet);
 	sheet.get('race').on('update', function(){PnJRace(sheet);})
+	initImportExport(sheet);
 	log('fin de l\'initiation PnJ!');
 };
 
@@ -2024,9 +1972,288 @@ function Monnaie(sheet){
 
 	// Faire diff: -0 => 50% / 0-3 => 100 % / 4-5 => 125 % / 6-7 => 150 % / 8-9 => 175 % / 10+ => 200 %
 	sheet.get('revente1').on('update', function(){
-		var a = 0;	// Jet - SD
+		var a = sheet.get('revente1').value();	// Jet - SD
 		if(a<0){var b=50;}else if(a<4){var b=100;}else if(a<6){var b=125;}else if(a<8){var b=150;}else{var b=200;}
 		sheet.get('revente2').text(b+_('% du prix du marché'));
 	});
 }
 //endregion
+
+//region---------------------- IMPORT - EXPORT ---------------------------
+// Source: [klnavajo](https://discord.com/channels/488658494891753473/690160436909441045/951003587792744459)
+
+const JSONstringify = function (value) { // inspiration: https://levelup.gitconnected.com/creating-your-own-simplified-implementation-of-json-stringify-ed8e50b9144a?gi=fb2f7a2ef8a
+    const lastKey = Object.keys(value).pop();
+    let objString = '';
+    if (typeof value === 'object') {
+      if (Array.isArray(value)) {	// value => ARRAY
+        objString += '[';
+		each(value, function(v, key){	// v = valeur
+			objString += JSONstringify(value[key]); 
+            if (key !== lastKey) { objString += ','; }
+		});
+        objString += ']';
+      }else{	// value => OBJECT
+        objString += '{';
+		each(value, function(v, key){	// v = valeur
+			objString += '"' + key + '":'+ JSONstringify(value[key]);
+            if (key !== lastKey) { objString += ','; }
+		});
+        objString += '}';
+      }
+    } else if (typeof value === 'string') {
+		objString += '"' + value +'"';
+    } else if (typeof value === 'number') {
+        objString += value;
+    }
+    return objString;
+}
+
+const initImportExport = function(sheet) {
+    /* Export */
+    sheet.get('save_fiche').on('click', function() {
+        let dataObj = sheet.getData();
+		log(dataObj);
+        sheet.prompt('Exportation des données...', 'promptjson', function(result) { }, function(promptView) {
+            promptView.get('jsonstr').value( JSONstringify(dataObj) );
+        });
+    });
+
+    /* Import */
+    sheet.get('import_fiche').on('click', function() {
+        sheet.prompt('Importation des données...', 'promptjson', function(result) {
+            let dataObj = parseJSON(result.jsonstr);			
+			let data = {};
+            let nb = 0;
+
+            each(dataObj, function(v, k) {	// v = value, k = key		
+				if( sheet.get(k) ){
+					data[k] = v;
+					nb += 1;
+					if (nb == 20) {  // decoupe par paquet de 20
+						sheet.setData(data);
+						data = {};
+						nb = 0;
+					}
+				}
+            });
+            if (nb > 0) {
+                sheet.setData(data);
+            }
+        });
+    });
+};
+
+function parseJSON(json) { // inspiration: https://lihautan.com/json-parser-with-javascript/
+  const str = json.split('');
+  let i = 0;
+  return parseValue();
+  
+  function parseObject() {
+    if (str[i] === '{') {
+      i++;
+      skipWhitespace();
+      const result = {};
+      let initial = true;
+      while (str[i] !== '}') {
+      	if (!initial) {
+          eatComma();
+          skipWhitespace();
+        }
+        if (str[i] === '}'){
+          break;
+        }
+        const key = parseString();
+        skipWhitespace();
+        eatColon();
+        const value = parseValue();
+        result[key] = value;
+        initial = false;
+      }
+      i++;
+      return result;
+    }
+  }
+  
+  function parseArray() {
+    if (str[i] === '[') {
+      i++;
+      skipWhitespace();
+
+      const result = [];
+      let initial = true;
+      while (str[i] !== ']') {
+        if (!initial) {
+          eatComma();
+        }
+        const value = parseValue();
+        result.push(value);
+        initial = false;
+      }
+      i++;
+      return result;
+    }
+  }
+  
+  function parseString() {
+    if (str[i] === '"') {
+      i++;
+      let result = "";
+      while (i < str.length && str[i] !== '"') {
+        if (str[i] === "\\") {
+          const char = str[i + 1];
+          if (
+            char === '"' ||
+            char === "\\" ||
+            char === "/" ||
+            char === "b" ||
+            char === "f" ||
+            char === "n" ||
+            char === "r" ||
+            char === "t"
+          ) {
+            result += char;
+            i++;
+          } else if (char === "u") {
+            if (
+              isHexadecimal(str[i + 2]) &&
+              isHexadecimal(str[i + 3]) &&
+              isHexadecimal(str[i + 4]) &&
+              isHexadecimal(str[i + 5])
+            ) {
+              result += String.fromCharCode(
+                parseInt(Slicer(i + 2, i + 6), 16)
+              );
+              i += 5;
+            } else {
+              i += 2;
+              expectEscapeUnicode(result);
+            }
+          } else {
+            expectEscapeCharacter(result);
+          }
+        } else {
+          result += str[i];
+        }
+        i++;
+      }
+      i++;
+      return result;
+    }
+  }
+
+  function isHexadecimal(char) {
+    return (
+      (char >= "0" && char <= "9") ||
+      (char.toLowerCase() >= "a" && char.toLowerCase() <= "f")
+    );
+  }
+
+  function parseNumber() {
+    let start = i;
+    if (str[i] === "-") {
+      i++;
+      expectDigit(Slicer(start, i));
+    }
+    if (str[i] === "0") {
+      i++;
+    } else if (str[i] >= "1" && str[i] <= "9") {
+      i++;
+      while (str[i] >= "0" && str[i] <= "9") {
+        i++;
+      }
+    }
+
+    if (str[i] === ".") {
+      i++;
+      expectDigit(Slicer(start, i));
+      while (str[i] >= "0" && str[i] <= "9") {
+        i++;
+      }
+    }
+    if (str[i] === "e" || str[i] === "E") {
+      i++;
+      if (str[i] === "-" || str[i] === "+") {
+        i++;
+      }
+      expectDigit(Slicer(start, i));
+      while (str[i] >= "0" && str[i] <= "9") {
+        i++;
+      }
+    }
+    if (i > start) {
+      return Number(Slicer(start, i));
+    }
+  }
+    
+  function parseValue() {
+    skipWhitespace();
+    var newStr = str[i];
+    if (newStr === '{'){
+      return parseObject();
+    }else if(newStr === '['){
+      return parseArray();
+    }else if(newStr === '"'){
+      return parseString();
+    }else if(newStr === "true"){
+      return parseKeyword('true', true);
+    }else if(newStr === "false"){
+      return parseKeyword('false', false);
+    }else if(newStr === "null"){
+      return parseKeyword('null', null);
+    }else if(newStr === "}"){
+      return;
+    }else{
+      return parseNumber();      
+    }
+  }
+  
+  function parseKeyword(name, value) {
+    if (Slicer(i, i + name.length) === name) {
+      i += name.length;
+      return value;
+    }
+  }
+
+  function Slicer(start, end){
+	  var sortie = '';
+	  while (start !== end) {
+		  sortie += str[start];
+		  start ++;
+	  }
+	  return sortie;
+  }
+
+  function expectDigit(numSoFar) {
+    if (!(str[i] >= "0" && str[i] <= "9")) {
+      return log("JSON_ERROR_0006 Expecting a digit: " + numSoFar);
+    }
+  }
+  
+  function skipWhitespace() {
+    while (
+      str[i] === " " ||
+      str[i] === "\n" ||
+      str[i] === "\t" ||
+      str[i] === "\r"
+    ) {
+      i++;
+    }
+  }
+  
+  function eatComma() {
+    if (str[i] !== ',') {
+    	return log('Expected ",".');
+    }
+    i++;
+  }
+
+  function eatColon() {
+    if (str[i] !== ':') {
+    	return log('Expected ":".');
+    }
+    i++;
+  }
+}
+
+// endregion
